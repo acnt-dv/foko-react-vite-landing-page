@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* src/index.css or src/App.css */
+@font-face {
+  font-family: 'Rubik';
+  src: url('/public/fonts/Rubik/static/Rubik-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/public/fonts/Helvetica/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  @apply font-helvetica;
+} 
+
+body {
+  margin: 0;
+  /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
+  /*  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
+  /*  sans-serif;*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  /*font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',*/
+  /*  monospace;*/
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@theme {
+  --color-foko: #D9D7C9;
+  --margin-foko: 50px;
+  --margin-foko-sm: 30px;
+  --font-rubik: Rubik, "sans-serif";
+  --font-helvetica: Helvetica, "sans-serif";
+  --font-size-10: 10px;
+  --font-size-20: 20px;
+  --font-size-30: 30px;
+}
