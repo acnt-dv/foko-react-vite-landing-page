@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import {React, useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
 import Header from './Header';
 import Footer from './Footer';
@@ -9,14 +9,24 @@ import BackToTop from "./BackToTop";
 export const Layout = () => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [hideLogo, setHideLogo] = useState(false);
 
     const toggleMenu = () => setMenuOpen(prev => !prev);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setHideLogo(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <div className="flex flex-col items-center justify-center bg-foko">
             {loggedIn ?
                 <>
-                    <Header menuToggle={toggleMenu}/>
+                    <Header menuToggle={toggleMenu} hideLogo={hideLogo}/>
                     <FullPageMenu isOpen={menuOpen} onClose={toggleMenu}/>
                     <Outlet />
                     <BackToTop />
