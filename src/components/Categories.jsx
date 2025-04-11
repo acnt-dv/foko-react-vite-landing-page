@@ -33,7 +33,7 @@ const Categories = () => {
 
                 {/* RESIDENTIAL Button */}
                 <button
-                    className={`py-2 self-start rounded-md transition-all cursor-pointer ${
+                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${
                         active === "RESIDENTIAL" ? "text-black font-bold" : "text-gray-400"
                     }`}
                     onClick={() => setActive("RESIDENTIAL")}
@@ -43,7 +43,7 @@ const Categories = () => {
 
                 {/* COMMERCIAL Button */}
                 <button
-                    className={`py-2 self-start rounded-md transition-all cursor-pointer ${
+                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${
                         active === "COMMERCIAL" ? "text-black font-bold" : "text-gray-400"
                     }`}
                     onClick={() => setActive("COMMERCIAL")}
@@ -53,7 +53,7 @@ const Categories = () => {
 
                 {/* ALL Button */}
                 <button
-                    className={`py-2 self-start rounded-md transition-all cursor-pointer ${
+                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${
                         active === "ALL" ? "text-black font-bold" : "text-gray-400"
                     }`}
                     onClick={() => setActive("ALL")}
