@@ -4,10 +4,10 @@ import right from "../statics/svg/arrow-right.svg";
 const AboutUs = () => {
     return (
         <div className="flex flex-col md:flex-row h-full md:h-screen items-center justify-center">
-            <h1 className="text-start text-30 font-rubik hidden md:block absolute left-[50px]">About <br/> FOKO</h1>
+            <h1 className="text-end text-30 font-rubik hidden md:block absolute left-[50px]">About <br/> FOKO</h1>
 
             <div className='flex'>
-                <h1 className="text-start text-16 font-rubik block md:hidden absolute left-[30px] mt-foko">About <br/> FOKO</h1>
+                <h1 className="text-end text-16 font-rubik block md:hidden absolute left-[30px] mt-foko">About <br/> FOKO</h1>
                 <span className="flex flex-col w-full justify-start items-center text-justify my-foko md:my-0">
                     <p className="mx-[30px] md:mx-[50px] text-10 md:text-16 w-7/12 self-end md:self-center max-w-[450px]">
                         FOKO Studio is a Los Angeles-based architecture and interior design firm.
@@ -23,7 +23,7 @@ const AboutUs = () => {
                         we design environments that are perfectly tailored to the unique lifestyle and
                         aspirations of our clients.
                     </p>
-                    <h2 className="flex font-rubik w-7/12 max-w-[450px] self-end md:self-center mx-[30px] md:mx-[50px] md:justify-self-start text-10 md:text-20 mt-foko">
+                    <h2 className="flex font-rubik w-7/12 max-w-[450px] self-end md:self-center mx-[30px] md:mx-[50px] md:justify-self-start text-10 md:text-20 mt-foko cursor-pointer">
                         MORE &nbsp; &nbsp; &nbsp;
                         <img src={right} alt="Right Image"/>
                     </h2>
