@@ -1,5 +1,9 @@
+import { Fragment } from "react";
+import Footer from "./Footer";
+
 const Contact = () => {
     return (
+        <Fragment>
         <div className="flex flex-col md:flex-row w-full h-screen justify-center items-center mb-32">
             <h1 className="text-30 font-rubik text-end hidden md:block mx-[50px]">Contact <br/> Us</h1>
 
@@ -13,6 +17,8 @@ const Contact = () => {
                 </p>
             </div>
         </div>
+        <Footer/>
+        </Fragment>
     )
 }
 

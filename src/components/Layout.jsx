@@ -20,12 +20,12 @@ export const Layout = () => {
                     <FullPageMenu isOpen={menuOpen} onClose={toggleMenu}/>
                     <Outlet />
                     <BackToTop />
-                    <Footer />
+                    {/* <Footer /> */}
                 </>
                 :
                 <>
                     <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
-                    <Footer/>
+                    {/* <Footer/> */}
                 </>
             }
         </div>
