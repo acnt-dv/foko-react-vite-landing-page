@@ -20,9 +20,9 @@ export const Footer = () => {
             <div className="flex w-3/4 justify-start text-[7px] md:text-10 m-[30px] md:m-[50px]">
                 <p>@ 2025 FOKO STUDIO. ALL RIGHTS RESERVED.</p>
             </div>
-            <div className="flex w-1/4 justify-between text-10 md:text-16 m-[30px] md:m-[50px] gap-2 md:gap-4">
-                <p>LinkedIn</p>
-                <p>Instagram</p>
+            <div className="flex w-1/4 justify-end text-10 md:text-16 m-[30px] md:m-[50px] gap-2 md:gap-4">
+                {/* <p>LinkedIn</p> */}
+                <p className="cursor-pointer">Instagram</p>
             </div>
         </div>
     )

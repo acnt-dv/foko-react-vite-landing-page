@@ -32,7 +32,7 @@ const Categories = () => {
 
                 {/* RESIDENTIAL Button */}
                 <button
-                    className={`py-2 self-start rounded-md transition-all ${
+                    className={`py-2 self-start rounded-md transition-all cursor-pointer ${
                         active === "RESIDENTIAL" ? "text-black font-bold" : "text-gray-400"
                     }`}
                     onClick={() => setActive("RESIDENTIAL")}
@@ -42,7 +42,7 @@ const Categories = () => {
 
                 {/* COMMERCIAL Button */}
                 <button
-                    className={`py-2 self-start rounded-md transition-all ${
+                    className={`py-2 self-start rounded-md transition-all cursor-pointer ${
                         active === "COMMERCIAL" ? "text-black font-bold" : "text-gray-400"
                     }`}
                     onClick={() => setActive("COMMERCIAL")}
@@ -52,7 +52,7 @@ const Categories = () => {
 
                 {/* ALL Button */}
                 <button
-                    className={`py-2 self-start rounded-md transition-all ${
+                    className={`py-2 self-start rounded-md transition-all cursor-pointer ${
                         active === "ALL" ? "text-black font-bold" : "text-gray-400"
                     }`}
                     onClick={() => setActive("ALL")}
@@ -72,7 +72,7 @@ const Categories = () => {
                                 onClick={()=> {navigate('/works')}}
                                 key={index}
                                 className={`h-[208px] bg-gray-900 flex items-center justify-center text-white 
-                                    bg-cover bg-center transition-all duration-500 ${
+                                    bg-cover bg-center transition-all duration-500 cursor-pointer ${
                                     isActive ? "grayscale-0" : "grayscale"
                                 }`}
                                 style={{ backgroundImage: `url(${image.src})` }}
