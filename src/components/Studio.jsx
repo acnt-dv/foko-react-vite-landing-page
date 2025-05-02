@@ -42,7 +42,7 @@ const AboutUs = () => {
                 </div>
             </div>
             <div className='flex w-full mb-[30px] md:mb-[50px]'>
-                <h1 className="text-16 font-rubik block absolute left-[30px] text-right mt-[47px]">OUR <br/> TEAM</h1>
+                <h1 className="text-16 md:text-30 font-rubik block absolute left-[30px] text-right mt-[47px] md:mt-[40px]">OUR <br/> TEAM</h1>
                 <span className="flex flex-col w-full justify-center items-center text-justify my-foko">
                     <p className="mx-[30px] md:mx-[50px] text-10 md:text-16 w-1/2 md:w-9/12 self-end md:self-center">
                         FOKO Studio was founded by Jenny Fontenot and Pegah Koulaeien, two seasoned design professionals with a shared passion for creating inspiring spaces. With diverse backgrounds in architecture and interior design, Jenny and Pegah bring a unique blend of technical expertise and creative intuition to every project. Their collaboration fosters a dynamic, multidisciplinary approach that excels across projects of all scales.
