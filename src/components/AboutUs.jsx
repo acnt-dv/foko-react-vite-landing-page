@@ -4,12 +4,12 @@ import right from "../statics/svg/arrow-right.svg";
 const AboutUs = () => {
     return (
         <div className="flex flex-col md:flex-row h-full md:h-screen items-start justify-center">
-            <h1 className="text-end text-30 font-rubik hidden md:block absolute left-[50px] mt-[20px]">About <br/> FOKO</h1>
+            <h1 className="text-end text-30 font-rubik hidden md:block absolute left-[50px] mt-[45px]">About <br/> FOKO</h1>
 
             <div className='flex'>
                 <h1 className="text-end text-16 font-rubik block md:hidden absolute left-[30px] mt-foko">About <br/> FOKO</h1>
                 <span className="flex flex-col w-full justify-start items-center text-justify my-foko md:my-0">
-                    <p className="mx-[30px] md:mx-[50px] text-16 w-7/12 self-end md:self-center max-w-[450px] mt-[30px]">
+                    <p className="mx-[30px] md:mx-[50px] text-16 w-7/12 self-end md:self-center max-w-[450px] mt-[30px] md:mt-foko">
                         FOKO Studio is a Los Angeles-based architecture and interior design firm.
                         Our studio specializes in crafting bespoke, high-end residential and commercial
                         spaces that are as thoughtful as they are visually compelling.
@@ -29,7 +29,7 @@ const AboutUs = () => {
                     </h2>
                 </span>
                 <img src={aboutUsImage} alt={'aboutUsImage'}
-                     className="hidden md:block filter grayscale mb-foko md:mx-foko"/>
+                     className="hidden md:block filter grayscale mb-foko md:mx-foko mt-foko"/>
             </div>
             <img src={aboutUsImage} alt={'aboutUsImage'}
                  className="block md:hidden filter grayscale mb-foko md:mx-foko"/>
