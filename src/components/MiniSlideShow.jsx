@@ -61,28 +61,29 @@ const MiniScreenSlideshow = () => {
                     key={index}
                     src={images[index]}
                     alt="Slideshow"
-                    className="absolute w-full h-full object-cover"
+                    className="absolute w-full h-full object-cover cursor-pointer"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
+                    onClick={() => openModal(images[index])}
                 />
             </AnimatePresence>
 
             {/* Left Arrow */}
             <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
+                className="absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko" />
+                <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko cursor-pointer"/>
             </button>
 
             {/* Right Arrow */}
             <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-black bg-opacity-0 text-white hover:bg-opacity-0"
+                className="absolute right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={rightArrow} alt="next slide" className="flex justify-self-end w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko" />
+                <img src={rightArrow} alt="next slide" className="flex justify-self-end w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko cursor-pointer" />
             </button>
 
             {/* Dots Navigation */}
@@ -97,12 +98,12 @@ const MiniScreenSlideshow = () => {
             </div>
 
             {/* Plus Icon */}
-            <button
+            {/* <button
                 onClick={() => openModal(images[index])}
                 className="absolute top-8 left-32 p-2 rounded-full shadow-lg"
             >
                 <img src={plusIcon} alt="open modal" className="w-[20px] h-[20px]" />
-            </button>
+            </button> */}
 
             {/* Fullscreen Modal */}
             {showModal && (
@@ -110,7 +111,7 @@ const MiniScreenSlideshow = () => {
                     <div className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
                         <button
                             onClick={closeModal}
-                            className="absolute top-[30px] right-[30px]"
+                            className="absolute top-[30px] right-[30px] cursor-pointer"
                         >
                             <img src={close} alt="close" width='30px' height='30px' className="filter grayscale"/>
                         </button>

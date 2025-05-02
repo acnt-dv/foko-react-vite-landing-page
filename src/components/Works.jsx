@@ -57,12 +57,16 @@ into timeless masterpieces. With a blend of cutting-edge technology and sustaina
             </div>
             <div className="flex w-full items-start justify-start sm:justify-center text-black">
                 <div className="flex justify- items-center mt-[30px] md:mt-[50px]">
-                    <p className="mt-[30px] md:mt-[150px] mx-[30px] md:mx-0 md:absolute md:left-[50px] font-rubik text-10 md:text-16 md:text30 text-start break-words -translate-y-1/2 text-gray-900 transition-transform duration-300"
-                       style={{transform: `translateY(${translateY}px)`,}}>BEL AIR <br/> RESIDENTIAL
+                    <p className="mt-[30px] md:mt-[100px] mx-[30px] md:mx-0 md:absolute md:left-[50px] font-rubik text-10 md:text30 text-end break-words -translate-y-1/2 text-gray-900 transition-transform duration-300"
+                    //    style={{transform: `translateY(${translateY}px)`,}}
+                       >BEL AIR <br/> RESIDENTIAL
                     </p>
                 </div>
                 <div className="flex-col w-3/5 space-y-16 items-center justify-end mr-[30px] md:mr-0 text-black mb-[150px]">
-                    <FadingTextBoxWithMask text={textLines}/>
+                    {/* <FadingTextBoxWithMask text={textLines}/> */}
+                    <p className='text-justify mt-[30px] md:mt-[50px]'>
+                        {textLines}
+                    </p>
                     <MiniSlideShow/>
                 </div>
             </div>
