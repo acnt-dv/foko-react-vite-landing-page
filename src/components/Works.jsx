@@ -57,7 +57,7 @@ into timeless masterpieces. With a blend of cutting-edge technology and sustaina
             </div>
             <div className="flex w-full items-start justify-start sm:justify-center text-black">
                 <div className="flex justify- items-center mt-[30px] md:mt-[50px]">
-                    <p className="mt-[30px] md:mt-[100px] mx-[30px] md:mx-0 md:absolute md:left-[50px] font-rubik text-10 md:text30 text-end break-words -translate-y-1/2 text-gray-900 transition-transform duration-300"
+                    <p className="mt-[30px] md:mt-[160px] mx-[30px] md:mx-0 md:absolute md:left-[50px] font-rubik text-10 md:text-30 text-end break-words -translate-y-1/2 text-gray-900 transition-transform duration-300"
                     //    style={{transform: `translateY(${translateY}px)`,}}
                        >BEL AIR <br/> RESIDENTIAL
                     </p>

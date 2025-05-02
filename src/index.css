@@ -56,7 +56,7 @@ code {
   --margin-foko-sm: 30px;
   --font-rubik: Rubik, "sans-serif";
   --font-helvetica: Helvetica, "sans-serif";
-  --font-size-10: 10px;
-  --font-size-20: 20px;
-  --font-size-30: 30px;
+  --text-10: 10px;
+  --text-20: 20px;
+  --text-30: 30px;
 }
