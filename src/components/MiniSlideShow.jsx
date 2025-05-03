@@ -56,7 +56,7 @@ const MiniScreenSlideshow = () => {
     return (
         <div className="relative w-full h-auto aspect-[2/1]">
             {/* Image Transition */}
-            <AnimatePresence mode="wait">
+            {/* <AnimatePresence mode="wait">
                 <motion.img
                     key={index}
                     src={images[index]}
@@ -68,6 +68,27 @@ const MiniScreenSlideshow = () => {
                     transition={{ duration: 1 }}
                     onClick={() => openModal(images[index])}
                 />
+            </AnimatePresence> */}
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={index}
+                    className="absolute w-full h-full"
+                    initial={{ opacity: .5, backgroundColor: "#000" }}
+                    animate={{ opacity: 0 }}
+                    exit={{ opacity: .5, backgroundColor: "#000" }}
+                    transition={{ duration: 0.25 }}
+                />
+                <motion.img
+                    key={`img-${index}`}
+                    src={images[index]}
+                    alt="Slideshow"
+                    className="absolute w-full h-full object-cover cursor-pointer"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    onClick={() => openModal(images[index])}
+                />
             </AnimatePresence>
 
             {/* Left Arrow */}
@@ -75,7 +96,7 @@ const MiniScreenSlideshow = () => {
                 onClick={prevSlide}
                 className="absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko cursor-pointer"/>
+                <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko cursor-pointer" />
             </button>
 
             {/* Right Arrow */}
@@ -113,7 +134,7 @@ const MiniScreenSlideshow = () => {
                             onClick={closeModal}
                             className="absolute top-[30px] right-[30px] cursor-pointer"
                         >
-                            <img src={close} alt="close" width='30px' height='30px' className="filter grayscale"/>
+                            <img src={close} alt="close" width='30px' height='30px' className="filter grayscale" />
                         </button>
                         <img
                             src={selectedImage}
