@@ -76,7 +76,7 @@ const MiniScreenSlideshow = () => {
                     initial={{ opacity: .5, backgroundColor: "#000" }}
                     animate={{ opacity: 0 }}
                     exit={{ opacity: .5, backgroundColor: "#000" }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.20 }}
                 />
                 <motion.img
                     key={`img-${index}`}
