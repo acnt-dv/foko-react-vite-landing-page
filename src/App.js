@@ -11,7 +11,7 @@ import Contact from "./components/Contact";
 function App() {
     return (
         <Router>
-            <div className="App">
+            <div className="App w-full max-w-[1920px] mx-auto">
                 <Routes>
                     <Route path="/" element={<Layout/>}>
                         <Route index element={<Home/>}/>
