@@ -141,6 +141,8 @@ const MiniScreenSlideshow = () => {
                             alt="Fullscreen"
                             className="w-full max-h-[80vh] object-contain"
                         />
+                        <p className="absolute bottom-[30px] left-[175px]">Some renderings by Polynates. Work completed while at BA Collective.
+                        </p>
                     </div>
                 </div>
             )}
