@@ -3,14 +3,15 @@ import profileImage from "../statics/png/about-us.png"; // Replace with actual i
 
 const ProfileCard = ({ name }) => {
     return (
-        <div className="flex-col bg-foko min-h-full justify-start w-[calc(100%-60px)] md:w-3/4 mt-[125px] ml-[125px]">
-            <div className="flex flex-col md:flex-row w-full">
-                <div className="relative w-full h-full aspect-[1/1.5] md:w-1/3 md:max-w-[528px] md:max-h-[698px] p-0 flex flex-col items-center">
+        // <div className="flex-col bg-foko min-h-full justify-start w-[calc(100%-60px)] md:w-full px-[100px] mt-[125px]">
+        <div className="flex bg-foko min-h-full md:w-full mt-[125px] justify-end">
+            <div className="flex flex-col md:flex-row w-10/12">
+                <div className="relative w-full h-full aspect-[1/1.5] md:w-1/3 md:max-w-[528px] md:max-h-[698px] flex flex-col items-center">
                     {/* Profile Image */}
                     <img
                         src={profileImage}
                         alt="Jenny Fontenot"
-                        className="absolute top-0 left-0 w-full h-full object-cover shadow-lg"
+                        className="absolute ml-[-25px] top-0 left-0 w-full h-full object-cover shadow-lg"
                     />
                 </div>
 
