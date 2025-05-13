@@ -9,7 +9,7 @@ const FullPageMenu = ({isOpen, onClose}) => {
     return (
         <div
             className={`z-10 fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-            <button onClick={onClose} className="absolute top-[30px] right-[30px] md:top-[50px] md:right-[50px] cursor-pointer">
+            <button onClick={onClose} className="absolute top-[52.5px] right-[30px] md:top-[72.5px] md:right-[50px] cursor-pointer">
                 <img src={close} alt="close" width='30px' height='30px'/>
             </button>
 
