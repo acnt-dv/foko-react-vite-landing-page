@@ -8,11 +8,8 @@ const ContactUs = () => {
                 <div className='flex w-full text-justify items-start'>
                     <h1 className="text-16 font-rubik text-end block md:hidden mx-[30px]">Contact <br /> Us</h1>
                     <div className="col">
-                        <p className="mr-[30px] md:mr-[150px] w-full max-w-[450px] md:self-center text-10 md:text-16 mt-[4px] md:mt-0">FOKO
-                            Studio is here to bring your architectural dreams to life. We invite you to get in touch with us to
-                            discuss your project ideas and see how we can assist you. Email us at contact@foko.studio or give us
-                            a call at +123-456-7890. Our team is ready to provide you with the expertise and support you need to
-                            achieve your goals.
+                        <p className="mr-[30px] md:mr-[150px] w-full max-w-[450px] md:self-center text-10 md:text-16 mt-[4px] md:mt-0">
+                        Whether you're looking to start a new project, have questions about our services, or just want to say hello, our team is here to assist. Please reach out to us directly using the information below, and we’ll get back to you as soon as possible.
                         </p>
                         <p className="mt-[100px]">Pegah Koulaeian</p>
                         <p>pegah@fokostudio.com</p>
