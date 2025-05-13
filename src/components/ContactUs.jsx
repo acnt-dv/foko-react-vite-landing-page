@@ -1,6 +1,6 @@
 const ContactUs = () => {
     return (
-        <div className="flex max-w-4/5 flex-col md:flex-row w-full h-full md:h-screen justify-start items-start mb-32">
+        <div className="flex max-w-11/12 flex-col md:flex-row w-full h-full md:h-screen justify-start items-start mb-32">
             <span className="flex w-1/5 justify-end">
                 <h1 className="text-30 font-rubik text-end hidden md:block mr-[50px] mt-[-10px]">Contact <br /> Us</h1>
             </span>

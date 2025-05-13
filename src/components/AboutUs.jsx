@@ -4,7 +4,7 @@ import right from "../statics/svg/arrow-right.svg";
 const AboutUs = () => {
     return (
         <div className="flex flex-col w-full md:flex-row h-full md:h-screen items-start justify-center mt-[150px]">
-            <div className='flex w-4/5'>
+            <div className='flex w-11/12'>
                 <span className="flex w-1/5 justify-end">
                     {/* <h1 className="text-end text-30 font-rubik hidden md:block mr-[50px] mt-[45px]">About <br /> FOKO</h1> */}
                     <h1 className="text-end text-16 font-rubik block md:hidden absolute left-[30px] mt-[48px]">About <br /> FOKO</h1>
