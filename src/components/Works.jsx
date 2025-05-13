@@ -44,43 +44,47 @@ export const Works = () => {
     );
 
     return (
-        <div className="flex flex-col w-full bg-foko">
-            <div
-                className="min-h-[75vh] w-full bg-cover bg-center bg-gray-400"
-                style={{ backgroundImage: `url(${image})` }}>
-            </div>
+        <div className="flex flex-col w-full justify-center items-center bg-foko">
+            <div className="min-h-[75vh] w-full bg-cover bg-center bg-gray-400" style={{ backgroundImage: `url(${image})` }} />
+
             <div className="flex w-full mx-0 mt-[200px] items-start justify-center md:justify-center text-black">
-                {/* <div className="flex items-center mt-[30px] md:mt-[50px] md:w-1/5">
-                    <p className="mt-[30px] md:mt-[160px] mx-[30px] md:mx-0 md:absolute md:left-[50px] font-rubik text-10 md:text-30 text-end break-words -translate-y-1/2 text-gray-900 transition-transform duration-300" style={{transform: `translateY(${translateY}px)`,}}></p>
-                    
-                </div> */}
-                <div className="relative flex-col w-3/5 space-y-16 items-center justify-end mr-[30px] md:mr-0 text-black mb-[150px]">
-                    <p className='absolute left-[-275px] top-[50px] font-rubik text-16 md:text-30 text-end break-words md:mt-[10px]'>
-                        BEL AIR <br /> RESIDENTIAL
-                    </p>
-                    <p className='text-justify mt-[60px] w-full text-10 md:text-16'>
-                        {textLines}
-                    </p>
-                    <div className='absolute left-[-350px] bottom-[-90px]'>
-                        <div className="flex flex-row justify-between items-end w-full px-6">
-                            {/* جدول مشخصات پروژه */}
-                            <div className="text-left mb-[10px] mr-[40px] text-[12px] leading-[1.8]">
-                                <div className="grid grid-cols-[80px_auto] gap-x-4 gap-y-1 p-2 w-fit">
-                                    <span className="font-bold">PROGRAM</span>
-                                    <span className="text-right">Single Family Residential</span>
-                                    <span className="font-bold">LOCATION</span>
-                                    <span className="text-right">Bel Air</span>
-                                    <span className="font-bold">SIZE</span>
-                                    <span className="text-right">24,000 Sf</span>
-                                    <span className="font-bold">TYPE</span>
-                                    <span className="text-right">New Construction</span>
-                                    <span className="font-bold">STATUS</span>
-                                    <span className="text-right">Unbuilt</span>
+                <div className="flex-col w-4/5 space-y-16 items-center justify-end mr-[30px] md:mr-0 text-black mb-[150px]">
+                    <span className='flex'>
+                        <span className='flex w-3/12'>
+                            <p className='font-rubik text-16 md:text-30 text-end break-words mt-[-10px]'>
+                                BEL AIR <br /> RESIDENTIAL
+                            </p>
+                        </span>
+                        <span className='flex w-9/12'>
+                            <p className='text-justify w-full text-10 md:text-16'>
+                                {textLines}
+                            </p>
+                        </span>
+                    </span>
+
+                    <span className='flex'>
+                        <div className='flex w-3/12 justify-start'>
+                            <div className="flex flex-row mx-2 mb-[-7px] justify-between items-end w-full">
+                                <div className="text-left text-[12px] leading-[1.8]">
+                                    <div className="grid grid-cols-[80px_auto] gap-x-4 gap-y-1 w-fit">
+                                        <span className="font-bold">PROGRAM</span>
+                                        <span className="text-right">Single Family Residential</span>
+                                        <span className="font-bold">LOCATION</span>
+                                        <span className="text-right">Bel Air</span>
+                                        <span className="font-bold">SIZE</span>
+                                        <span className="text-right">24,000 Sf</span>
+                                        <span className="font-bold">TYPE</span>
+                                        <span className="text-right">New Construction</span>
+                                        <span className="font-bold">STATUS</span>
+                                        <span className="text-right">Unbuilt</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <MiniSlideShow />
+                        <span className='flex w-9/12'>
+                            <MiniSlideShow />
+                        </span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -88,4 +92,3 @@ export const Works = () => {
 }
 
 export default Works;
-
