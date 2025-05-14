@@ -23,13 +23,13 @@ const Categories = () => {
     const [active, setActive] = useState("ALL");
 
     return (
-        <div className="flex w-full h-screen items-center justify-center gap-8 text-black">
+        <div className="flex w-full h-screen items-center justify-center gap-0 md:gap-8 text-black">
             {/* Sidebar Buttons */}
             {/* removed from this div style: md:border-r md:border-gray-500 */}
             <div
                 className="flex flex-col w-[10%] h-3/4 justify-end md:justify-center
                 md:ml-foko bg-gradient-to-b from-black via-gray-900 to-gray-100 bg-clip-text text-transparent
-                font-rubik text-16 ml-[30px]">
+                font-rubik text-10 md:text-16 ml-[30px]">
 
                 {/* RESIDENTIAL Button */}
                 <button
@@ -63,8 +63,8 @@ const Categories = () => {
             </div>
 
             {/* Image Grid */}
-            <div className="flex flex-col w-[75%] h-3/4">
-                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-0 px-12 w-full max-w-8xl overflow-auto scrollbar-hide">
+            <div className="flex flex-col w-[75%] h-3/4 mt-[100px] md:mt-0">
+                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(auto,1fr))] md:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] ml-[20px] pr-0 md:pr-[30px] md:ml-[50px] gap-0 w-full max-w-8xl overflow-auto scrollbar-hide">
                     {images.map((image, index) => {
                         // Apply grayscale based on active filter
                         const isActive = active === "ALL" || active === image.category;
@@ -72,13 +72,13 @@ const Categories = () => {
                             <div
                                 onClick={()=> {navigate('/works')}}
                                 key={index}
-                                className={`h-[208px] bg-gray-900 flex items-center justify-center text-white 
+                                className={`h-[108px] md:h-[208px] bg-gray-900 flex items-center justify-center text-white 
                                     bg-cover bg-center transition-all duration-500 cursor-pointer ${
                                     isActive ? "grayscale-0" : "grayscale"
                                 }`}
                                 style={{ backgroundImage: `url(${image.src})` }}
                                 
-                            ><div className="fixed w-full h-[25px] bg-foko bottom-0 text-black">BA COLLECTIVE STUDIO</div></div>
+                            ><div className="fixed w-full h-[25px] bg-foko bottom-0 text-10 md:text-16 text-black">BA COLLECTIVE STUDIO</div></div>
                         );
                     })}
                 </div>
