@@ -132,17 +132,19 @@ const MiniScreenSlideshow = () => {
                     <div className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
                         <button
                             onClick={closeModal}
-                            className="absolute top-[30px] right-[30px] cursor-pointer"
+                            className="absolute top-[10px] right-[10px] md:top-[50px] md:right-[50px] max-w-[15px] max-h-[15px] md:max-w-[30px] md:max-h-[30px] cursor-pointer"
                         >
                             <img src={close} alt="close" width='30px' height='30px' className="filter grayscale" />
                         </button>
-                        <img
-                            src={selectedImage}
-                            alt="Fullscreen"
-                            className="w-full max-h-[80vh] object-contain"
-                        />
-                        <p className="absolute bottom-[30px] left-[175px]">Some renderings by Polynates. Work completed while at BA Collective.
-                        </p>
+                        <span className="grid w-full text-left">
+                            <img
+                                src={selectedImage}
+                                alt="Fullscreen"
+                                className="w-full max-h-[80vh] object-contain px-0 md:px-[100px]"
+                            />
+                            <p className="text-10 md:text-16 p-2 md:px-[100px]">Some renderings by Polynates. Work completed while at BA Collective.
+                            </p>
+                        </span>
                     </div>
                 </div>
             )}
