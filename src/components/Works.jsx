@@ -47,41 +47,44 @@ export const Works = () => {
         <div className="flex flex-col w-full justify-center items-center bg-foko">
             <div className="min-h-[75vh] w-full bg-cover bg-center bg-gray-400" style={{ backgroundImage: `url(${image})` }} />
 
-            <div className="flex w-full mx-0 mt-[200px] items-start justify-center md:justify-center text-black">
-                <div className="flex-col w-4/5 space-y-16 items-center justify-end mr-[30px] md:mr-0 text-black mb-[150px]">
-                    <span className='flex'>
-                        <span className='flex w-3/12'>
-                            <p className='font-rubik text-16 md:text-30 text-end break-words mt-[-10px]'>
+            <div className="flex w-full mx-0 mt-[30px] md:mt-[200px] items-start justify-center md:justify-center text-black">
+                <div className="flex-col w-4/5 space-y-16 items-center justify-end text-black mb-[150px]">
+                    <span className='flex w-full'>
+                        <span className='flex w-3/12 justify-end'>
+                            <p className='font-rubik text-10 md:text-30 font-black md:font-normal text-end break-words pr-0 md:pr-[50px] mt-0 md:mt-[-10px]'>
                                 BEL AIR <br /> RESIDENTIAL
                             </p>
                         </span>
-                        <span className='flex w-9/12'>
-                            <p className='text-justify w-full text-10 md:text-16'>
+                        <span className='flex w-full '>
+                            <p className='text-justify w-full text-10 md:text-16 pl-[30px] md:pl-0'>
                                 {textLines}
                             </p>
                         </span>
                     </span>
 
-                    <span className='flex'>
-                        <div className='flex w-3/12 justify-start'>
-                            <div className="flex flex-row mx-2 mb-[-7px] justify-between items-end w-full">
-                                <div className="text-left text-[12px] leading-[1.8]">
-                                    <div className="grid grid-cols-[80px_auto] gap-x-4 gap-y-1 w-fit">
-                                        <span className="font-bold">PROGRAM</span>
-                                        <span className="text-right">Single Family Residential</span>
-                                        <span className="font-bold">LOCATION</span>
-                                        <span className="text-right">Bel Air</span>
-                                        <span className="font-bold">SIZE</span>
-                                        <span className="text-right">24,000 Sf</span>
-                                        <span className="font-bold">TYPE</span>
-                                        <span className="text-right">New Construction</span>
-                                        <span className="font-bold">STATUS</span>
-                                        <span className="text-right">Unbuilt</span>
-                                    </div>
+                    <span className='flex w-full flex-col-reverse md:flex-row'>
+                        <div className="flex w-full md:w-3/12 mt-[75px] md:mt-0">
+                             <div className="flex flex-row mb-[-7px] pr-0 md:pr-[50px] justify-end items-end w-full">
+                                <div className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 md:text-[12px] leading-[1.8]">
+                                    <span className="font-bold">PROGRAM</span>
+                                    <span className="text-right">Single Family Residential</span>
+
+                                    <span className="font-bold">LOCATION</span>
+                                    <span className="text-right">Bel Air</span>
+
+                                    <span className="font-bold">SIZE</span>
+                                    <span className="text-right">24,000 Sf</span>
+
+                                    <span className="font-bold">TYPE</span>
+                                    <span className="text-right">New Construction</span>
+
+                                    <span className="font-bold">STATUS</span>
+                                    <span className="text-right">Unbuilt</span>
                                 </div>
                             </div>
                         </div>
-                        <span className='flex w-9/12'>
+
+                        <span className='flex w-full w-9/12'>
                             <MiniSlideShow />
                         </span>
                     </span>
