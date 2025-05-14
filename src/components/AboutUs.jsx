@@ -1,5 +1,6 @@
 import aboutUsImage from '../statics/png/about-us.png';
 import right from "../statics/svg/arrow-right.svg";
+import rightSmall from "../statics/svg/arrow-right-small.svg";
 
 const AboutUs = () => {
     return (
@@ -23,9 +24,13 @@ const AboutUs = () => {
                         we design environments that are perfectly tailored to the unique lifestyle and
                         aspirations of our clients. */}
                         </p>
-                        <h2 className="flex font-rubik max-w-[450px] text-10 md:text-20 cursor-pointer my-[50px] md:my-0">
+                        <h2 className="hidden md:flex font-rubik max-w-[450px] text-10 md:text-20 cursor-pointer my-[50px] md:my-0">
                             MORE &nbsp; &nbsp; &nbsp;
                             <img src={right} alt="Right Image" />
+                        </h2>
+                        <h2 className="block md:hidden flex font-rubik max-w-[450px] text-10 md:text-20 cursor-pointer my-[50px] md:my-0">
+                            MORE &nbsp; &nbsp; &nbsp;
+                            <img src={rightSmall} alt="Right Image" width="9px" height="4px" className='mt-[-2px]'/>
                         </h2>
                     </div>
                     <img src={aboutUsImage} alt={'aboutUsImage'}
