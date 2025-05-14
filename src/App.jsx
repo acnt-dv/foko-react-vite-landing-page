@@ -6,7 +6,7 @@ import Works from "./components/Works";
 import Home from "./components/Home";
 import Studio from "./components/Studio";
 import Categories from "./components/Categories";
-import Contact from "./components/Contact";
+import Contact from "./components/ContactUsPage";
 import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
