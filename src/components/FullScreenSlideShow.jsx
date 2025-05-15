@@ -30,7 +30,7 @@ const FullScreenSlideshow = () => {
     };
 
     return (
-        <div className="relative w-full h-[75vh] md:h-screen overflow-hidden">
+        <div className="relative w-full h-[75vh] lg:h-screen overflow-hidden">
             {/* Image Transition */}
             <AnimatePresence mode="wait">
                 <motion.img
@@ -50,7 +50,7 @@ const FullScreenSlideshow = () => {
                 onClick={prevSlide}
                 className="absolute left-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={leftArrow} alt={'previous slide'} className="m-foko-sm md:m-foko cursor-pointer"/>
+                <img src={leftArrow} alt={'previous slide'} className="m-foko-sm lg:m-foko cursor-pointer"/>
             </button>
 
             {/* Right Arrow */}
@@ -58,7 +58,7 @@ const FullScreenSlideshow = () => {
                 onClick={nextSlide}
                 className="absolute flex justify-end items-center right-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={rightArrow} alt={'next slide'} className="m-foko-sm md:m-foko cursor-pointer"/>
+                <img src={rightArrow} alt={'next slide'} className="m-foko-sm lg:m-foko cursor-pointer"/>
             </button>
 
         </div>

@@ -46,10 +46,10 @@ const FadingTextBox = ({ text }) => {
     }, [lines.length]);
 
     return (
-        <div className="flex w-full items-center justify-center self-center mt-[30px] md:mt-[50px]">
+        <div className="flex w-full items-center justify-center self-center mt-[30px] lg:mt-[50px]">
             <div
                 ref={scrollBoxRef}
-                className="w-full h-[20vh] overflow-y-auto text-10 md:text-16 text-justify text-black space-y-6 no-scrollbar my-[30px] md:my-[50px]"
+                className="w-full h-[20vh] overflow-y-auto text-10 lg:text-16 text-justify text-black space-y-6 no-scrollbar my-[30px] lg:my-[50px]"
             >
                 {/* Render the text as word-wrapped lines */}
                 {lines.map((line, index) => (

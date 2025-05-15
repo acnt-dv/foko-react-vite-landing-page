@@ -32,7 +32,7 @@ const BackToTop = () => {
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-[42px] md:bottom-[50px] p-3 text-white text-2xl rounded-full  transition z-40 cursor-pointer"
+                    className="fixed bottom-[42px] lg:bottom-[50px] p-3 text-white text-2xl rounded-full  transition z-40 cursor-pointer"
                 >
                     <img src={arrowTop} alt={'back to top'}/>
                 </button>
