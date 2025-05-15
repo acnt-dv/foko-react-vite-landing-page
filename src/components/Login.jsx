@@ -5,11 +5,11 @@ export const Login = ({loggedIn, setLoggedIn})=> {
     return (
         <div className="flex flex-col justify-center items-center h-screen">
             <div>
-            <div className="w-[75px] h-[75px] md:w-[130px] md:h-[130px] content justify-center items-center">
+            <div className="w-[75px] h-[75px] lg:w-[130px] lg:h-[130px] content justify-center items-center">
                 <img src={logo} alt={'logo'} />
             </div>
-        <div className="absolute top-[calc(50%-50px)] md:top-[calc(50%-0px)]">
-            <button className="text-[12px] md:text-20 font-rubik mt-[128px] cursor-pointer"
+        <div className="absolute top-[calc(50%-50px)] lg:top-[calc(50%-0px)]">
+            <button className="text-[12px] lg:text-20 font-rubik mt-[128px] cursor-pointer"
             onClick={()=>setLoggedIn(!loggedIn)}
             >PASSWORD &#62;</button>
         </div>

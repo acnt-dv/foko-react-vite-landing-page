@@ -54,7 +54,7 @@ const MiniScreenSlideshow = () => {
     };
 
     return (
-        <div className="relative w-full h-auto aspect-[2/1] mt-0 md:mt-[100px]">
+        <div className="relative w-full h-auto aspect-[2/1] mt-0 lg:mt-[100px]">
             {/* Image Transition */}
             {/* <AnimatePresence mode="wait">
                 <motion.img
@@ -96,7 +96,7 @@ const MiniScreenSlideshow = () => {
                 onClick={prevSlide}
                 className="absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko cursor-pointer" />
+                <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer" />
             </button>
 
             {/* Right Arrow */}
@@ -104,7 +104,7 @@ const MiniScreenSlideshow = () => {
                 onClick={nextSlide}
                 className="absolute flex justify-end items-center right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={rightArrow} alt="next slide" className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko cursor-pointer" />
+                <img src={rightArrow} alt="next slide" className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer" />
             </button>
 
             {/* Dots Navigation */}
@@ -132,7 +132,7 @@ const MiniScreenSlideshow = () => {
                     <div className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
                         <button
                             onClick={closeModal}
-                            className="absolute top-[10px] right-[10px] md:top-[50px] md:right-[50px] max-w-[15px] max-h-[15px] md:max-w-[30px] md:max-h-[30px] cursor-pointer"
+                            className="absolute top-[10px] right-[10px] lg:top-[50px] lg:right-[50px] max-w-[15px] max-h-[15px] lg:max-w-[30px] lg:max-h-[30px] cursor-pointer"
                         >
                             <img src={close} alt="close" width='30px' height='30px' className="filter grayscale" />
                         </button>
@@ -140,9 +140,9 @@ const MiniScreenSlideshow = () => {
                             <img
                                 src={selectedImage}
                                 alt="Fullscreen"
-                                className="w-full max-h-[70vh] object-contain px-0 md:px-[100px]"
+                                className="w-full max-h-[70vh] object-contain px-0 lg:px-[100px]"
                             />
-                            <p className="text-10 md:text-16 p-2 md:px-[10px]">
+                            <p className="text-10 lg:text-16 p-2 lg:px-[10px]">
                                 Some renderings by Polynates. Work completed while at BA Collective.
                             </p>
                         </span>
