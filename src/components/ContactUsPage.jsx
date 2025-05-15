@@ -4,19 +4,27 @@ import Footer from "./Footer";
 const Contact = () => {
     return (
         <Fragment>
-            <div className="flex flex-col md:flex-row w-full h-screen justify-center items-center mb-32">
-                <div className="flex flex-col md:flex-row w-full justify-center items-start">
-                    <h1 className="text-30 font-rubik text-end hidden md:block mx-[50px] mt-[-10px]">Contact <br /> Us</h1>
-
-                    <div className='flex w-full text-justify'>
-                        <h1 className="text-16 font-rubik block text-end md:hidden mx-[30px]">Contact <br /> Us</h1>
-                        <p className="mx-[30px] md:mx-[50px] w-full max-w-[450px] md:self-center text-10 md:text-16">FOKO
-                            Studio is here to bring your architectural dreams to life. We invite you to get in touch with us to
-                            discuss your project ideas and see how we can assist you. Email us at contact@foko.studio or give us
-                            a call at +123-456-7890. Our team is ready to provide you with the expertise and support you need to
-                            achieve your goals.
-                        </p>
-                    </div>
+            <div className="flex w-full flex-col md:flex-row w-full h-screen justify-start items-center mb-32">
+                <div className="flex w-full h-screen md:h-fit items-center md:items-start">
+                    <span className="flex w-1/5 justify-end hidden md:block">
+                        <h1 className="text-30 font-rubik text-end hidden md:block mr-[50px] mt-[-10px]">Contact <br /> Us</h1>
+                    </span>
+                    <span className="flex w-full md:w-4/5">
+                        <div className='flex w-full text-justify items-start'>
+                            <h1 className="text-16 font-rubik text-end block md:hidden mx-[30px]">Contact <br /> Us</h1>
+                            <div className="col">
+                                <p className="mr-[30px] md:mr-[150px] max-w-[450px] md:self-center text-10 md:text-16 mt-[4px] md:mt-0">
+                                    Whether you're looking to start a new project, have questions about our services, or just want to say hello, our team is here to assist. Please reach out to us directly using the information below, and we’ll get back to you as soon as possible.
+                                </p>
+                                <p className="mt-[50px] text-10 md:text-16">Pegah Koulaeian</p>
+                                <p className="text-10 md:text-16">pegah@fokostudio.com</p>
+                                <p className="text-10 md:text-16">949-502-1482</p>
+                                <p className="mt-[15px] text-10 md:text-16">Jenny Fontenot</p>
+                                <p className="text-10 md:text-16">jenny@fokostudio.com</p>
+                                <p className="text-10 md:text-16">718-984-8018</p>
+                            </div>
+                        </div>
+                    </span>
                 </div>
             </div>
             <Footer />
