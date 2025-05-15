@@ -56,9 +56,9 @@ const FullScreenSlideshow = () => {
             {/* Right Arrow */}
             <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
+                className="absolute flex justify-end items-center right-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={rightArrow} alt={'next slide'} className="flex justify-self-end m-foko-sm md:m-foko cursor-pointer"/>
+                <img src={rightArrow} alt={'next slide'} className="m-foko-sm md:m-foko cursor-pointer"/>
             </button>
 
         </div>
