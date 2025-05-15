@@ -140,9 +140,10 @@ const MiniScreenSlideshow = () => {
                             <img
                                 src={selectedImage}
                                 alt="Fullscreen"
-                                className="w-full max-h-[80vh] object-contain px-0 md:px-[100px]"
+                                className="w-full max-h-[70vh] object-contain px-0 md:px-[100px]"
                             />
-                            <p className="text-10 md:text-16 p-2 md:px-[100px]">Some renderings by Polynates. Work completed while at BA Collective.
+                            <p className="text-10 md:text-16 p-2 md:px-[10px]">
+                                Some renderings by Polynates. Work completed while at BA Collective.
                             </p>
                         </span>
                     </div>

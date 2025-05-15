@@ -52,7 +52,7 @@ const ProfileCard = ({ name }) => {
                             scales.
                         </p>
                     </div>
-                    <div className="flex flex-row justify-start items-end w-full">
+                    <div className="flex flex-row justify-start items-end w-full mt-10">
                         {/* جدول مشخصات پروژه */}
                         <div className="text-left mt-[30px] md:mt-0 mb-[10px] mr-[40px] text-[10px] md:text-[16px] leading-[1.8]">
                             <div className="grid grid-cols-2 gap-x-4 gap-y-1 w-full">
