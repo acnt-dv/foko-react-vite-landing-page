@@ -76,7 +76,11 @@ const Categories = () => {
 
                             >
                                 {isActive &&
-                                    <div className="fixed w-full h-[25px] bg-foko bottom-0 text-10 md:text-16 text-black">BA COLLECTIVE STUDIO</div>
+                                    <div className="fixed w-full h-[25px] bg-foko bottom-0 text-10 md:text-16 text-black opacity-75 content content-center">
+                                        <p className="text-right">
+                                            BA COLLECTIVE STUDIO
+                                        </p>
+                                    </div>
                                 }
                             </div>
                         );
