@@ -76,7 +76,7 @@ const MiniScreenSlideshow = () => {
                     initial={{ opacity: .5, backgroundColor: "#000" }}
                     animate={{ opacity: 0 }}
                     exit={{ opacity: .5, backgroundColor: "#000" }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.5 }}
                 />
                 <motion.img
                     key={`img-${index}`}
@@ -86,7 +86,7 @@ const MiniScreenSlideshow = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.4 }}
                     onClick={() => openModal(images[index])}
                 />
             </AnimatePresence>
@@ -102,9 +102,9 @@ const MiniScreenSlideshow = () => {
             {/* Right Arrow */}
             <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
+                className="absolute flex justify-end items-center right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
             >
-                <img src={rightArrow} alt="next slide" className="flex justify-self-end w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko cursor-pointer" />
+                <img src={rightArrow} alt="next slide" className="w-[15px] h-[15px] md:w-[20px] md:h-[20px] m-[10px] md:m-foko cursor-pointer" />
             </button>
 
             {/* Dots Navigation */}
