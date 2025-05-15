@@ -69,7 +69,7 @@ const Categories = () => {
                             <div
                                 onClick={() => { navigate('/works') }}
                                 key={index}
-                                className={`h-[208px] bg-gray-900 flex items-end justify-center text-white 
+                                className={`h-[165px] lg:h-[208px] bg-gray-900 flex items-end justify-center text-white 
                                     bg-cover bg-center transition-all duration-500 cursor-pointer ${isActive ? "grayscale-0" : "grayscale"
                                     }`}
                                 style={{ backgroundImage: `url(${image.src})` }}
