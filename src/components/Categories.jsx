@@ -69,15 +69,15 @@ const Categories = () => {
                             <div
                                 onClick={() => { navigate('/works') }}
                                 key={index}
-                                className={`h-[208px] bg-gray-900 flex items-center justify-center text-white 
+                                className={`h-[208px] bg-gray-900 flex items-end justify-center text-white 
                                     bg-cover bg-center transition-all duration-500 cursor-pointer ${isActive ? "grayscale-0" : "grayscale"
                                     }`}
                                 style={{ backgroundImage: `url(${image.src})` }}
 
                             >
                                 {isActive &&
-                                    <div className="fixed w-full h-[25px] bg-foko bottom-0 text-10 md:text-16 text-black opacity-75 content content-center">
-                                        <p className="text-right">
+                                    <div className="flex w-full h-[25px] justify-end items-center bg-foko text-10 md:text-16 text-black opacity-75">
+                                        <p className="text-right mt-1 mr-2">
                                             BA COLLECTIVE STUDIO
                                         </p>
                                     </div>
