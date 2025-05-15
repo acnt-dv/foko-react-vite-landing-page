@@ -60,7 +60,7 @@ const Categories = () => {
             </div>
 
             {/* Image Grid */}
-            <div className="flex flex-col w-[75%] h-3/4 mt-[100px] md:mt-0">
+            <div className="flex flex-col w-[75%] h-3/4 justify-center items-center mt-[100px] md:mt-0">
                 <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(auto,1fr))] md:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] ml-[20px] pr-0 md:pr-[30px] md:ml-[50px] gap-0 w-full max-w-8xl overflow-auto scrollbar-hide">
                     {images.map((image, index) => {
                         // Apply grayscale based on active filter
