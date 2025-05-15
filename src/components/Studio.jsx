@@ -27,10 +27,10 @@ const AboutUs = () => {
 
                         <div className='flex w-full mt-[50px] md:mt-20'>
                             <div className='w-1/5 grid justify-end items-start max-h-[50px]'>
-                                <p className="text-right text-10 text-30">
+                                <p className="text-right text-10 md:text-30">
                                     OUR
                                 </p>
-                                <p className="text-right text-10 text-30">
+                                <p className="text-right text-10 md:text-30">
                                     PHILOSOPHY
                                 </p>
                             </div>
@@ -57,10 +57,10 @@ const AboutUs = () => {
                         <div className="flex w-full md:w-3/5">
 
                             <div className='w-1/5 grid justify-end items-start max-h-[50px]'>
-                                <p className="text-right text-10 text-30">
+                                <p className="text-right text-10 md:text-30">
                                     THE
                                 </p>
-                                <p className="text-right text-10 text-30">
+                                <p className="text-right text-10 md:text-30">
                                     FOUNDERS
                                 </p>
                             </div>
