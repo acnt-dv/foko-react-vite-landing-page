@@ -136,7 +136,7 @@ const MiniScreenSlideshow = () => {
                         >
                             <img src={close} alt="close" width='30px' height='30px' className="filter grayscale" />
                         </button>
-                        <span className="grid w-full text-left">
+                        <span className="grid w-full text-center">
                             <img
                                 src={selectedImage}
                                 alt="Fullscreen"
