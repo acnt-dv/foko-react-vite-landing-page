@@ -6,7 +6,7 @@ import image04 from "../statics/png/projects/pr04.png";
 import image05 from "../statics/png/projects/pr05.png";
 import image06 from "../statics/png/projects/pr06.png";
 import image07 from "../statics/png/projects/pr07.png";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const images = [
     { src: image01, category: "RESIDENTIAL" },
@@ -33,9 +33,8 @@ const Categories = () => {
 
                 {/* RESIDENTIAL Button */}
                 <button
-                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${
-                        active === "RESIDENTIAL" ? "text-black font-bold" : "text-gray-400"
-                    }`}
+                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${active === "RESIDENTIAL" ? "text-black font-bold" : "text-gray-400"
+                        }`}
                     onClick={() => setActive("RESIDENTIAL")}
                 >
                     RESIDENTIAL
@@ -43,9 +42,8 @@ const Categories = () => {
 
                 {/* COMMERCIAL Button */}
                 <button
-                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${
-                        active === "COMMERCIAL" ? "text-black font-bold" : "text-gray-400"
-                    }`}
+                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${active === "COMMERCIAL" ? "text-black font-bold" : "text-gray-400"
+                        }`}
                     onClick={() => setActive("COMMERCIAL")}
                 >
                     COMMERCIAL
@@ -53,9 +51,8 @@ const Categories = () => {
 
                 {/* ALL Button */}
                 <button
-                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${
-                        active === "ALL" ? "text-black font-bold" : "text-gray-400"
-                    }`}
+                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${active === "ALL" ? "text-black font-bold" : "text-gray-400"
+                        }`}
                     onClick={() => setActive("ALL")}
                 >
                     ALL
@@ -70,15 +67,18 @@ const Categories = () => {
                         const isActive = active === "ALL" || active === image.category;
                         return (
                             <div
-                                onClick={()=> {navigate('/works')}}
+                                onClick={() => { navigate('/works') }}
                                 key={index}
                                 className={`h-[208px] bg-gray-900 flex items-center justify-center text-white 
-                                    bg-cover bg-center transition-all duration-500 cursor-pointer ${
-                                    isActive ? "grayscale-0" : "grayscale"
-                                }`}
+                                    bg-cover bg-center transition-all duration-500 cursor-pointer ${isActive ? "grayscale-0" : "grayscale"
+                                    }`}
                                 style={{ backgroundImage: `url(${image.src})` }}
-                                
-                            ><div className="fixed w-full h-[25px] bg-foko bottom-0 text-10 md:text-16 text-black">BA COLLECTIVE STUDIO</div></div>
+
+                            >
+                                {isActive &&
+                                    <div className="fixed w-full h-[25px] bg-foko bottom-0 text-10 md:text-16 text-black">BA COLLECTIVE STUDIO</div>
+                                }
+                            </div>
                         );
                     })}
                 </div>
