@@ -18,11 +18,11 @@ const ProfileCard = ({ name }) => {
                 <div className="relative w-full md:w-2/3 px-0 my-[30px] md:my-0 md:pl-[50px] flex flex-col justify-between">
                     <div>
                         {/* Name and Title */}
-                        <h1 className="font-rubik text-16 md:text-30 font-bold">{name}</h1>
-                        <h2 className="font-rubik text-16 md:text-30 font-light uppercase mt-2">Co-Founder</h2>
+                        <h1 className="font-rubik text-16 md:text-30 text-left font-bold">{name}</h1>
+                        <h2 className="font-rubik text-16 md:text-30 text-left font-light uppercase mt-2">Co-Founder</h2>
 
                         {/* Description */}
-                        <p className="mt-4 text-justify text-10 md:text-16 leading-6">
+                        <p className="mt-4 text-justify text-10 md:text-16">
                             Jenny is the co-founder and Architectural Director of FOKO Studio. She is a licensed architect
                             with a passion
                             for creating positive impact for individuals and communities through shaping the built
@@ -34,7 +34,7 @@ const ProfileCard = ({ name }) => {
                             and expertise.
                         </p>
 
-                        <p className="mt-4 text-justify text-10 md:text-16 leading-6">
+                        <p className="mt-4 text-justify text-10 md:text-16">
                             As a licensed architect in both New York and California, Jenny brings a wealth of knowledge and
                             understanding
                             of different building regulations, allowing her to navigate complex projects while seeking
@@ -44,7 +44,7 @@ const ProfileCard = ({ name }) => {
                             mindset, eager to unravel its puzzle-like nature.
                         </p>
 
-                        <p className="mt-4 text-justify text-gray-800 text-10 md:text-16 leading-6">
+                        <p className="mt-4 text-justify text-gray-800 text-10 md:text-16">
                             Extending beyond traditional architecture, Jenny’s interests include furniture and product
                             design. She
                             believes in creating holistic and captivating experiences for users through design and
@@ -54,7 +54,7 @@ const ProfileCard = ({ name }) => {
                     </div>
                     <div className="flex flex-row justify-start items-end w-full">
                         {/* جدول مشخصات پروژه */}
-                        <div className="text-left mt-[30px] md:mt-0 mb-[10px] mr-[40px] text-[10px] md:text-[12px] leading-[1.8]">
+                        <div className="text-left mt-[30px] md:mt-0 mb-[10px] mr-[40px] text-[10px] md:text-[16px] leading-[1.8]">
                             <div className="grid grid-cols-2 gap-x-4 gap-y-1 w-full">
                                 <span className="font-bold">Masters of Architecture ||</span>
                                 <span className="text-right">Yale University</span>
