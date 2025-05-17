@@ -51,7 +51,7 @@ export const Works = () => {
                 <div className="flex-col w-4/5 space-y-16 items-center justify-end text-black mb-[150px]">
                     <span className='flex w-full'>
                         <span className='flex w-3/12 justify-start 2xl:justify-end'>
-                            <p className='font-rubik text-10 lg:text-20 xl:text-30 font-black lg:font-normal text-end break-words pr-0 2xl:pr-[50px] mt-0 xl:mt-[-10px]'>
+                            <p className='font-rubik text-10 lg:text-20 xl:text-30 font-black xl:font-normal text-end break-words pr-0 2xl:pr-[50px] mt-0 xl:mt-[-5px]'>
                                 BEL AIR <br /> RESIDENTIAL
                             </p>
                         </span>
