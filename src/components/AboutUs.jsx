@@ -39,7 +39,7 @@ const AboutUs = () => {
 
             </div>
             <img src={aboutUsImage} alt={'aboutUsImage'}
-                className="block lg:hidden filter grayscale mb-foko lg:mx-foko w-full px-0 sm:px-[30px] max-h-[400px] object-cover object-[center_30%]" />
+                className="block lg:hidden filter grayscale mb-foko lg:mx-foko w-full px-0 sm:px-[30px] max-h-[400px] object-cover object-[center_30%] hover:object-[center_60%] transition-[object-position] duration-700" />
         </div>)
 }
 
