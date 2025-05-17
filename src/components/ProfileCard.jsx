@@ -5,7 +5,7 @@ const ProfileCard = ({ name }) => {
     return (
         // <div className="flex-col bg-foko min-h-full justify-start w-[calc(100%-60px)] lg:w-full px-[100px] mt-[125px]">
         <div className="flex bg-foko min-h-full lg:w-full mt-[100px] lg:mt-[200px] justify-center lg:justify-end">
-            <div className="flex flex-col lg:flex-row  w-full px-[30px] xl:px-0 xl:w-10/12">
+            <div className="flex flex-col lg:flex-row  w-full px-[30px] lg:px-0 lg:w-10/12">
                 <div className="relative w-full h-full aspect-[1/1.5] lg:w-1/3 lg:max-w-[528px] lg:max-h-[698px] flex flex-col items-center">
                     {/* Profile Image */}
                     <img
@@ -53,7 +53,6 @@ const ProfileCard = ({ name }) => {
                         </p>
                     </div>
                     <div className="flex flex-row justify-start items-end w-full mt-10">
-                        {/* جدول مشخصات پروژه */}
                         <div className="text-left mt-[30px] lg:mt-0 mb-[10px] mr-[40px] text-[10px] lg:text-[16px] leading-[1.8]">
                             <div className="grid grid-cols-2 gap-x-4 gap-y-1 w-full">
                                 <span className="font-bold">Masters of Architecture ||</span>
