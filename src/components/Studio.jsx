@@ -47,7 +47,7 @@ const AboutUs = () => {
                         <img
                             src={aboutUsImage}
                             alt="aboutUsImage"
-                            className="w-full h-auto object-cover"
+                            className="w-full h-auto max-h-[575px] object-cover"
                         />
                     </div>
                 </div>
