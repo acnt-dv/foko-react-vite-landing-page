@@ -1,8 +1,11 @@
 import aboutUsImage from '../statics/png/about-us.png';
 import right from "../statics/svg/arrow-right.svg";
 import rightSmall from "../statics/svg/arrow-right-small.svg";
+import { useNavigate } from 'react-router-dom';
 
 const AboutUs = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="flex flex-col w-full lg:flex-row h-full lg:h-screen items-center lg:items-start justify-center mt-[50px] lg:mt-[150px]">
             <div className='flex w-full lg:w-11/12'>
@@ -24,13 +27,13 @@ const AboutUs = () => {
                         we design environments that are perfectly tailored to the unique lifestyle and
                         aspirations of our clients. */}
                         </p>
-                        <h2 className="hidden lg:flex font-rubik lg:max-w-[450px] text-10 lg:text-20 cursor-pointer my-[50px] lg:my-0">
+                        <h2 className="hidden lg:flex font-rubik lg:max-w-[450px] text-10 lg:text-20 cursor-pointer my-[50px] lg:my-0" onClick={() => { navigate('/contactUs') }}>
                             MORE &nbsp; &nbsp; &nbsp;
                             <img src={right} alt="Right Image" />
                         </h2>
-                        <h2 className="block lg:hidden flex font-rubik lg:max-w-[450px] text-10 lg:text-20 cursor-pointer my-[50px] lg:my-0">
+                        <h2 className="block lg:hidden flex font-rubik lg:max-w-[450px] text-10 lg:text-20 cursor-pointer my-[50px] lg:my-0" onClick={() => { navigate('/contactUs') }}>
                             MORE &nbsp; &nbsp; &nbsp;
-                            <img src={rightSmall} alt="Right Image" width="9px" height="4px" className='mt-[-2px]'/>
+                            <img src={rightSmall} alt="Right Image" width="9px" height="4px" className='mt-[-2px]' />
                         </h2>
                     </div>
                     <img src={aboutUsImage} alt={'aboutUsImage'}
