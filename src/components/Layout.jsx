@@ -23,7 +23,7 @@ export const Layout = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center bg-foko">
+        <div className="flex flex-col h-[100vh] items-center justify-center bg-foko">
             {loggedIn ?
                 <>
                     <Header menuToggle={toggleMenu} hideLogo={hideLogo}/>
