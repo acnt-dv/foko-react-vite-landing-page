@@ -11,7 +11,7 @@ const AboutUs = () => {
                     <div className="flex flex-col w-[49.48vw] h-[60.19vh] justify-between">
                         <div className='flex w-full justify-end'>
                             <div className='w-fit mr-[2.6vw]'>
-                                <h1 className="font-rubik text-right text-[clamp(10px,1.56vw,30px)]">
+                                <h1 className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                                     ABOUT <br /> US
                                 </h1>
                             </div>
