@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Optional for smooth transition
+import { motion , AnimatePresence } from "framer-motion"; // Optional for smooth transition
 import image from "../statics/png/main-title.png";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
