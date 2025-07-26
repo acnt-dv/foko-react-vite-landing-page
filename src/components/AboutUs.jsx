@@ -7,7 +7,7 @@ const AboutUs = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="flex flex-col w-full lg:flex-row h-full lg:h-screen items-center lg:items-start justify-end mt-[50px] lg:mt-[150px]">
+        <div className="flex flex-col w-full lg:flex-row h-full lg:h-screen items-center lg:items-start justify-end mt-[18.52vh]">
             <div className='flex w-full'>
                 <span className="flex justify-center lg:justify-start w-full">
                     <div className="flex w-full flex-col justify-between items-between text-justify my-0 lg:my-0">
