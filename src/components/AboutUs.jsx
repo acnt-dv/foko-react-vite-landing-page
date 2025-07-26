@@ -9,29 +9,18 @@ const AboutUs = () => {
     return (
         <div className="flex flex-col w-full lg:flex-row h-full lg:h-screen items-center lg:items-start justify-end mt-[50px] lg:mt-[150px]">
             <div className='flex w-full'>
-                <span className="flex w-0 lg:block">
-                    {/* <h1 className="text-end text-30 font-rubik hidden lg:block mr-[50px] mt-[45px]">About <br /> FOKO</h1> */}
-                    {/* <h1 className="text-end text-16 font-rubik block lg:hidden absolute left-[30px] mt-[48px]">About <br /> FOKO</h1> */}
-                </span>
-                <span className="flex justify-center lg:justify-start w-full lg:w-5/5 px-[30px] lg:px-0">
+                <span className="flex justify-center lg:justify-start w-full">
                     <div className="flex w-full flex-col justify-between items-between text-justify my-0 lg:my-0">
                         <p className="ml-[15.63vw] mr-[7.81vw] text-10 lg:text-16">
                             Welcome to FOKO Studio, an architecture and interior design practice specializing in creating functional, inspiring spaces that reflect your unique vision. From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.
                         </p>
 
-                        <p className="mx-[30px] lg:mr-[150px] hidden lg:block self-end lg:self-center text-16 w-full my-foko">
-                            {/* At FOKO Studio, we are deeply committed to our clients' specific needs.
-                        From intimate interiors to large-scale architectural projects,
-                        we combine creative problem-solving with a holistic design approach,
-                        navigating the layered complexities of each project. By considering every detail,
-                        we design environments that are perfectly tailored to the unique lifestyle and
-                        aspirations of our clients. */}
-                        </p>
                         <h2 className="hidden lg:flex font-rubik w-full ml-[15.63vw] text-10 lg:text-20 cursor-pointer my-[50px] lg:my-0" onClick={() => { navigate('/contactUs') }}>
                             MORE &nbsp; &nbsp; &nbsp;
                             <img src={right} alt="Right Image" />
                         </h2>
-                        <h2 className="block lg:hidden flex font-rubik lg:max-w-[450px] text-10 lg:text-20 cursor-pointer my-[50px] lg:my-0" onClick={() => { navigate('/contactUs') }}>
+
+                        <h2 className="block lg:hidden font-rubik lg:max-w-[450px] text-10 lg:text-20 cursor-pointer my-[50px] lg:my-0" onClick={() => { navigate('/contactUs') }}>
                             MORE &nbsp; &nbsp; &nbsp;
                             <img src={rightSmall} alt="Right Image" width="9px" height="4px" className='mt-[-2px]' />
                         </h2>
