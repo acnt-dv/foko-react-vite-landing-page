@@ -4,11 +4,10 @@ import profileImage from "../statics/png/about-us.png"; // Replace with actual i
 const ProfileCard = ({ name }) => {
     return (
         // <div className="flex-col bg-foko min-h-full justify-start w-[calc(100%-60px)] lg:w-full px-[100px] mt-[125px]">
-        <div className="flex bg-foko min-h-full lg:w-full mt-[100px] lg:mt-[200px] justify-center lg:justify-end">
-            <div className="flex flex-col lg:flex-row w-full px-[30px] lg:px-0">
-                <span className="flex w-[13%] hidden lg:block" />
+        <div className="flex bg-foko min-h-full lg:w-full mt-[18.52vh] justify-end">
+            <div className="flex flex-col lg:flex-row w-full">
                 <span className="grid w-full lg:flex">
-                    <div className="relative w-full h-full aspect-[1/1.5] lg:w-1/3 flex flex-col items-center lg:pl-[50px]">
+                    <div className="w-[27.08vw] h-[63.89vh] flex flex-col items-center justify-end ml-[15.63vw] mr-[2.60vw]">
                         {/* Profile Image */}
                         <img
                             src={profileImage}
@@ -17,14 +16,14 @@ const ProfileCard = ({ name }) => {
                         />
                     </div>
 
-                    <div className="relative w-full px-0 my-[30px] lg:my-0 lg:pl-[50px] flex flex-col justify-between">
+                    <div className="flex flex-col justify-between">
                         <div>
                             {/* Name and Title */}
                             <h1 className="font-rubik text-16 lg:text-30 text-left font-bold">{name}</h1>
                             <h2 className="font-rubik text-16 lg:text-30 text-left font-light uppercase mt-2">Co-Founder</h2>
 
                             {/* Description */}
-                            <p className="mt-4 text-justify text-10 lg:text-16">
+                            <p className="mt-4 text-justify text-10 lg:text-16 w-[41.67vw] mr-[10.42vw]">
                                 Jenny is the co-founder and Architectural Director of FOKO Studio. She is a licensed architect
                                 with a passion
                                 for creating positive impact for individuals and communities through shaping the built
@@ -36,7 +35,7 @@ const ProfileCard = ({ name }) => {
                                 and expertise.
                             </p>
 
-                            <p className="mt-4 text-justify text-10 lg:text-16">
+                            <p className="mt-4 text-justify text-10 lg:text-16 w-[41.67vw] mr-[10.42vw]">
                                 As a licensed architect in both New York and California, Jenny brings a wealth of knowledge and
                                 understanding
                                 of different building regulations, allowing her to navigate complex projects while seeking
@@ -46,7 +45,7 @@ const ProfileCard = ({ name }) => {
                                 mindset, eager to unravel its puzzle-like nature.
                             </p>
 
-                            <p className="mt-4 text-justify text-gray-800 text-10 lg:text-16">
+                            <p className="mt-4 text-justify text-gray-800 text-10 lg:text-16 w-[41.67vw] mr-[10.42vw]">
                                 Extending beyond traditional architecture, Jenny’s interests include furniture and product
                                 design. She
                                 believes in creating holistic and captivating experiences for users through design and
