@@ -91,7 +91,7 @@ const AboutUs = () => {
 
                 <ProfileCard name='JENNY FONTENOT, RA' />
                 <ProfileCard name='PEGAH KOULAEIAN, LEED AP' />
-                {/*<span className="mb-[200px]" />*/}
+                <span className="mb-[18.52vh]" />
             </div>
 
         </div>
