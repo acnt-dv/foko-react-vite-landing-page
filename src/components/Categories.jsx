@@ -23,13 +23,13 @@ const Categories = () => {
     const [active, setActive] = useState("ALL");
 
     return (
-        <div className="flex w-full h-screen items-center justify-center gap-0 lg:gap-8 text-black">
+        <div className="flex w-full h-screen items-center justify-end gap-0  text-black">
             {/* Sidebar Buttons */}
             {/* removed from this div style: lg:border-r lg:border-gray-500 */}
             <div
-                className="flex flex-col w-[10%] h-3/4 justify-end lg:justify-center
+                className="flex flex-col h-3/4 justify-end lg:justify-center
                 lg:ml-foko bg-gradient-to-b from-black via-gray-900 to-gray-100 bg-clip-text text-transparent
-                font-rubik text-10 lg:text-16 ml-[30px]">
+                font-rubik text-10 lg:text-16 mr-[5.21vw]">
 
                 {/* RESIDENTIAL Button */}
                 <button
@@ -60,8 +60,8 @@ const Categories = () => {
             </div>
 
             {/* Image Grid */}
-            <div className="flex flex-col w-[75%] h-3/4 justify-center items-center mt-[100px] lg:mt-0">
-                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(auto,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] ml-[20px] pr-0 lg:pr-[30px] lg:ml-[50px] gap-0 w-full max-w-8xl overflow-auto scrollbar-hide">
+            <div className="flex flex-col w-[75%] h-3/4 justify-center items-end">
+                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(auto,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] mr-[15.63vw] gap-0 w-full max-w-6xl overflow-auto scrollbar-hide">
                     {images.map((image, index) => {
                         // Apply grayscale based on active filter
                         const isActive = active === "ALL" || active === image.category;
@@ -89,7 +89,7 @@ const Categories = () => {
             </div>
 
             {/* Empty Right Column */}
-            <div className="flex flex-col w-[15%] h-3/4"></div>
+            {/*<div className="flex flex-col w-[15%] h-3/4"></div>*/}
         </div>
     );
 };
