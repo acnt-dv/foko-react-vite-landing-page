@@ -136,13 +136,13 @@ const MiniScreenSlideshow = () => {
                         >
                             <img src={close} alt="close" width='30px' height='30px' className="filter grayscale" />
                         </button>
-                        <span className="grid w-full text-center">
+                        <span className="grid w-full text-start">
                             <img
                                 src={selectedImage}
                                 alt="Fullscreen"
-                                className="w-full max-h-[70vh] object-contain px-0 lg:px-[100px]"
+                                className="w-[79.17vw] h-[62.96vh] mx-[10.42vw] mt-[18.52vh] mb-[2.78vh] object-contain"
                             />
-                            <p className="text-10 lg:text-16 p-2 lg:px-[10px]">
+                            <p className="text-10 lg:text-16 ml-[10.42vw] mb-[15.72vh]">
                                 Some renderings by Polynates. Work completed while at BA Collective.
                             </p>
                         </span>
