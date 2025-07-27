@@ -19,11 +19,11 @@ const ProfileCard = ({ name }) => {
                     <div className="flex flex-col justify-between">
                         <div>
                             {/* Name and Title */}
-                            <h1 className="font-rubik text-16 lg:text-30 text-left font-bold">{name}</h1>
-                            <h2 className="font-rubik text-16 lg:text-30 text-left font-light uppercase mt-2">Co-Founder</h2>
+                            <h1 className="font-rubik text-[clamp(16px,1.8vw,30px)] text-left font-bold">{name}</h1>
+                            <h2 className="font-rubik text-[clamp(16px,1.4vw,30px)] text-left font-light uppercase mt-[1.85vh] mb-[4.63vh]">Co-Founder</h2>
 
                             {/* Description */}
-                            <p className="mt-4 text-justify text-10 lg:text-16 w-[41.67vw] mr-[10.42vw]">
+                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] w-[41.67vw] mr-[10.42vw]">
                                 Jenny is the co-founder and Architectural Director of FOKO Studio. She is a licensed architect
                                 with a passion
                                 for creating positive impact for individuals and communities through shaping the built
@@ -35,7 +35,7 @@ const ProfileCard = ({ name }) => {
                                 and expertise.
                             </p>
 
-                            <p className="mt-4 text-justify text-10 lg:text-16 w-[41.67vw] mr-[10.42vw]">
+                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] w-[41.67vw] mr-[10.42vw]">
                                 As a licensed architect in both New York and California, Jenny brings a wealth of knowledge and
                                 understanding
                                 of different building regulations, allowing her to navigate complex projects while seeking
@@ -45,7 +45,7 @@ const ProfileCard = ({ name }) => {
                                 mindset, eager to unravel its puzzle-like nature.
                             </p>
 
-                            <p className="mt-4 text-justify text-gray-800 text-10 lg:text-16 w-[41.67vw] mr-[10.42vw]">
+                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] w-[41.67vw] mr-[10.42vw]">
                                 Extending beyond traditional architecture, Jenny’s interests include furniture and product
                                 design. She
                                 believes in creating holistic and captivating experiences for users through design and
@@ -53,13 +53,13 @@ const ProfileCard = ({ name }) => {
                                 scales.
                             </p>
                         </div>
-                        <div className="flex flex-row justify-start items-end w-full mt-10">
-                            <div className="text-left mt-[30px] lg:mt-0 mb-[10px] mr-[40px] text-[10px] lg:text-[16px] leading-[1.8]">
-                                <div className="grid grid-cols-2 gap-x-4 gap-y-1 w-full">
+                        <div className="flex flex-row justify-start items-end w-full">
+                            <div className="text-[clamp(10px,0.83vw,16px)] text-left leading-loose tracking-[0.005em]">
+                                <div className="grid grid-cols-2 gap-x-16 gap-y-1 w-full">
                                     <span className="font-bold">Masters of Architecture ||</span>
-                                    <span className="text-right">Yale University</span>
+                                    <span className="text-left">Yale University</span>
                                     <span className="font-bold">Bachelor of Architecture</span>
-                                    <span className="text-right">Pratt Institute</span>
+                                    <span className="text-left">Pratt Institute</span>
                                 </div>
                             </div>
                         </div>
