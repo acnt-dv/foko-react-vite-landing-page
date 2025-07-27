@@ -132,7 +132,7 @@ const MiniScreenSlideshow = () => {
                     <div className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
                         <button
                             onClick={closeModal}
-                            className="absolute top-[10px] right-[10px] lg:top-[50px] lg:right-[50px] max-w-[15px] max-h-[15px] lg:max-w-[30px] lg:max-h-[30px] cursor-pointer"
+                            className="absolute w-[1.56vw] h-[2.78vh] top-[7.13vh] right-[2.60vw] cursor-pointer"
                         >
                             <img src={close} alt="close" width='30px' height='30px' className="filter grayscale" />
                         </button>
