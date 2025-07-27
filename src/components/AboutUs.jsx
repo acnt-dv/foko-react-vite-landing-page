@@ -11,7 +11,7 @@ const AboutUs = () => {
             <div className='flex w-full'>
                 <span className="flex justify-center lg:justify-start w-full">
                     <div className="flex w-full flex-col justify-between items-between text-justify my-0 lg:my-0">
-                        <p className="ml-[15.63vw] mr-[7.81vw] text-10 lg:text-16">
+                        <p className="ml-[15.63vw] mr-[7.81vw] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.015em]">
                             Welcome to FOKO Studio, an architecture and interior design practice specializing in creating functional, inspiring spaces that reflect your unique vision. From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.
                         </p>
 
