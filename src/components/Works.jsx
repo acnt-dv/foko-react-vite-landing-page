@@ -47,24 +47,24 @@ export const Works = () => {
         <div className="flex flex-col w-full justify-center items-center bg-foko">
             <div className="min-h-[75vh] w-full bg-cover bg-center bg-gray-400" style={{ backgroundImage: `url(${image})` }} />
 
-            <div className="flex w-full mx-0 mt-[30px] lg:mt-[200px] items-start justify-center lg:justify-center text-black">
-                <div className="flex-col w-4/5 space-y-16 items-center justify-end text-black mb-[150px]">
-                    <span className='flex w-full'>
-                        <span className='flex w-3/12 justify-start 2xl:justify-end'>
-                            <p className='font-rubik text-10 lg:text-20 xl:text-30 font-black xl:font-normal text-end break-words pr-0 2xl:pr-[50px] mt-0 xl:mt-[-5px]'>
+            <div className="flex w-full mt-[18.52vh] items-start justify-center lg:justify-center text-black">
+                <div className="flex-col w-full space-y-16 items-center justify-end text-black">
+                    <span className='flex w-full justify-end items-center'>
+                        <span className='flex w-fit justify-end mr-[2.60vw]'>
+                            <p className='font-rubik text-10 lg:text-20 xl:text-30 font-black xl:font-normal text-end break-words'>
                                 BEL AIR <br /> RESIDENTIAL
                             </p>
                         </span>
-                        <span className='flex w-full '>
-                            <p className='text-justify w-full text-10 lg:text-16 pl-[30px] lg:pl-0'>
+                        <span className='flex w-[58.33vw] mr-[20.83vw]'>
+                            <p className='text-justify w-full text-10 lg:text-16'>
                                 {textLines}
                             </p>
                         </span>
                     </span>
 
-                    <span className='flex w-full flex-col-reverse lg:flex-row'>
-                        <div className="flex w-full lg:w-3/12 mt-[75px] lg:mt-0">
-                             <div className="flex flex-row mb-[-7px] pr-0 lg:pr-[50px] justify-end items-end w-full">
+                    <span className='flex w-full flex-col-reverse lg:flex-row justify-end mb-[27.78vh]'>
+                        <div className="flex w-fit mt-[75px] mx-[2.6vw]">
+                             <div className="flex flex-row justify-end items-end w-full">
                                 <div className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
                                     <span className="font-bold">PROGRAM</span>
                                     <span className="text-right">Single Family Residential</span>
@@ -84,7 +84,7 @@ export const Works = () => {
                             </div>
                         </div>
 
-                        <span className='flex w-full w-9/12'>
+                        <span className='flex w-[58.33vw] mr-[20.83vw]'>
                             <MiniSlideShow />
                         </span>
                     </span>
