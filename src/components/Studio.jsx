@@ -16,15 +16,13 @@ const AboutUs = () => {
                                 </h1>
                             </div>
                             <div className='w-[27.08vw] mr-[10.42vw]'>
-                                <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-wide
-">
+                                <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-wide">
                                     FOKO Studio is a Los Angeles-based architecture and interior design firm. Our studio
                                     specializes in crafting bespoke, high-end residential and commercial spaces that are
                                     as thoughtful as they are visually compelling.
                                 </p>
                                 <br/>
-                                <p className="text-[clamp(10px,0.83vw,16px)] text-justify  leading-loose tracking-wide
-">
+                                <p className="text-[clamp(10px,0.83vw,16px)] text-justify  leading-loose tracking-[0.005em]">
                                     At FOKO Studio, we are deeply committed to our clients' specific needs. From
                                     intimate interiors to large scale architectural projects, we combine creative
                                     problem-solving with a holistic design approach, navigating the layered complexities
@@ -38,16 +36,15 @@ const AboutUs = () => {
 
                         <div className='flex w-full justify-end'>
                             <div className='grid w-fit mr-[2.6vw] justify-end items-start max-h-[50px]'>
-                                <p className="font-rubik text-right text-[clamp(10px,1.56vw,30px)]">
+                                <p className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                                     OUR
                                 </p>
-                                <p className="font-rubik text-right text-[clamp(10px,1.56vw,30px)]">
+                                <p className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                                     PHILOSOPHY
                                 </p>
                             </div>
                             <div className='w-[27.08vw] mr-[10.42vw]'>
-                                <p className="text-[clamp(10px,0.83vw,16px)] text-justify  leading-loose tracking-wide
-">
+                                <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]">
                                     At the heart of our practice is the belief that design should create meaningful
                                     spaces that enrich the lives of those who inhabit them. We combine critical
                                     thinking, technical skill, and a deep respect for context to transform challenges
@@ -70,16 +67,16 @@ const AboutUs = () => {
                 </div>
 
                 <div className="flex w-full justify-end mt-[18.52vh]">
-                    <div className='w-fit grid justify-end items-end mr-[2.60vw]'>
-                        <p className="font-rubik text-right text-[clamp(10px,1.56vw,30px)]">
+                    <div className='grid w-fit mr-[2.6vw] justify-end items-start max-h-[50px]'>
+                        <p className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                             THE
                         </p>
-                        <p className="font-rubik text-right text-[clamp(10px,1.56vw,30px)]">
+                        <p className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                             FOUNDERS
                         </p>
                     </div>
                     <div className='w-[27.08vw] mr-[54.6vw]'>
-                        <p className="text-10 lg:text-16 text-justify">
+                        <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]">
                             FOKO Studio was founded by Jenny Fontenot and Pegah Koulaeien, two seasoned design
                             professionals with a shared passion for creating inspiring spaces. With diverse backgrounds
                             in architecture and interior design, Jenny and Pegah bring a unique blend of technical
