@@ -51,12 +51,12 @@ export const Works = () => {
                 <div className="flex-col w-full space-y-16 items-center justify-end text-black">
                     <span className='flex w-full justify-end items-center'>
                         <span className='flex w-fit justify-end mr-[2.60vw]'>
-                            <p className='font-rubik text-10 lg:text-20 xl:text-30 font-black xl:font-normal text-end break-words'>
+                            <p className='font-rubik text-[clamp(10px,1.6vw,30px)] text-end align-text-top -mt-2 break-words'>
                                 BEL AIR <br /> RESIDENTIAL
                             </p>
                         </span>
                         <span className='flex w-[58.33vw] mr-[20.83vw]'>
-                            <p className='text-justify w-full text-10 lg:text-16'>
+                            <p className='text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
                                 {textLines}
                             </p>
                         </span>
