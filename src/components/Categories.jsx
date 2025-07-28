@@ -29,7 +29,7 @@ const Categories = () => {
             <div
                 className="flex flex-col h-3/4 justify-end lg:justify-center
                 lg:ml-foko bg-gradient-to-b from-black via-gray-900 to-gray-100 bg-clip-text text-transparent
-                font-rubik text-10 lg:text-16 mr-[5.21vw]">
+                font-rubik text-10 lg:text-16 mr-[7.69vw] lg:mr-[5.21vw]">
 
                 {/* RESIDENTIAL Button */}
                 <button
@@ -60,8 +60,8 @@ const Categories = () => {
             </div>
 
             {/* Image Grid */}
-            <div className="flex flex-col w-[75%] h-3/4 justify-center items-end">
-                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(auto,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] mr-[15.63vw] gap-0 w-full max-w-6xl overflow-auto scrollbar-hide">
+            <div className="flex flex-col w-fit h-3/4 justify-center items-end mr-[7.69vw] lg:mr-[15.63vw]">
+                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(320px,1fr))]  gap-0 w-full lg:max-w-6xl overflow-auto scrollbar-hide">
                     {images.map((image, index) => {
                         // Apply grayscale based on active filter
                         const isActive = active === "ALL" || active === image.category;
@@ -69,7 +69,7 @@ const Categories = () => {
                             <div
                                 onClick={() => { navigate('/works') }}
                                 key={index}
-                                className={`h-[165px] lg:h-[208px] bg-gray-900 flex items-end justify-center text-white 
+                                className={`h-[16.23vh] lg:h-[208px] bg-gray-900 flex items-end justify-center text-white 
                                     bg-cover bg-center transition-all duration-500 cursor-pointer ${isActive ? "grayscale-0" : "grayscale"
                                     }`}
                                 style={{ backgroundImage: `url(${image.src})` }}
