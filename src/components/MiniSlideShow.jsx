@@ -54,7 +54,7 @@ const MiniScreenSlideshow = () => {
     };
 
     return (
-        <div className="relative w-full h-auto aspect-[2/1] mt-0 lg:mt-[100px]">
+        <div className="relative w-full h-auto aspect-[2/1]">
             {/* Image Transition */}
             {/* <AnimatePresence mode="wait">
                 <motion.img

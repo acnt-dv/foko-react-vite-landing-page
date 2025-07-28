@@ -47,15 +47,15 @@ export const Works = () => {
         <div className="flex flex-col w-full justify-center items-center bg-foko">
             <div className="min-h-[75vh] w-full bg-cover bg-center bg-gray-400" style={{ backgroundImage: `url(${image})` }} />
 
-            <div className="flex w-full mt-[18.52vh] items-start justify-center lg:justify-center text-black">
+            <div className="flex w-full mt-[16.23vh] lg:mt-[18.52vh] items-start justify-center text-black">
                 <div className="flex-col w-full space-y-16 items-center justify-end text-black">
-                    <span className='flex w-full justify-end items-center'>
-                        <span className='flex w-fit justify-end mr-[2.60vw]'>
+                    <span className='flex w-full justify-end items-baseline'>
+                        <span className='flex w-fit justify-end mr-[7.69vw] lg:mr-[2.60vw]'>
                             <p className='font-rubik text-[clamp(10px,1.6vw,30px)] text-end align-text-top -mt-2 break-words'>
                                 BEL AIR <br /> RESIDENTIAL
                             </p>
                         </span>
-                        <span className='flex w-[58.33vw] mr-[20.83vw]'>
+                        <span className='flex w-[59.23vw] lg:w-[58.33vw] mr-[7.69vw] lg:mr-[20.83vw]'>
                             <p className='text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
                                 {textLines}
                             </p>
@@ -63,7 +63,7 @@ export const Works = () => {
                     </span>
 
                     <span className='flex w-full flex-col-reverse lg:flex-row justify-end mb-[27.78vh]'>
-                        <div className="flex w-fit mt-[75px] mx-[2.6vw]">
+                        <div className="flex lg:w-fit mt-[75px] mx-[7.69vw] lg:mx-[2.6vw]">
                              <div className="flex flex-row justify-end items-end w-full">
                                 <div className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
                                     <span className="font-bold">PROGRAM</span>
@@ -84,7 +84,7 @@ export const Works = () => {
                             </div>
                         </div>
 
-                        <span className='flex w-[58.33vw] mr-[20.83vw]'>
+                        <span className='flex lg:w-[58.33vw] mx-[7.69vw] lg:mr-[20.83vw]'>
                             <MiniSlideShow />
                         </span>
                     </span>
