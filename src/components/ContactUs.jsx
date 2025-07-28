@@ -26,7 +26,7 @@ const ContactUs = () => {
                             <p className="text-10 lg:text-16">718-984-8018</p>
                         </span>
 
-                         <h2 className="flex lg:hidden font-rubik text-10 cursor-pointer mr-[53.08vw] my-[5.92vh]" onClick={() => { navigate('/contactUs') }}>
+                         <h2 className="flex lg:hidden font-rubik text-10 cursor-pointer mr-[53.08vw] mt-[5.92vh] mb-[9.47vh]" onClick={() => { navigate('/contactUs') }}>
                             MORE &nbsp; &nbsp; &nbsp;
                              <img src={rightSmall} alt="Right Image" width="9px" height="4px" className='mt-[-2px]' />
                         </h2>
