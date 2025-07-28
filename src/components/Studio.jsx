@@ -3,19 +3,19 @@ import ProfileCard from "./ProfileCard";
 
 const AboutUs = () => {
     return (
-        <div className="flex flex-col w-full h-full items-end mt-[18.52vh] ">
+        <div className="flex flex-col w-full h-full items-end mt-0 lg:mt-[18.52vh] ">
             <div className="flex flex-col box-border px-0">
-                <div className="flex flex-col-reverse lg:flex-row justify-end mr-[10.42vw]">
+                <div className="flex flex-col-reverse lg:flex-row justify-end mr-0 lg:mr-[10.42vw]">
 
                     {/* ABOUT US */}
-                    <div className="flex flex-col w-[49.48vw] h-[60.19vh] justify-between">
+                    <div className="flex flex-col mt-[5.92vh] lg:mt-0 w-full lg:w-[49.48vw] h-[60.19vh] lg:justify-between">
                         <div className='flex w-full justify-end'>
-                            <div className='w-fit mr-[2.6vw]'>
+                            <div className='w-fit mx-[7.69vw] lg:mr-[2.6vw]'>
                                 <h1 className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                                     ABOUT <br/> US
                                 </h1>
                             </div>
-                            <div className='w-[27.08vw] mr-[10.42vw]'>
+                            <div className='w-[61.54vw] lg:w-[27.08vw] mr-[7.69vw] lg:mr-[10.42vw]'>
                                 <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-wide">
                                     FOKO Studio is a Los Angeles-based architecture and interior design firm. Our studio
                                     specializes in crafting bespoke, high-end residential and commercial spaces that are
@@ -34,8 +34,8 @@ const AboutUs = () => {
 
                         {/* OUR PHILOSOPHY */}
 
-                        <div className='flex w-full justify-end'>
-                            <div className='grid w-fit mr-[2.6vw] justify-end items-start max-h-[50px]'>
+                        <div className='flex w-full justify-end mt-[5.92vh] lg:mt-0'>
+                            <div className='grid w-fit mx-[7.69vw] lg:mr-[2.6vw] justify-end items-start max-h-[50px]'>
                                 <p className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                                     OUR
                                 </p>
@@ -43,7 +43,7 @@ const AboutUs = () => {
                                     PHILOSOPHY
                                 </p>
                             </div>
-                            <div className='w-[27.08vw] mr-[10.42vw]'>
+                            <div className='w-[61.54vw] lg:w-[27.08vw] mr-[7.69vw] lg:mr-[10.42vw]'>
                                 <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]">
                                     At the heart of our practice is the belief that design should create meaningful
                                     spaces that enrich the lives of those who inhabit them. We combine critical
@@ -57,17 +57,17 @@ const AboutUs = () => {
                     </div>
 
                     {/* COVER IMAGE */}
-                    <div className="flex w-[33.85vw]">
+                    <div className="flex w-full lg:w-[33.85vw]">
                         <img
                             src={aboutUsImage}
                             alt="aboutUsImage"
-                            className="w-[33.85vw] h-auto max-h-[60.19vh] object-cover"
+                            className="w-full lg:w-[33.85vw] h-auto max-h-[60.19vh] object-cover"
                         />
                     </div>
                 </div>
 
-                <div className="flex w-full justify-end mt-[18.52vh]">
-                    <div className='grid w-fit mr-[2.6vw] justify-end items-start max-h-[50px]'>
+                <div className="flex w-full justify-end mt-[5.92vh] lg:mt-[18.52vh]">
+                    <div className='grid w-fit mx-[7.69vw] lg:mr-[2.6vw] justify-end items-start max-h-[50px]'>
                         <p className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                             THE
                         </p>
@@ -75,7 +75,7 @@ const AboutUs = () => {
                             FOUNDERS
                         </p>
                     </div>
-                    <div className='w-[27.08vw] mr-[54.6vw]'>
+                    <div className='w-[61.54vw] lg:w-[27.08vw] mr-[7.69vw] lg:mr-[54.6vw]'>
                         <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]">
                             FOKO Studio was founded by Jenny Fontenot and Pegah Koulaeien, two seasoned design
                             professionals with a shared passion for creating inspiring spaces. With diverse backgrounds
