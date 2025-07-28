@@ -15,32 +15,32 @@ const FullPageMenu = ({isOpen, onClose}) => {
             </button>
 
             <div className="flex flex-col lg:flex-row w-full items-center justify-end">
-                <span className='flex justify-end items-center mr-[28.44vw]'>
+                <span className='flex justify-center lg:justify-end items-center mr-0 lg:mr-[28.44vw]'>
                     <img src={logo} alt={'logo'}
-                         className='w-[6.77vw] h-[12.04vh] filter brightness-0 invert'/>
+                         className='w-[25.64vw] h-[11.58vh] lg:w-[6.77vw] lg:h-[12.04vh] filter brightness-0 invert'/>
                 </span>
 
                 <nav>
-                    <ul className="flex flex-col lg:flex-row w-fit space-y-12 lg:space-y-0 text-center">
-                        <li className="text-white text-20 hover:underline cursor-pointer mr-[5.21vw]">
+                    <ul className="flex flex-col mt-[18.48vh] lg:mt-0 lg:flex-row w-fit space-y-[3.65vh] lg:space-y-0 text-center">
+                        <li className="text-white text-16 lg:text-20 hover:underline cursor-pointer mr-0 lg:mr-[5.21vw]">
                             <a href="#home" onClick={() => {
                                 onClose();
                                 navigate('/')
                             }}>HOME</a>
                         </li>
-                        <li className="text-white text-20 hover:underline cursor-pointer mr-[5.21vw]">
+                        <li className="text-white text-16 lg:text-20 hover:underline cursor-pointer mr-0 lg:mr-[5.21vw]">
                             <a href="#work" onClick={() => {
                                 onClose();
                                 navigate('/categories')
                             }}>WORK</a>
                         </li>
-                        <li className="text-white text-20 hover:underline cursor-pointer mr-[5.21vw]">
+                        <li className="text-white text-16 lg:text-20 hover:underline cursor-pointer mr-0 lg:mr-[5.21vw]">
                             <a href="#studio" onClick={() => {
                                 onClose();
                                 navigate('/studio')
                             }}>STUDIO</a>
                         </li>
-                        <li className="text-white text-20 hover:underline cursor-pointer mr-[7.81vw]">
+                        <li className="text-white text-16 lg:text-20 hover:underline cursor-pointer mr-0 lg:mr-[7.81vw]">
                             <a href="#contact" onClick={() => {
                                 onClose();
                                 navigate('/contactUs')
