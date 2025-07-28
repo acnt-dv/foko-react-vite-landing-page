@@ -11,11 +11,15 @@ const AboutUs = () => {
             className="flex flex-col w-full lg:flex-row h-full lg:h-screen items-center lg:items-start justify-end mt-[5.92vh] lg:mt-[18.52vh]">
             <div className='flex w-full'>
                 <span className="flex justify-center lg:justify-start w-full">
-                    <div className="flex w-full flex-col justify-end lg:justify-between items-start text-justify my-0">
-
+                    <div
+                        className="flex w-full flex-col justify-end lg:justify-between items-end lg:items-start text-justify my-0">
+                        <span className="flex">
+                            <h1 className="flex w-fit lg:hidden text-16 font-rubik text-end">ABOUT <br/> FOKO</h1>
                             <p className="w-[59.23vw] lg:w-[30.05vw] ml-[15.63vw] mr-[7.69vw] lg:mr-[7.81vw] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.015em]">
                                 Welcome to FOKO Studio, an architecture and interior design practice specializing in creating functional, inspiring spaces that reflect your unique vision. From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.
                             </p>
+                        </span>
+
 
                         <h2 className="hidden lg:flex font-rubik w-fit ml-[15.63vw] lg:text-20 cursor-pointer lg:my-0"
                             onClick={() => {
