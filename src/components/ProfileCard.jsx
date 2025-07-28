@@ -4,10 +4,10 @@ import profileImage from "../statics/png/about-us.png"; // Replace with actual i
 const ProfileCard = ({ name }) => {
     return (
         // <div className="flex-col bg-foko min-h-full justify-start w-[calc(100%-60px)] lg:w-full px-[100px] mt-[125px]">
-        <div className="flex bg-foko min-h-full lg:w-full mt-[18.52vh] justify-end">
+        <div className="flex bg-foko min-h-full lg:w-full mt-[5.92vh] lg:mt-[18.52vh] justify-end">
             <div className="flex flex-col lg:flex-row w-full">
                 <span className="grid w-full lg:flex">
-                    <div className="w-[27.08vw] h-[63.89vh] flex flex-col items-center justify-end ml-[15.63vw] mr-[2.60vw]">
+                    <div className="w-full h-auto lg:w-[27.08vw] lg:h-[63.89vh] flex flex-col items-center justify-end mx-0 lg:ml-[15.63vw] lg:mr-[2.60vw]">
                         {/* Profile Image */}
                         <img
                             src={profileImage}
@@ -16,14 +16,14 @@ const ProfileCard = ({ name }) => {
                         />
                     </div>
 
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col justify-between mt-[5.92vh] lg:0">
                         <div>
                             {/* Name and Title */}
-                            <h1 className="font-rubik text-[clamp(16px,1.8vw,30px)] text-left font-bold">{name}</h1>
-                            <h2 className="font-rubik text-[clamp(16px,1.4vw,30px)] text-left font-light uppercase mt-[1.85vh] mb-[4.63vh]">Co-Founder</h2>
+                            <h1 className="font-rubik text-[clamp(16px,1.8vw,30px)] text-left font-bold ml-[7.69vw] lg:ml-0">{name}</h1>
+                            <h2 className="font-rubik text-[clamp(16px,1.4vw,30px)] text-left font-light uppercase ml-[7.69vw] lg:ml-0 mt-[1.85vh] mb-[4.63vh]">Co-Founder</h2>
 
                             {/* Description */}
-                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] w-[41.67vw] mr-[10.42vw]">
+                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] lg:w-[41.67vw] mx-[7.69vw] lg:mr-[10.42vw]">
                                 Jenny is the co-founder and Architectural Director of FOKO Studio. She is a licensed architect
                                 with a passion
                                 for creating positive impact for individuals and communities through shaping the built
@@ -35,7 +35,7 @@ const ProfileCard = ({ name }) => {
                                 and expertise.
                             </p>
 
-                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] w-[41.67vw] mr-[10.42vw]">
+                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] lg:w-[41.67vw] mx-[7.69vw] lg:mr-[10.42vw]">
                                 As a licensed architect in both New York and California, Jenny brings a wealth of knowledge and
                                 understanding
                                 of different building regulations, allowing her to navigate complex projects while seeking
@@ -45,7 +45,7 @@ const ProfileCard = ({ name }) => {
                                 mindset, eager to unravel its puzzle-like nature.
                             </p>
 
-                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] w-[41.67vw] mr-[10.42vw]">
+                            <p className="text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em] lg:w-[41.67vw] mx-[7.69vw] lg:mr-[10.42vw]">
                                 Extending beyond traditional architecture, Jenny’s interests include furniture and product
                                 design. She
                                 believes in creating holistic and captivating experiences for users through design and
@@ -53,7 +53,7 @@ const ProfileCard = ({ name }) => {
                                 scales.
                             </p>
                         </div>
-                        <div className="flex flex-row justify-start items-end w-full">
+                        <div className="flex flex-row justify-start items-end w-full ml-[7.69vw] lg:ml-0 mt-[5.92vh] lg:mt-0">
                             <div className="text-[clamp(10px,0.83vw,16px)] text-left leading-loose tracking-[0.005em]">
                                 <div className="grid grid-cols-2 gap-x-16 gap-y-1 w-full">
                                     <span className="font-bold">Masters of Architecture ||</span>
