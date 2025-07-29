@@ -84,7 +84,7 @@ export const Works = () => {
                             </div>
                         </div>
 
-                        <span className='flex lg:w-[58.33vw] mx-[7.69vw] lg:mr-[20.83vw]'>
+                        <span className='flex lg:w-[58.33vw] ml-[7.69vw] mr-[7.69] lg:ml-0 lg:mr-[20.83vw]'>
                             <MiniSlideShow />
                         </span>
                     </span>
