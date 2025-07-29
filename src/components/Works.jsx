@@ -49,9 +49,9 @@ export const Works = () => {
 
             <div className="flex w-full mt-[16.23vh] lg:mt-[18.52vh] items-start justify-center text-black">
                 <div className="flex-col w-full space-y-16 items-center justify-end text-black">
-                    <span className='flex w-full justify-end items-baseline'>
+                    <span className='flex w-full justify-end items-baseline mb-[18.52vh]'>
                         <span className='flex w-fit justify-end mr-[7.69vw] lg:mr-[2.60vw]'>
-                            <p className='font-rubik text-[clamp(10px,1.6vw,30px)] text-end align-text-top -mt-2 break-words'>
+                            <p className='font-rubik text-[clamp(10px,1.6vw,30px)] text-end align-text-top break-words'>
                                 BEL AIR <br /> RESIDENTIAL
                             </p>
                         </span>
