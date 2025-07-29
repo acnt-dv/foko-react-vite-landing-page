@@ -61,7 +61,7 @@ const Categories = () => {
 
             {/* Image Grid */}
             <div className="flex flex-col w-fit h-3/4 justify-center items-end mr-[7.69vw] lg:mr-[15.63vw]">
-                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(320px,1fr))]  gap-0 w-full lg:max-w-6xl overflow-auto scrollbar-hide">
+                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(22.92vw,1fr))]  gap-0 w-full lg:max-w-[95rem] overflow-auto scrollbar-hide">
                     {images.map((image, index) => {
                         // Apply grayscale based on active filter
                         const isActive = active === "ALL" || active === image.category;
@@ -69,7 +69,7 @@ const Categories = () => {
                             <div
                                 onClick={() => { navigate('/works') }}
                                 key={index}
-                                className={`h-[16.23vh] lg:h-[208px] bg-gray-900 flex items-end justify-center text-white 
+                                className={`h-[16.23vh] lg:h-[21.02vh] bg-gray-900 flex items-end justify-center text-white 
                                     bg-cover bg-center transition-all duration-500 cursor-pointer ${isActive ? "grayscale-0" : "grayscale"
                                     }`}
                                 style={{ backgroundImage: `url(${image.src})` }}
