@@ -53,9 +53,9 @@ const ProfileCard = ({ name }) => {
                                 scales.
                             </p>
                         </div>
-                        <div className="flex flex-row justify-start items-end w-full ml-[7.69vw] lg:ml-0 mt-[5.92vh] lg:mt-0">
+                        <div className="flex flex-row justify-start items-end ml-[7.69vw] lg:ml-0 mt-[5.92vh] lg:mt-0">
                             <div className="text-[clamp(10px,0.83vw,16px)] text-left leading-loose tracking-[0.005em]">
-                                <div className="grid grid-cols-2 gap-x-16 gap-y-1 w-full">
+                                <div className="grid grid-cols-2 gap-x-16 gap-y-1">
                                     <span className="font-bold">Masters of Architecture ||</span>
                                     <span className="text-left">Yale University</span>
                                     <span className="font-bold">Bachelor of Architecture</span>

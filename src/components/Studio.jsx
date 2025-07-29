@@ -3,12 +3,12 @@ import ProfileCard from "./ProfileCard";
 
 const AboutUs = () => {
     return (
-        <div className="flex flex-col w-full h-full items-end mt-0 lg:mt-[18.52vh]">
-            <div className="flex w-full flex-col box-border px-0">
-                <div className="flex w-full flex-col-reverse lg:flex-row justify-end">
+        <div className="flex flex-col h-full items-end mt-0 lg:mt-[18.52vh]">
+            <div className="flex flex-col box-border px-0">
+                <div className="flex flex-col-reverse lg:flex-row justify-end">
 
                     {/* ABOUT US */}
-                    <div className="flex flex-col mt-[5.92vh] lg:mt-0 w-full lg:w-[49.48vw] h-[60.19vh] lg:justify-between">
+                    <div className="flex flex-col mt-[5.92vh] lg:mt-0 lg:w-[49.48vw] h-[60.19vh] lg:justify-between">
                         <div className='flex w-full justify-end'>
                             <div className='w-fit ml-[7.69vw] mr-[7.69vw] lg:ml-0 lg:mr-[2.6vw]'>
                                 <h1 className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
@@ -66,7 +66,7 @@ const AboutUs = () => {
                     </div>
                 </div>
 
-                <div className="flex w-full justify-end mt-[5.92vh] lg:mt-[18.52vh]">
+                <div className="flex justify-end mt-[5.92vh] lg:mt-[18.52vh]">
                     <div className='grid w-fit mx-[7.69vw] lg:mr-[2.6vw] justify-end items-start max-h-[50px]'>
                         <p className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                             THE
