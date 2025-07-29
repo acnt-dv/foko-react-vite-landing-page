@@ -132,7 +132,7 @@ const MiniScreenSlideshow = () => {
                     <div className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
                         <button
                             onClick={closeModal}
-                            className="absolute w-[1.56vw] h-[2.78vh] top-[7.13vh] right-[2.60vw] cursor-pointer"
+                            className="absolute w-[30px] h-[30px] top-[30px] right-[30px] lg:w-[1.56vw] lg:h-[2.78vh] lg:top-[7.13vh] lg:right-[2.60vw] cursor-pointer"
                         >
                             <img src={close} alt="close" width='30px' height='30px' className="filter grayscale" />
                         </button>
@@ -140,7 +140,7 @@ const MiniScreenSlideshow = () => {
                             <img
                                 src={selectedImage}
                                 alt="Fullscreen"
-                                className="w-[79.17vw] h-[62.96vh] mx-[10.42vw] mt-[18.52vh] mb-[2.78vh] object-contain"
+                                className="w-full h-auto lg:w-[79.17vw] lg:h-[62.96vh] mx-0 lg:mx-[10.42vw] mt-[18.52vh] mb-[2.78vh] object-contain"
                             />
                             <p className="text-10 lg:text-16 ml-[10.42vw] mb-[15.72vh]">
                                 Some renderings by Polynates. Work completed while at BA Collective.
