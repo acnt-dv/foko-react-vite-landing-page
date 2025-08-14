@@ -45,7 +45,7 @@ export const Works = () => {
 
     return (
         <div className="flex flex-col w-full justify-center items-center bg-foko">
-            <div className="min-h-[75vh] w-full bg-cover bg-center bg-gray-400" style={{ backgroundImage: `url(${image})` }} />
+            <div className="w-full h-[61vh] bg-cover bg-center bg-gray-400" style={{ backgroundImage: `url(${image})` }} />
 
             <div className="flex w-full mt-[16.23vh] lg:mt-[18.52vh] items-start justify-center text-black">
                 <div className="flex-col w-full space-y-16 items-center justify-end text-black">

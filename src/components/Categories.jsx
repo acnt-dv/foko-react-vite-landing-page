@@ -27,13 +27,13 @@ const Categories = () => {
             {/* Sidebar Buttons */}
             {/* removed from this div style: lg:border-r lg:border-gray-500 */}
             <div
-                className="flex flex-col h-3/4 justify-end lg:justify-center
+                className="flex flex-col h-[48.82vh] lg:h-[62.96vh] justify-end lg:justify-center
                 lg:ml-foko bg-gradient-to-b from-black via-gray-900 to-gray-100 bg-clip-text text-transparent
                 font-rubik text-10 lg:text-16 mr-[7.69vw] lg:mr-[5.21vw]">
 
                 {/* RESIDENTIAL Button */}
                 <button
-                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${active === "RESIDENTIAL" ? "text-black font-bold" : "text-gray-400"
+                    className={`py-2 self-end rounded-md transition-all leading-loose tracking-widest cursor-pointer ${active === "RESIDENTIAL" ? "text-black font-bold" : "text-gray-400"
                         }`}
                     onClick={() => setActive("RESIDENTIAL")}
                 >
@@ -42,7 +42,7 @@ const Categories = () => {
 
                 {/* COMMERCIAL Button */}
                 <button
-                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${active === "COMMERCIAL" ? "text-black font-bold" : "text-gray-400"
+                    className={`py-2 self-end rounded-md transition-all leading-loose tracking-widest cursor-pointer ${active === "COMMERCIAL" ? "text-black font-bold" : "text-gray-400"
                         }`}
                     onClick={() => setActive("COMMERCIAL")}
                 >
@@ -51,7 +51,7 @@ const Categories = () => {
 
                 {/* ALL Button */}
                 <button
-                    className={`py-2 self-end rounded-md transition-all cursor-pointer ${active === "ALL" ? "text-black font-bold" : "text-gray-400"
+                    className={`py-2 self-end rounded-md transition-all leading-loose tracking-widest cursor-pointer ${active === "ALL" ? "text-black font-bold" : "text-gray-400"
                         }`}
                     onClick={() => setActive("ALL")}
                 >
@@ -60,8 +60,8 @@ const Categories = () => {
             </div>
 
             {/* Image Grid */}
-            <div className="flex flex-col w-fit h-3/4 justify-center items-end mr-[7.69vw] lg:mr-[15.63vw]">
-                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(22.92vw,1fr))]  gap-0 w-full lg:max-w-[95rem] overflow-auto scrollbar-hide">
+            <div className="flex flex-col w-fit h-[48.82vh] lg:h-[62.96vh] justify-center items-end mr-[7.69vw] lg:mr-[15.63vw]">
+                <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(22.92vw,1fr))]  gap-0 w-full md:max-w-[40rem] xl:max-w-[95rem] overflow-auto scrollbar-hide">
                     {images.map((image, index) => {
                         // Apply grayscale based on active filter
                         const isActive = active === "ALL" || active === image.category;
