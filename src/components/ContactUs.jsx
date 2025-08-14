@@ -6,7 +6,7 @@ const ContactUs = () => {
 
     return (
         <div
-            className="flex w-full flex-col lg:flex-row h-full lg:h-screen justify-end items-center lg:items-start mt-[5.92vh] lg:mt-[18.52vh]">
+            className="flex w-full flex-col lg:flex-row h-full lg:h-[calc(100vh-9.47vh)] justify-end items-center lg:items-start mt-[5.92vh] lg:mt-[18.52vh]">
             <span className="w-fit justify-end hidden lg:block">
                 <h1 className="text-30 font-rubik text-end hidden lg:block ml-[4.69vw] mr-[4.69vw] mt-[-5px]">Contact <br/> Us</h1>
             </span>
