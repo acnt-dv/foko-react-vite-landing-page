@@ -66,7 +66,7 @@ const AboutUs = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-end mt-[5.92vh] lg:mt-[18.52vh]">
+                <div className="flex justify-end mt-[5.92vh] lg:mt-[20.52vh]">
                     <div className='grid w-fit mx-[7.69vw] lg:mr-[2.6vw] justify-end items-start max-h-[50px]'>
                         <p className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
                             THE
