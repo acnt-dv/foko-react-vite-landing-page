@@ -21,24 +21,24 @@ const AboutUs = () => {
                         </span>
 
 
-                        <h2 className="hidden lg:flex font-rubik w-fit ml-[15.63vw] lg:text-20 cursor-pointer lg:my-0"
+                        <h2 className="hidden justify-center items-center lg:flex font-rubik w-fit ml-[15.63vw] lg:text-20 cursor-pointer lg:my-0"
                             onClick={() => {
                                 navigate('/contactUs')
                             }}>
                             MORE &nbsp; &nbsp; &nbsp;
-                            <img src={right} alt="Right Image"/>
+                            <img src={right} alt="Right Image" className='w-[0.42vw] h-[1.48vh]' />
                         </h2>
 
-                        <h2 className="flex lg:hidden font-rubik text-10 cursor-pointer mr-[53.08vw] my-[5.92vh]"
+                        <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[53.08vw] my-[5.92vh]"
                             onClick={() => {
                                 navigate('/contactUs')
                             }}>
                             MORE &nbsp; &nbsp; &nbsp;
-                            <img src={rightSmall} alt="Right Image" width="9px" height="4px" className='mt-[-2px]'/>
+                            <img src={rightSmall} alt="Right Image" className='w-[1.03vw] h-[1.07vh]'/>
                         </h2>
                     </div>
                     <img src={aboutUsImage} alt={'aboutUsImage'}
-                         className="hidden lg:block filter grayscale w-[32.14vw] h-[69.07vh] mr-[15.63vw]"/>
+                         className="hidden lg:block filter grayscale w-[32.14vw] h-[47.07vh] mr-[15.63vw]"/>
                 </span>
 
             </div>

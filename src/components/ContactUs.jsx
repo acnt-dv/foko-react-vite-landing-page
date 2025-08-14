@@ -26,9 +26,9 @@ const ContactUs = () => {
                             <p className="text-10 lg:text-16">718-984-8018</p>
                         </span>
 
-                         <h2 className="flex lg:hidden font-rubik text-10 cursor-pointer mr-[53.08vw] mt-[5.92vh] mb-[9.47vh]" onClick={() => { navigate('/contactUs') }}>
+                         <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[53.08vw] mt-[5.92vh] mb-[9.47vh]" onClick={() => { navigate('/contactUs') }}>
                             MORE &nbsp; &nbsp; &nbsp;
-                             <img src={rightSmall} alt="Right Image" width="9px" height="4px" className='mt-[-2px]' />
+                             <img src={rightSmall} alt="Right Image" className='w-[1.03vw] h-[1.07vh]' />
                         </h2>
                     </div>
                 </div>
