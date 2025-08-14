@@ -4,9 +4,9 @@ import Footer from "./Footer";
 const Contact = () => {
     return (
         <Fragment>
-            <div className="flex w-full flex-col lg:flex-row w-full h-screen justify-start items-center mb-32">
-                <div className="flex w-full h-screen lg:h-fit items-center lg:items-start">
-                    <span className="flex w-1/5 justify-end hidden lg:block">
+            <div className="flex w-full flex-col lg:flex-row h-screen lg:h-[calc(100vh-9.47vh)] justify-start items-center mb-32">
+                <div className="flex w-full h-screen overflow-hidden lg:h-fit items-center lg:items-start">
+                    <span className="flex w-0 lg:w-1/5 justify-end lg:block">
                         <h1 className="text-30 font-rubik text-end hidden lg:block mr-[50px] mt-[-10px]">Contact <br /> Us</h1>
                     </span>
                     <span className="flex w-full lg:w-4/5">
