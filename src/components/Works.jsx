@@ -63,7 +63,7 @@ export const Works = () => {
                     </span>
 
                     <span className='flex w-full flex-col-reverse lg:flex-row justify-end mb-[27.78vh]'>
-                        <div className="flex lg:w-fit mt-[75px] mx-[7.69vw] lg:mx-[2.6vw]">
+                        <div className="flex lg:w-fit mt-[75px] mx-[7.69vw] lg:mr-[2.6vw]">
                              <div className="flex flex-row justify-end items-end w-full">
                                 <div className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
                                     <span className="font-bold">PROGRAM</span>
