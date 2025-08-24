@@ -33,7 +33,10 @@ export const projects = [
         description:
             "This 11 bedroom private home sits on a hillside site in Bel Air with expansive views of Los Angeles. The contemporary style of the home incorporates subtle nods to the client’s Japanese roots through the use of natural materials that blurred the line between landscape and architecture. This project was unbuilt due to economic strains from the pandemic.",
         credits: "Some renderings by Polynates. Work completed while at BA Collective.",
-        images: getImagesForProject("Bel_Air_Residence"),
+        images: [
+            '/public/projects/BA_Collective_Studio/AAA-BelzbergStudio_PhotoByBruceDamonte_01_cropped_retouched.jpg',
+
+        ],
     },
     {
         title: "BA COLLECTIVE STUDIO",
