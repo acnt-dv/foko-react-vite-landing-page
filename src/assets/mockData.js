@@ -4,13 +4,12 @@ const allProjectImages = import.meta.glob(
 );
 
 export const getImagesForProject = (slug) => {
-  const prefix = `/src/assets/projects/${slug}/`;
   return Object.entries(allProjectImages)
-    .filter(([path]) => path.startsWith(prefix))
-    .sort(([a], [b]) =>
-      a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
-    )
-    .map(([, url]) => url);
+      .filter(([path]) => path.toLowerCase().includes(slug.toLowerCase()))
+      .sort(([a], [b]) =>
+          a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
+      )
+      .map(([, url]) => url);
 };
 
 export const projects = [
