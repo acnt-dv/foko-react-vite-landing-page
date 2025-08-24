@@ -1,10 +1,10 @@
 const allProjectImages = import.meta.glob(
     "/src/assets/projects/**/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG,WEBP,SVG}",
-    {eager: true, as: "url", import: 'default'}
+    { eager: true, import: "default", query: "?url" }
 );
 
 const normalizeSlug = (slug) =>
-    slug.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
+    slug.toLowerCase().replace(/\s+/g, "_").replace(/[^a-z0-9\-_]/g, "");
 
 export const getImagesForProject = (slug) => {
     const normalizedSlug = normalizeSlug(slug);
