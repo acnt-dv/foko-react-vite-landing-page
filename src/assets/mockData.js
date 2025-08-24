@@ -3,13 +3,21 @@ const allProjectImages = import.meta.glob(
   { eager: true, as: "url" }
 );
 
+const normalizeSlug = (slug) =>
+  slug.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
+
 export const getImagesForProject = (slug) => {
+  const normalizedSlug = normalizeSlug(slug);
   return Object.entries(allProjectImages)
-      .filter(([path]) => path.toLowerCase().includes(slug.toLowerCase()))
-      .sort(([a], [b]) =>
-          a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
-      )
-      .map(([, url]) => url);
+    .filter(([path]) => {
+      // Normalize path to lowercase and replace backslashes with forward slashes for consistency
+      const normalizedPath = path.toLowerCase().replace(/\\/g, "/");
+      return normalizedPath.includes(normalizedSlug);
+    })
+    .sort(([a], [b]) =>
+      a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
+    )
+    .map(([, url]) => url);
 };
 
 export const projects = [
@@ -25,7 +33,7 @@ export const projects = [
     description:
       "This 11 bedroom private home sits on a hillside site in Bel Air with expansive views of Los Angeles. The contemporary style of the home incorporates subtle nods to the client’s Japanese roots through the use of natural materials that blurred the line between landscape and architecture. This project was unbuilt due to economic strains from the pandemic.",
     credits: "Some renderings by Polynates. Work completed while at BA Collective.",
-    images: getImagesForProject("Bel Air Residence"),
+    images: getImagesForProject("bel-air-residence"),
   },
   {
     title: "BA COLLECTIVE STUDIO",
@@ -39,7 +47,7 @@ export const projects = [
     description:
       "Located on Main Street, Santa Monica, this ground-up commercial building serves as BA Collective’s new studio and owns the title of Santa Monica’s first mass timber building. The rooftop solar canopy further promotes sustainable design while the rotated brick facade creates a dynamic pattern that ties into the neighboring context through the use of traditional materials.",
     credits: "Photos by Bruce Damonte. Work completed while at BA Collective.",
-    images: getImagesForProject("BA Collective Studio"),
+    images: getImagesForProject("ba-collective-studio"),
   },
   {
     title: "PARADIGM TALENT AGENCY",
@@ -67,7 +75,7 @@ export const projects = [
     description:
       "Located on a peninsula in the Hollywood Hills with almost 360 degree views of Los Angeles, this 4 bedroom home is designed as entirely new construction for an owner to occupy. The most public interior spaces are located on the second level where the best views are experienced. The landscape berms up at the front to conceal the more private ground level.",
     credits: "Work completed while at BA Collective.",
-    images: getImagesForProject("Hills Residence"),
+    images: getImagesForProject("hollywood-residence"),
   },
   {
     title: "ROYAL CREST RESIDENCE",
@@ -95,11 +103,11 @@ export const projects = [
     description:
       "This Malibu home was designed as new construction for the owner to occupy. The house sits at the peak of a hill with unobstructed views of the ocean and surrounding canyons. The curvature of the architecture seamlessly integrates with the landscape and frames views of key landmarks.",
     credits: "Work completed while at BA Collective.",
-    images: getImagesForProject("Malibu Residence"),
+    images: getImagesForProject("malibu-residence"),
   },
   {
     title: "Clarkson Law Office HQ",
-    slug: "Clarkson Law Office HQ",
+    slug: "clarkson-law-office-hq",
     program: "Clarkson Law Office HQ",
     location: "",
     size: "",
@@ -107,11 +115,10 @@ export const projects = [
     status: "",
     category: "",
     description:
-        "The project involved the comprehensive interior remodeling of an existing space with the goal of transforming it into a dynamic, communal work environment, inspired by contemporary coworking models like WeWork. The design intent focused on creating a flexible and inclusive space that supports collaboration, creativity, and productivity.\n" +
-        "The remodeled interior features a variety of distinct zones tailored to diverse working styles and social interactions, including open lounge areas, huddle rooms for small team discussions, a central bar for informal gatherings, and multiple seating arrangements ranging from individual desks to communal tables. Flexibility was a key consideration in the design, allowing the space to seamlessly adapt for events, workshops, and social functions.\n" +
-        "This adaptive, multi-use approach encourages both individual focus and collective engagement, fostering a vibrant professional community within a versatile and inviting setting.",
+      "The project involved the comprehensive interior remodeling of an existing space with the goal of transforming it into a dynamic, communal work environment, inspired by contemporary coworking models like WeWork. The design intent focused on creating a flexible and inclusive space that supports collaboration, creativity, and productivity.\n" +
+      "The remodeled interior features a variety of distinct zones tailored to diverse working styles and social interactions, including open lounge areas, huddle rooms for small team discussions, a central bar for informal gatherings, and multiple seating arrangements ranging from individual desks to communal tables. Flexibility was a key consideration in the design, allowing the space to seamlessly adapt for events, workshops, and social functions.\n" +
+      "This adaptive, multi-use approach encourages both individual focus and collective engagement, fostering a vibrant professional community within a versatile and inviting setting.",
     credits: "",
-    images: getImagesForProject("Clarkson Law Office HQ"),
+    images: getImagesForProject("clarkson-law-office-hq"),
   }
 ];
-
