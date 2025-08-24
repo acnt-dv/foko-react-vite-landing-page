@@ -29,7 +29,7 @@ const AboutUs = () => {
                             <img src={right} alt="Right Image" className='w-[0.42vw] h-[1.48vh]' />
                         </h2>
 
-                        <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[53.08vw] my-[5.92vh]"
+                        <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[55.28vw] md:mr-[60.28vw] my-[5.92vh]"
                             onClick={() => {
                                 navigate('/contactUs')
                             }}>
