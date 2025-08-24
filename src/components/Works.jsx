@@ -1,63 +1,68 @@
 import image from '../statics/png/main-title.png';
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import MiniSlideShow from "./MiniSlideShow";
 import FadingTextBoxWithMask from "./FadingTextBoxWithMask";
+import {useLocation} from "react-router-dom";
 
 export const Works = () => {
     // const [maxTranslate, setMaxTranslate] = useState(0);
     const [translateY, setTranslateY] = useState(0);
     const miniSlideRef = useRef(null);
 
-    const textLines =
-        `This 11 bedroom private home sits on a Hillside site in Bel Air with expansive views of Los Angeles. The contemporary style of the home incorporates subtle nods to the client’s Japanese roots through the use of natural materials that blurred the line between landscape and architecture. This projectwas unbuilt due to economic strains from the pandemic.
-`
+//     const textLines =
+//         `This 11 bedroom private home sits on a Hillside site in Bel Air with expansive views of Los Angeles. The contemporary style of the home incorporates subtle nods to the client’s Japanese roots through the use of natural materials that blurred the line between landscape and architecture. This projectwas unbuilt due to economic strains from the pandemic.
+// `
+
+    const location = useLocation();
+    const {project} = location.state || {};
 
     useEffect(() => {
-        let maxTranslate = 0;
-        if (window.innerWidth <= 768) {
-            // 'md' breakpoint in Tailwind (768px)
-            maxTranslate = (window.innerHeight * 0.47);
-        } else {
-            maxTranslate = (window.innerHeight * 0.75);
-        }
-
-        const handleScroll = () => {
-            // Get the current scroll position
-            const position = window.scrollY;
-            let maxLimit = maxTranslate;
-
-            if (miniSlideRef.current) {
-                const slideShowRect = miniSlideRef.current.getBoundingClientRect();
-                const bottomLimit = slideShowRect.top + slideShowRect.height - 150; // Adjust offset as needed
-
-                if (position >= bottomLimit) {
-                    maxLimit = bottomLimit;
-                }
+            let maxTranslate = 0;
+            if (window.innerWidth <= 768) {
+                // 'md' breakpoint in Tailwind (768px)
+                maxTranslate = (window.innerHeight * 0.47);
+            } else {
+                maxTranslate = (window.innerHeight * 0.75);
             }
 
-            setTranslateY(Math.min(position, maxLimit));
-        };
+            const handleScroll = () => {
+                // Get the current scroll position
+                const position = window.scrollY;
+                let maxLimit = maxTranslate;
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []
+                if (miniSlideRef.current) {
+                    const slideShowRect = miniSlideRef.current.getBoundingClientRect();
+                    const bottomLimit = slideShowRect.top + slideShowRect.height - 150; // Adjust offset as needed
+
+                    if (position >= bottomLimit) {
+                        maxLimit = bottomLimit;
+                    }
+                }
+
+                setTranslateY(Math.min(position, maxLimit));
+            };
+
+            window.addEventListener("scroll", handleScroll);
+            return () => window.removeEventListener("scroll", handleScroll);
+        }, []
     );
 
     return (
         <div className="flex flex-col w-full justify-center items-center bg-foko">
-            <div className="w-full h-[61vh] bg-cover bg-center bg-gray-400" style={{ backgroundImage: `url(${image})` }} />
+            <div className="w-full h-[61vh] bg-cover bg-center bg-gray-400" style={{backgroundImage: `url(${project?.images?.[0] ?? image})`}}/>
 
             <div className="flex w-full mt-[16.23vh] lg:mt-[18.52vh] items-start justify-center text-black">
                 <div className="flex-col w-full space-y-16 items-center justify-end text-black">
                     <span className='flex w-full justify-end items-baseline mb-[18.52vh]'>
                         <span className='flex w-fit justify-end mr-[7.69vw] lg:mr-[2.60vw]'>
-                            <p className='font-rubik text-[clamp(10px,1.6vw,30px)] text-end align-text-top break-words'>
-                                BEL AIR <br /> RESIDENTIAL
+                            <p className='font-rubik font-black lg:font-normal text-[clamp(10px,1.6vw,30px)] text-end align-text-top break-words'>
+                                {/*BEL AIR <br /> RESIDENTIAL*/}
+                                {project?.title}
                             </p>
                         </span>
-                        <span className='flex w-[59.23vw] lg:w-[58.33vw] mr-[7.69vw] lg:mr-[20.83vw]'>
-                            <p className='text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
-                                {textLines}
+                        <span className='flex w-[52.23vw] xl:w-[58.33vw] mr-[7.69vw] lg:mr-[20.83vw]'>
+                            <p className='relative lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
+                                {project?.description}
                             </p>
                         </span>
                     </span>
@@ -65,27 +70,50 @@ export const Works = () => {
                     <span className='flex w-full flex-col-reverse lg:flex-row justify-end mb-[27.78vh]'>
                         <div className="flex lg:w-fit mt-[75px] mx-[7.69vw] lg:mr-[2.6vw]">
                              <div className="flex flex-row justify-end items-end w-full">
-                                <div className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
-                                    <span className="font-bold">PROGRAM</span>
-                                    <span className="text-right">Single Family Residential</span>
+                                <div
+                                    className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
 
-                                    <span className="font-bold">LOCATION</span>
-                                    <span className="text-right">Bel Air</span>
+                                    {project?.program &&
+                                        <>
+                                            <span className="font-bold">PROGRAM</span>
+                                            <span className="text-right">{project?.program}</span>
+                                        </>
+                                    }
 
-                                    <span className="font-bold">SIZE</span>
-                                    <span className="text-right">24,000 Sf</span>
+                                    {project?.location &&
+                                        <>
+                                            <span className="font-bold">LOCATION</span>
+                                            <span className="text-right">{project?.location}</span>
+                                        </>
+                                    }
 
-                                    <span className="font-bold">TYPE</span>
-                                    <span className="text-right">New Construction</span>
+                                    {project?.size &&
+                                        <>
+                                            <span className="font-bold">SIZE</span>
+                                            <span className="text-right">{project?.size}</span>
+                                        </>
+                                    }
 
-                                    <span className="font-bold">STATUS</span>
-                                    <span className="text-right">Unbuilt</span>
+                                    {project?.type &&
+                                        <>
+                                            <span className="font-bold">TYPE</span>
+                                            <span className="text-right">{project?.type}</span>
+                                        </>
+                                    }
+
+                                    {project?.status &&
+                                        <>
+                                            <span className="font-bold">STATUS</span>
+                                            <span className="text-right">{project?.status}</span>
+                                        </>
+                                    }
+
                                 </div>
                             </div>
                         </div>
 
                         <span className='flex lg:w-[58.33vw] ml-[7.69vw] mr-[7.69vw] lg:ml-0 lg:mr-[20.83vw]'>
-                            <MiniSlideShow />
+                            <MiniSlideShow images={project?.images}/>
                         </span>
                     </span>
                 </div>

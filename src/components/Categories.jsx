@@ -1,26 +1,29 @@
 import React, { useState } from "react";
-import image01 from "../statics/png/projects/pr01.png";
-import image02 from "../statics/png/projects/pr02.png";
-import image03 from "../statics/png/projects/pr03.png";
-import image04 from "../statics/png/projects/pr04.png";
-import image05 from "../statics/png/projects/pr05.png";
-import image06 from "../statics/png/projects/pr06.png";
-import image07 from "../statics/png/projects/pr07.png";
+// import image01 from "../statics/png/projects/pr01.png";
+// import image02 from "../statics/png/projects/pr02.png";
+// import image03 from "../statics/png/projects/pr03.png";
+// import image04 from "../statics/png/projects/pr04.png";
+// import image05 from "../statics/png/projects/pr05.png";
+// import image06 from "../statics/png/projects/pr06.png";
+// import image07 from "../statics/png/projects/pr07.png";
 import { useNavigate } from "react-router-dom";
+import {projects} from "../assets/mockData.js";
 
-const images = [
-    { src: image01, category: "RESIDENTIAL" },
-    { src: image02, category: "RESIDENTIAL" },
-    { src: image03, category: "RESIDENTIAL" },
-    { src: image04, category: "COMMERCIAL" },
-    { src: image05, category: "COMMERCIAL" },
-    { src: image06, category: "COMMERCIAL" },
-    { src: image07, category: "COMMERCIAL" },
-];
+// const images = [
+//     { src: image01, category: "RESIDENTIAL" },
+//     { src: image02, category: "RESIDENTIAL" },
+//     { src: image03, category: "RESIDENTIAL" },
+//     { src: image04, category: "COMMERCIAL" },
+//     { src: image05, category: "COMMERCIAL" },
+//     { src: image06, category: "COMMERCIAL" },
+//     { src: image07, category: "COMMERCIAL" },
+// ];
 
 const Categories = () => {
     const navigate = useNavigate();
     const [active, setActive] = useState("ALL");
+
+    const projectsItems = projects;
 
     return (
         <div className="flex w-full h-screen items-center justify-end gap-0  text-black">
@@ -62,23 +65,23 @@ const Categories = () => {
             {/* Image Grid */}
             <div className="flex flex-col w-fit h-[48.82vh] lg:h-[62.96vh] justify-center items-end mr-[7.69vw] lg:mr-[15.63vw]">
                 <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(22.92vw,1fr))]  gap-0 w-full md:max-w-[40rem] 2xl:max-w-[95rem] overflow-auto scrollbar-hide">
-                    {images.map((image, index) => {
+                    {projectsItems.map((project, index) => {
                         // Apply grayscale based on active filter
-                        const isActive = active === "ALL" || active === image.category;
+                        const isActive = active === "ALL" || active === project.category;
                         return (
                             <div
-                                onClick={() => { navigate('/works') }}
+                                onClick={() => navigate('/works', { state: { project } })}
                                 key={index}
                                 className={`h-[16.23vh] lg:h-[21.02vh] bg-gray-900 flex items-end justify-center text-white 
                                     bg-cover bg-center transition-all duration-500 cursor-pointer ${isActive ? "grayscale-0" : "grayscale"
                                     }`}
-                                style={{ backgroundImage: `url(${image.src})` }}
+                                style={{ backgroundImage: `url(${project?.images?.[0]})` }}
 
                             >
                                 {isActive &&
                                     <div className="flex w-full h-[25px] justify-end items-center bg-foko text-10 lg:text-16 text-black opacity-75">
                                         <p className="text-right mt-1 mr-2">
-                                            BA COLLECTIVE STUDIO
+                                            {project.title}
                                         </p>
                                     </div>
                                 }
