@@ -111,21 +111,21 @@ const AboutUs = () => {
                     profileImg={profileImage}
                     description={[
                         `Pegah, the co-founder and Interior Architecture Director of FOKO Studio, brings over a decade
-of experience in architecture and interior design to her role. Her expertise spans diverse
-projects in hospitality, workplace, and residential environments around the world. Committed
-to crafting immersive design experiences that authentically capture the essence of a location,
-Pegah strives to create standout projects aligned with the unique brand, market, and business
-aspirations of each property.`,
-                        `Pegah effortlessly moves between different aspects of architecture, from big-picture planning
-to detailed furniture design. Her keen design sense and problem-solving skills make it easy for
-her to understand what clients want and involve them in the creative process.`,
-                        `Driven by a passion for learning about diverse cultures and technologies, Pegah actively
-incorporates these elements into her designs. Her innate design intuition and adept problem-
-solving skills enable her to grasp a client’s aspirations and engage them in a collaborative
-creative journey.`,
-                        `Pegah holds a Bachelor of Architecture from the University of Mazandaran, complemented
-by Master of Architecture degrees from both the University of Tehran and the University of
-California, Los Angeles.`
+                        of experience in architecture and interior design to her role. Her expertise spans diverse
+                        projects in hospitality, workplace, and residential environments around the world. Committed
+                        to crafting immersive design experiences that authentically capture the essence of a location,
+                        Pegah strives to create standout projects aligned with the unique brand, market, and business
+                        aspirations of each property.`,
+                                                `Pegah effortlessly moves between different aspects of architecture, from big-picture planning
+                        to detailed furniture design. Her keen design sense and problem-solving skills make it easy for
+                        her to understand what clients want and involve them in the creative process.`,
+                                                `Driven by a passion for learning about diverse cultures and technologies, Pegah actively
+                        incorporates these elements into her designs. Her innate design intuition and adept problem-
+                        solving skills enable her to grasp a client’s aspirations and engage them in a collaborative
+                        creative journey.`,
+                                                `Pegah holds a Bachelor of Architecture from the University of Mazandaran, complemented
+                        by Master of Architecture degrees from both the University of Tehran and the University of
+                        California, Los Angeles.`
                     ]}
                     education={[
                         {degree: "Masters of Architecture II", institution: "University of California"},

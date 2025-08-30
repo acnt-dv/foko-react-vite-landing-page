@@ -6,7 +6,7 @@ const ProfileCard = ({ name, title, education, description, profileImg }) => {
         <div className="flex bg-foko min-h-full lg:w-full mt-[5.92vh] lg:mt-[18.52vh] justify-end">
             <div className="flex flex-col lg:flex-row w-full">
                 <span className="grid w-full lg:flex justify-end">
-                    <div className="ml-[7.69vw] mr-[7.69vw] h-auto lg:w-[27.08vw] lg:h-[63.89vh] flex flex-col items-center justify-end mx-0 lg:ml-[15.63vw] lg:mr-[2.60vw]">
+                    <div className="ml-[7.69vw] mr-[7.69vw] h-auto lg:w-[27.08vw] lg:min-h-[63.89vh] flex flex-col items-center justify-end mx-0 lg:ml-[15.63vw] lg:mr-[2.60vw]">
                         {/* Profile Image */}
                         <img
                             src={profileImg || profileImage}
