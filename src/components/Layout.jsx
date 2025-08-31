@@ -7,7 +7,6 @@ import FullPageMenu from "./FullPageMenu";
 import BackToTop from "./BackToTop";
 
 export const Layout = () => {
-    const [loggedIn, setLoggedIn] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [hideLogo, setHideLogo] = useState(false);
 
@@ -24,20 +23,11 @@ export const Layout = () => {
 
     return (
         <div className="flex flex-col h-full items-center justify-center bg-foko">
-            {loggedIn ?
-                <>
-                    <Header menuToggle={toggleMenu} hideLogo={hideLogo}/>
-                    <FullPageMenu isOpen={menuOpen} onClose={toggleMenu}/>
-                    <Outlet />
-                    <BackToTop />
-                    {/* <Footer /> */}
-                </>
-                :
-                <>
-                    <Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
-                    {/* <Footer/> */}
-                </>
-            }
+            <Header menuToggle={toggleMenu} hideLogo={hideLogo}/>
+            <FullPageMenu isOpen={menuOpen} onClose={toggleMenu}/>
+            <Outlet/>
+            <BackToTop/>
+            {/* <Footer /> */}
         </div>
     )
 }
