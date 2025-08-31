@@ -18,7 +18,7 @@ const ProfileCard = ({ name, title, education, description, profileImg }) => {
                     <div className="flex flex-col justify-between mt-[5.92vh] lg:mt-0">
                         <div>
                             {/* Name and Title */}
-                            <h1 className="font-rubik text-[clamp(16px,1.8vw,30px)] text-left font-bold lg:w-[41.67vw] ml-[7.69vw] lg:ml-0">
+                            <h1 className="font-rubik text-[clamp(16px,1.8vw,30px)] text-left font-medium lg:w-[41.67vw] ml-[7.69vw] lg:ml-0">
                                 {name}
                             </h1>
                             <h2 className="font-rubik text-[clamp(16px,1.4vw,30px)] text-left font-light uppercase lg:w-[41.67vw] ml-[7.69vw] lg:ml-0 mt-[1.85vh] mb-[4.63vh]">
