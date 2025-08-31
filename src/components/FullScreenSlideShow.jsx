@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion , AnimatePresence } from "framer-motion"; // Optional for smooth transition
-import image from "../statics/png/main-title.png";
+import { getSlideShowImages } from "../assets/mockData.js"; // adjust path if needed
+import fallbackImage from "../statics/png/main-title.png";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
 
-const images = [
-    image,
-    image,
-    image,
-];
+const slideShowImages = getSlideShowImages();
+const images = slideShowImages.length > 0
+    ? slideShowImages
+    : [fallbackImage, fallbackImage, fallbackImage];
 
 const FullScreenSlideshow = () => {
     const [index, setIndex] = useState(0);

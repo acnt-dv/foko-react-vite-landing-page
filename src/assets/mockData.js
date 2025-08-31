@@ -20,6 +20,19 @@ export const getImagesForProject = (slug) => {
         .map(([, url]) => url);
 };
 
+const allSlideShowImages = import.meta.glob(
+    "/src/assets/projects/slide_show/**/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG,WEBP,SVG}",
+    { eager: true, import: "default", query: "?url" }
+);
+
+export const getSlideShowImages = () => {
+    return Object.entries(allSlideShowImages)
+        .sort(([a], [b]) =>
+            a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
+        )
+        .map(([, url]) => url);
+};
+
 export const projects = [
     {
         title: "BEL AIR RESIDENCE",
