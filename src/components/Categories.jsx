@@ -1,23 +1,6 @@
 import React, { useState } from "react";
-// import image01 from "../statics/png/projects/pr01.png";
-// import image02 from "../statics/png/projects/pr02.png";
-// import image03 from "../statics/png/projects/pr03.png";
-// import image04 from "../statics/png/projects/pr04.png";
-// import image05 from "../statics/png/projects/pr05.png";
-// import image06 from "../statics/png/projects/pr06.png";
-// import image07 from "../statics/png/projects/pr07.png";
 import { useNavigate } from "react-router-dom";
 import {projects} from "../assets/mockData.js";
-
-// const images = [
-//     { src: image01, category: "RESIDENTIAL" },
-//     { src: image02, category: "RESIDENTIAL" },
-//     { src: image03, category: "RESIDENTIAL" },
-//     { src: image04, category: "COMMERCIAL" },
-//     { src: image05, category: "COMMERCIAL" },
-//     { src: image06, category: "COMMERCIAL" },
-//     { src: image07, category: "COMMERCIAL" },
-// ];
 
 const Categories = () => {
     const navigate = useNavigate();

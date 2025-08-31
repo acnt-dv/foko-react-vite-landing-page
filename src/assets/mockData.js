@@ -61,7 +61,7 @@ export const projects = [
         description:
             "For this 82,000 square-foot project in Beverly Hills, Paradigm Talent Agency challenged the design team to create a space which would foster collaboration, chance encounters and unity across three floors. This project was a full tenant improvement venture within an existing core and shell, and a redesign of the existing courtyard. The build-out consisted of advanced design elements and challenges.",
         credits: "Photos by Eric Laignel. Work completed while at Rottet Studio.",
-        images: getImagesForProject("Paradigm-Talent-Agency"),
+        images: getImagesForProject("Paradigm_Talent_Agency"),
     },
     {
         title: "HOLLYWOOD RESIDENCE",
@@ -75,7 +75,7 @@ export const projects = [
         description:
             "Located on a peninsula in the Hollywood Hills with almost 360 degree views of Los Angeles, this 4 bedroom home is designed as entirely new construction for an owner to occupy. The most public interior spaces are located on the second level where the best views are experienced. The landscape berms up at the front to conceal the more private ground level.",
         credits: "Work completed while at BA Collective.",
-        images: getImagesForProject("Hills_Residence"),
+        images: getImagesForProject("Hillside_Residence"),
     },
     {
         title: "ROYAL CREST RESIDENCE",
