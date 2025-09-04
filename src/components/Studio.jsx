@@ -10,7 +10,7 @@ const AboutUs = () => {
                 <div className="flex flex-col-reverse lg:flex-row justify-end">
 
                     {/* ABOUT US */}
-                    <div className="flex flex-col mt-[5.92vh] lg:mt-0 lg:w-[49.48vw] h-[60.19vh] lg:justify-between">
+                    <div className="flex flex-col mt-[5.92vh] lg:mt-0 lg:w-[49.48vw] lg:h-[60.19vh] lg:justify-between">
                         <div className='flex w-full justify-end'>
                             <div className='w-fit ml-[7.69vw] mr-[7.69vw] lg:ml-0 lg:mr-[2.6vw]'>
                                 <h1 className="font-rubik text-right text-[clamp(10px,1.4vw,30px)]">
