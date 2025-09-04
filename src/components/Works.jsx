@@ -53,22 +53,22 @@ export const Works = () => {
 
             <div className="flex w-full mt-[16.23vh] lg:mt-[18.52vh] items-start justify-center text-black">
                 <div className="flex-col w-full space-y-16 items-center justify-end text-black">
-                    <span className='flex w-full justify-end items-baseline mb-[18.52vh]'>
-                        <span className='flex w-fit justify-end mr-[7.69vw] lg:mr-[2.60vw]'>
+                    <div className='flex w-full justify-between items-baseline mb-[18.52vh]'>
+                        <div className='flex w-fit justify-end mx-[7.69vw] lg:mr-[2.60vw]'>
                             <p className='font-rubik font-black lg:font-normal text-[clamp(10px,1.6vw,30px)] text-end align-text-top break-words'>
                                 {/*BEL AIR <br /> RESIDENTIAL*/}
                                 {project?.title}
                             </p>
-                        </span>
-                        <span className='flex w-[52.23vw] xl:w-[58.33vw] mr-[7.69vw] lg:mr-[20.83vw]'>
-                            <p className='relative lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
+                        </div>
+                        <div className='flex mr-[7.69vw] lg:mr-[20.83vw]'>
+                            <p className=' w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
                                 {project?.description}
                             </p>
-                        </span>
-                    </span>
+                        </div>
+                    </div>
 
-                    <span className='flex w-full flex-col-reverse lg:flex-row justify-end mb-[27.78vh]'>
-                        <div className="flex lg:w-fit mt-[75px] mx-[7.69vw] lg:mr-[2.6vw]">
+                    <div className='flex w-full flex-col-reverse lg:flex-row justify-end mb-[27.78vh]'>
+                        <div className="flex mt-[75px] mx-[7.69vw] lg:mr-[2.6vw] lg:ml-auto">
                              <div className="flex flex-row justify-end items-end w-full">
                                 <div
                                     className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
@@ -112,10 +112,10 @@ export const Works = () => {
                             </div>
                         </div>
 
-                        <span className='flex lg:w-[58.33vw] ml-[7.69vw] mr-[7.69vw] lg:ml-0 lg:mr-[20.83vw]'>
+                        <div className='flex lg:w-[58.33vw] ml-[7.69vw] mr-[7.69vw] lg:ml-0 lg:mr-[20.83vw]'>
                             <MiniSlideShow images={project?.images}/>
-                        </span>
-                    </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

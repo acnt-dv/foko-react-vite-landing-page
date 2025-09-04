@@ -1,22 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Optional for smooth transition
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
 import close from "../statics/svg/black-close.svg";
-import plusIcon from "../statics/svg/plus-btn.svg"; // Assuming you have a plus icon
+import plusIcon from "../statics/svg/plus-btn.svg";
 
 const MiniScreenSlideshow = ({ images = [] }) => {
     const [index, setIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [hoverZone, setHoverZone] = useState(null);
+    const [isTouch, setIsTouch] = useState(false);
+    const [isDesktopPointer, setIsDesktopPointer] = useState(true);
+    const containerRef = useRef(null);
 
-    // Auto-slide every 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
         }, 5000);
         return () => clearInterval(interval);
     }, [index, images]);
+
+    useEffect(() => {
+        const touchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        setIsTouch(touchDevice);
+    }, []);
+
+    useEffect(() => {
+        const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
+        const update = () => setIsDesktopPointer(mq.matches);
+        update();
+        mq.addEventListener('change', update);
+        return () => mq.removeEventListener('change', update);
+    }, []);
 
     const nextSlide = () => {
         if (images.length === 0) return;
@@ -38,26 +54,45 @@ const MiniScreenSlideshow = ({ images = [] }) => {
         setSelectedImage(null);
     };
 
+    const handleMouseMove = (e) => {
+      // if (!containerRef.current || !isDesktopPointer) return; // desktop-only behavior
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const third = rect.width / 3;
+      if (x < third) {
+        setHoverZone('left');
+      } else if (x > 2 * third) {
+        setHoverZone('right');
+      } else {
+        setHoverZone(null);
+      }
+    };
+
+    const handleMouseLeave = () => {
+      if (isDesktopPointer) setHoverZone(null);
+    };
+
+    const handleClickToOpen = (e) => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const third = rect.width / 3;
+      if (x >= third && x <= 2 * third) {
+        openModal(images[index]);
+      }
+    };
+
     return (
-        <div className="relative w-full h-auto aspect-[2/1]">
-            {/* Image Transition */}
-            {/* <AnimatePresence mode="wait">
-                <motion.img
-                    key={index}
-                    src={images[index]}
-                    alt="Slideshow"
-                    className="absolute w-full h-full object-cover cursor-pointer"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
-                    onClick={() => openModal(images[index])}
-                />
-            </AnimatePresence> */}
+        <div
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="relative w-full h-auto aspect-[2/1]"
+        >
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
-                    className="absolute w-full h-full"
+                    className="absolute w-full h-full pointer-events-none"
                     initial={{ opacity: .5, backgroundColor: "#000" }}
                     animate={{ opacity: 0 }}
                     exit={{ opacity: .5, backgroundColor: "#000" }}
@@ -72,14 +107,14 @@ const MiniScreenSlideshow = ({ images = [] }) => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.4 }}
-                    onClick={() => openModal(images[index])}
+                    onClick={handleClickToOpen}
                 />
             </AnimatePresence>
 
             {/* Left Arrow */}
             <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
+                className={`absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 transition-opacity duration-200 z-20 ${hoverZone === 'left' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             >
                 <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer" />
             </button>
@@ -87,7 +122,7 @@ const MiniScreenSlideshow = ({ images = [] }) => {
             {/* Right Arrow */}
             <button
                 onClick={nextSlide}
-                className="absolute flex justify-end items-center right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0"
+                className={`absolute flex justify-end items-center right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 transition-opacity duration-200 z-20 ${hoverZone === 'right' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             >
                 <img src={rightArrow} alt="next slide" className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer" />
             </button>
@@ -102,14 +137,6 @@ const MiniScreenSlideshow = ({ images = [] }) => {
                     ></span>
                 ))}
             </div>
-
-            {/* Plus Icon */}
-            {/* <button
-                onClick={() => openModal(images[index])}
-                className="absolute top-8 left-32 p-2 rounded-full shadow-lg"
-            >
-                <img src={plusIcon} alt="open modal" className="w-[20px] h-[20px]" />
-            </button> */}
 
             {/* Fullscreen Modal */}
             {showModal && (
