@@ -1,14 +1,16 @@
 import {useState, useEffect, useRef} from "react";
 import toast, {Toaster} from "react-hot-toast";
 import logo from '../statics/png/foko-logo.png';
+import right from "../statics/svg/arrow-right.svg";
 
 export const Login = ({loggedIn, setLoggedIn}) => {
     const [password, setPassword] = useState("");
     const inputRef = useRef(null);
+    const containerRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (e) => {
-            if (inputRef.current && !inputRef.current.contains(e.target)) {
+            if (containerRef.current && !containerRef.current.contains(e.target)) {
                 setPassword("");
             }
         };
@@ -25,7 +27,7 @@ export const Login = ({loggedIn, setLoggedIn}) => {
                     <img src={logo} alt={'logo'} className="justify-self-center"/>
                 </div>
                 <div className="flex mt-[3.55vh] lg:mt-[12.04vh]">
-                    <div className="relative w-[25.64vw] lg:w-[6.77vw]">
+                    <div className="relative w-[25.64vw] lg:w-[6.77vw]" ref={containerRef}>
                         <input
                             ref={inputRef}
                             type="password"
@@ -53,9 +55,9 @@ export const Login = ({loggedIn, setLoggedIn}) => {
                                     toast.error("Invalid credential");
                                 }
                             }}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 text-lg font-bold text-gray-500"
+                            className="absolute right-0 top-1/2 -translate-y-1/2 text-lg font-bold text-gray-500 cursor-pointer hover:text-white hover:text-white"
                         >
-                            →
+                            <img src={right} alt="Right Image" className='w-[0.42vw] h-[1.48vh]' />
                         </button>
                     </div>
                 </div>
