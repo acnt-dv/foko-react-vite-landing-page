@@ -10,11 +10,11 @@ const ContactUs = () => {
             <span className="w-fit justify-end hidden lg:block">
                 <h1 className="text-30 font-rubik text-end hidden lg:block ml-[4.69vw] mr-[4.69vw] mt-[-5px]">Contact <br/> Us</h1>
             </span>
-            <span className="flex w-fit">
+            <span className="flex w-full">
                 <div className='flex w-full text-justify items-start'>
                     <h1 className="ml-[7.69vw] mr-[7.69vw] text-16 font-rubik text-end block lg:hidden">Contact <br/> Us</h1>
-                    <div className="col">
-                        <p className="mr-[7.69vw] lg:mr-[53.91vw] lg:self-center text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.03em]">
+                    <div className="flex w-full flex-col items-end lg:items-start text-right lg:text-left">
+                        <p className="w-[59.23vw] lg:w-[30.05vw] mr-[7.69vw] lg:mr-[53.0vw] lg:self-center text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.03em]">
                             Whether you're looking to start a new project, have questions about our services, or just want to say hello, our team is here to assist. Please reach out to us directly using the information below, and we’ll get back to you as soon as possible.
                         </p>
                         <span className="hidden lg:block">
@@ -26,7 +26,7 @@ const ContactUs = () => {
                             <p className="text-10 lg:text-16">718-984-8018</p>
                         </span>
 
-                         <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[60.28vw] md:mr-[70.28vw] mt-[5.92vh] mb-[9.47vh]" onClick={() => { navigate('/contactUs') }}>
+                         <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[60.28vw] md:mr-[56.28vw] mt-[5.92vh] mb-[9.47vh]" onClick={() => { navigate('/contactUs') }}>
                             MORE &nbsp; &nbsp; &nbsp;
                              <img src={rightSmall} alt="Right Image" className='w-[1.03vw] h-[1.07vh] -mt-[15px] ml-[4.03vw]' />
                         </h2>
