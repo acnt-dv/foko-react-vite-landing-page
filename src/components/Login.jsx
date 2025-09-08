@@ -45,7 +45,7 @@ export const Login = ({loggedIn, setLoggedIn}) => {
                                     }
                                 }
                             }}
-                            className="w-full text-[clamp(16px,1.60vw,16px)] lg:text-[clamp(10px,1.04vw,20px)] leading-none block font-rubik cursor-pointer bg-transparent pr-0 focus:outline-none focus:ring-0"
+                            className="w-[90%] text-[clamp(16px,1.60vw,16px)] lg:text-[clamp(10px,1.04vw,20px)] leading-none block font-rubik cursor-pointer bg-transparent pr-0 focus:outline-none focus:ring-0"
                         />
                         <button
                             onClick={() => {
@@ -58,7 +58,7 @@ export const Login = ({loggedIn, setLoggedIn}) => {
                             }}
                             className="absolute right-0 top-1/2 -translate-y-1/2 text-lg font-bold text-gray-500 cursor-pointer"
                         >
-                            <img src={right} alt="Right Image" className='w-[1vw] lg:w-[0.42vw] lg:h-[1.48vh]'/>
+                            <img src={right} alt="Right Image" className='w-[1.5vw] lg:w-[0.42vw] lg:h-[1.48vh]'/>
                         </button>
                     </div>
                 </div>
