@@ -11,7 +11,8 @@ export const Login = ({loggedIn, setLoggedIn}) => {
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (containerRef.current && !containerRef.current.contains(e.target)) {
-                setPassword("");
+                // disabled, in cause of hard clicking situation...
+                // setPassword("");
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
