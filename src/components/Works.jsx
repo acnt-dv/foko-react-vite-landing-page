@@ -1,13 +1,20 @@
 import image from '../statics/png/main-title.png';
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import MiniSlideShow from "./MiniSlideShow";
 import FadingTextBoxWithMask from "./FadingTextBoxWithMask";
 import {useLocation} from "react-router-dom";
+import getProjects from "../services/getProjects.jsx";
 
 export const Works = () => {
     // const [maxTranslate, setMaxTranslate] = useState(0);
     const [translateY, setTranslateY] = useState(0);
     const miniSlideRef = useRef(null);
+
+    const getData = useCallback(async () => {
+        const data = await getProjects();
+        console.log(data);
+    });
+    getData();
 
 //     const textLines =
 //         `This 11 bedroom private home sits on a Hillside site in Bel Air with expansive views of Los Angeles. The contemporary style of the home incorporates subtle nods to the client’s Japanese roots through the use of natural materials that blurred the line between landscape and architecture. This projectwas unbuilt due to economic strains from the pandemic.
