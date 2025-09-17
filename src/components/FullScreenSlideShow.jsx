@@ -1,33 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { motion , AnimatePresence } from "framer-motion"; // Optional for smooth transition
-import { getSlideShowImages } from "../assets/mockData.js"; // adjust path if needed
 import fallbackImage from "../statics/png/main-title.png";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
-
-const slideShowImages = getSlideShowImages();
-const images = slideShowImages.length > 0
-    ? slideShowImages
-    : [fallbackImage, fallbackImage, fallbackImage];
+import getSlides from "../services/getSlides.jsx";
 
 const FullScreenSlideshow = () => {
     const [index, setIndex] = useState(0);
     const [hoverZone, setHoverZone] = useState(null);
+    const [slides, setSlides] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Auto-slide every 5 seconds
     useEffect(() => {
+        let isMounted = true;
+        (async () => {
+            try {
+                const data = await getSlides();
+                if (isMounted) {
+                    setSlides(Array.isArray(data) ? data : []);
+                    setIndex(0);
+                }
+            } catch (e) {
+                if (isMounted) setError(e);
+            } finally {
+                if (isMounted) setIsLoading(false);
+            }
+        })();
+        return () => { isMounted = false; };
+    }, []);
+
+    // Auto-slide every 5 seconds (only when we have slides)
+    useEffect(() => {
+        if (!slides.length) return;
         const interval = setInterval(() => {
-            nextSlide();
+            setIndex((prev) => (prev + 1) % slides.length);
         }, 5000);
         return () => clearInterval(interval);
-    }, [index]);
+    }, [slides.length]);
 
     const nextSlide = () => {
-        setIndex((prev) => (prev + 1) % images.length);
+        if (!slides.length) return;
+        setIndex((prev) => (prev + 1) % slides.length);
     };
 
     const prevSlide = () => {
-        setIndex((prev) => (prev - 1 + images.length) % images.length);
+        if (!slides.length) return;
+        setIndex((prev) => (prev - 1 + slides.length) % slides.length);
     };
 
     const handleMouseMove = (e) => {
@@ -48,8 +67,8 @@ const FullScreenSlideshow = () => {
             <AnimatePresence mode="wait">
                 <motion.img
                     key={index}
-                    src={images[index]}
-                    alt="Slideshow"
+                    src={slides[index]?.image || fallbackImage}
+                    alt={`Slideshow image ${slides.length ? index + 1 : 1}`}
                     className="absolute w-full h-full object-cover"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
