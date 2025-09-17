@@ -4,7 +4,7 @@ import axios from 'axios';
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 if (!BASE_URL) {
     // Helpful error to catch misconfigured env (falls back to current origin = localhost)
-    console.error('Missing VITE_BASE_URL. Define it in your .env (e.g., VITE_BASE_URL="http://103.75.198.210:8080/api/") and restart Vite.');
+    console.error('Missing VITE_BASE_URL. Define it in your .env (e.g., VITE_BASE_URL="http://address/api/") and restart Vite.');
 }
 
 // Create an Axios instance with the base URL from config
@@ -14,7 +14,7 @@ const apiClient = axios.create({
     headers: { 'Content-Type': 'application/json' }
 });
 
-export default async () => {
+const getProjects = async () => {
     try {
         const response = await apiClient.get('projects');
         console.log(response?.data);
@@ -23,3 +23,5 @@ export default async () => {
         console.error('API Error:', error.message);
     }
 }
+
+export default getProjects;
