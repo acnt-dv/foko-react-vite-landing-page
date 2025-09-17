@@ -4,17 +4,12 @@ import MiniSlideShow from "./MiniSlideShow";
 import FadingTextBoxWithMask from "./FadingTextBoxWithMask";
 import {useLocation} from "react-router-dom";
 import getProjects from "../services/getProjects.jsx";
+import getProjectsData from "../services/getProjectsData.jsx";
 
 export const Works = () => {
     // const [maxTranslate, setMaxTranslate] = useState(0);
     const [translateY, setTranslateY] = useState(0);
     const miniSlideRef = useRef(null);
-
-    const getData = useCallback(async () => {
-        const data = await getProjects();
-        console.log(data);
-    });
-    getData();
 
 //     const textLines =
 //         `This 11 bedroom private home sits on a Hillside site in Bel Air with expansive views of Los Angeles. The contemporary style of the home incorporates subtle nods to the client’s Japanese roots through the use of natural materials that blurred the line between landscape and architecture. This projectwas unbuilt due to economic strains from the pandemic.
@@ -22,6 +17,23 @@ export const Works = () => {
 
     const location = useLocation();
     const {project} = location.state || {};
+
+    const [projectData, setProjectData] = useState({});
+
+    useEffect(() => {
+        if(!project) return {};
+
+        const fetchProjectData = async () => {
+            try {
+                const data = await getProjectsData(project?.id);
+                setProjectData(Array.isArray(data) ? data : []);
+            } catch (e) {
+                console.error('Failed to load projects', e);
+                setProjectData({});
+            }
+        };
+        fetchProjectData();
+    }, []);
 
     useEffect(() => {
             let maxTranslate = 0;
@@ -54,6 +66,11 @@ export const Works = () => {
         }, []
     );
 
+    if (!project) {
+        // اگر کاربر مستقیم صفحه رو باز کنه یا رفرش کنه، state از بین میره
+        return <div>پروژه پیدا نشد. لطفاً از لیست وارد شوید.</div>;
+    }
+
     return (
         <div className="flex flex-col w-full justify-center items-center bg-foko">
             <div className="w-full h-[61vh] bg-cover bg-center bg-gray-400" style={{backgroundImage: `url(${project?.images?.[0] ?? image})`}}/>
@@ -80,38 +97,38 @@ export const Works = () => {
                                 <div
                                     className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
 
-                                    {project?.program &&
+                                    {project?.project_data?.program &&
                                         <>
                                             <span className="font-bold">PROGRAM</span>
-                                            <span className="text-right">{project?.program}</span>
+                                            <span className="text-right">{project?.project_data?.program}</span>
                                         </>
                                     }
 
-                                    {project?.location &&
+                                    {project?.project_data?.location &&
                                         <>
                                             <span className="font-bold">LOCATION</span>
-                                            <span className="text-right">{project?.location}</span>
+                                            <span className="text-right">{project?.project_data?.location}</span>
                                         </>
                                     }
 
-                                    {project?.size &&
+                                    {project?.project_data?.size &&
                                         <>
                                             <span className="font-bold">SIZE</span>
-                                            <span className="text-right">{project?.size}</span>
+                                            <span className="text-right">{project?.project_data?.size}</span>
                                         </>
                                     }
 
-                                    {project?.type &&
+                                    {project?.project_data?.type &&
                                         <>
                                             <span className="font-bold">TYPE</span>
-                                            <span className="text-right">{project?.type}</span>
+                                            <span className="text-right">{project?.project_data?.type}</span>
                                         </>
                                     }
 
-                                    {project?.status &&
+                                    {project?.project_data?.status &&
                                         <>
                                             <span className="font-bold">STATUS</span>
-                                            <span className="text-right">{project?.status}</span>
+                                            <span className="text-right">{project?.project_data?.status}</span>
                                         </>
                                     }
 
@@ -120,7 +137,7 @@ export const Works = () => {
                         </div>
 
                         <div className='flex lg:w-[58.33vw] ml-[7.69vw] mr-[7.69vw] lg:ml-0 lg:mr-[20.83vw]'>
-                            <MiniSlideShow images={project?.images}/>
+                            <MiniSlideShow images={project?.galleries}/>
                         </div>
                     </div>
                 </div>

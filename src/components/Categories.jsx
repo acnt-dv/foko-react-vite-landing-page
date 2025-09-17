@@ -1,12 +1,28 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import {projects} from "../assets/mockData.js";
+import getProjects from "../services/getProjects.jsx";
 
-const Categories = () => {
+const Categories = ({ onProjectsLoaded }) => {
     const navigate = useNavigate();
     const [active, setActive] = useState("ALL");
+    const [projects, setProjects] = useState([]);
 
-    const projectsItems = projects;
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const data = await getProjects();
+                setProjects(Array.isArray(data) ? data : []);
+                if (typeof onProjectsLoaded === 'function') {
+                    onProjectsLoaded(Array.isArray(data) ? data : []);
+                }
+            } catch (e) {
+                console.error('Failed to load projects', e);
+                setProjects([]);
+            }
+        };
+        fetchProjects();
+    }, [onProjectsLoaded]);
+
 
     return (
         <div className="flex w-full h-screen items-center justify-end gap-0  text-black">
@@ -48,23 +64,23 @@ const Categories = () => {
             {/* Image Grid */}
             <div className="flex flex-col w-fit h-[48.82vh] lg:h-[62.96vh] justify-center items-end mr-[7.69vw] lg:mr-[15.63vw]">
                 <div className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(22.92vw,1fr))] gap-0 w-full md:max-w-[40rem] 2xl:max-w-[85rem] overflow-auto scrollbar-hide">
-                    {projectsItems.map((project, index) => {
+                    {projects.map((project) => {
                         // Apply grayscale based on active filter
                         const isActive = active === "ALL" || active === project.category;
                         return (
                             <div
                                 onClick={() => navigate('/works', { state: { project } })}
-                                key={index}
+                                key={project.id}
                                 className={`h-[16.23vh] lg:h-[21.02vh] bg-gray-900 flex items-end justify-center text-white 
                                     bg-cover bg-center transition-all duration-500 cursor-pointer ${isActive ? "grayscale-0" : "grayscale"
                                     }`}
-                                style={{ backgroundImage: `url(${project?.images?.[0]})` }}
+                                style={{ backgroundImage: `url(${project?.image})` }}
 
                             >
                                 {isActive &&
                                     <div className="flex w-full h-[25px] justify-end items-center bg-foko text-10 lg:text-16 text-black opacity-75">
                                         <p className="text-right mt-1 mr-2">
-                                            {project.title}
+                                            {project?.title}
                                         </p>
                                     </div>
                                 }
