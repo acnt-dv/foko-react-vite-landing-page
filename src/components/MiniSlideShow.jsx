@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
 import close from "../statics/svg/black-close.svg";
 import plusIcon from "../statics/svg/plus-btn.svg";
 
-const MiniScreenSlideshow = ({ images = [] }) => {
+const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
     const [index, setIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
@@ -14,12 +14,27 @@ const MiniScreenSlideshow = ({ images = [] }) => {
     const [isDesktopPointer, setIsDesktopPointer] = useState(true);
     const containerRef = useRef(null);
 
+    // Build a single list of image URLs from either `images` (array of strings)
+    // or `galleries` (array of objects with an `image` URL field)
+    const imageList = useMemo(() => {
+      const fromImages = Array.isArray(images)
+        ? images.filter(Boolean).map((v) => (typeof v === 'string' ? v : (v && v.image) || null)).filter(Boolean)
+        : [];
+      const fromGalleries = Array.isArray(galleries)
+        ? galleries.filter(Boolean).map((g) => (g && typeof g.image === 'string' ? g.image : null)).filter(Boolean)
+        : [];
+      const merged = [...fromImages, ...fromGalleries];
+      // de-duplicate while preserving order
+      return Array.from(new Set(merged));
+    }, [images, galleries]);
+
     useEffect(() => {
+        if (!imageList.length) return;
         const interval = setInterval(() => {
             nextSlide();
         }, 5000);
         return () => clearInterval(interval);
-    }, [index, images]);
+    }, [index, imageList.length]);
 
     useEffect(() => {
         const touchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -35,18 +50,19 @@ const MiniScreenSlideshow = ({ images = [] }) => {
     }, []);
 
     const nextSlide = () => {
-        if (images.length === 0) return;
-        setIndex((prev) => (prev + 1) % images.length);
+        if (imageList.length === 0) return;
+        setIndex((prev) => (prev + 1) % imageList.length);
     };
 
     const prevSlide = () => {
-        if (images.length === 0) return;
-        setIndex((prev) => (prev - 1 + images.length) % images.length);
+        if (imageList.length === 0) return;
+        setIndex((prev) => (prev - 1 + imageList.length) % imageList.length);
     };
 
     const openModal = (image) => {
-        setSelectedImage(image);
-        setShowModal(true);
+      if (!image) return;
+      setSelectedImage(image);
+      setShowModal(true);
     };
 
     const closeModal = () => {
@@ -78,7 +94,7 @@ const MiniScreenSlideshow = ({ images = [] }) => {
       const x = e.clientX - rect.left;
       const third = rect.width / 3;
       if (x >= third && x <= 2 * third) {
-        openModal(images[index]);
+        openModal(imageList[index]);
       }
     };
 
@@ -89,6 +105,11 @@ const MiniScreenSlideshow = ({ images = [] }) => {
             onMouseLeave={handleMouseLeave}
             className="relative w-full h-auto aspect-[2/1]"
         >
+            {!imageList.length && (
+              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+                No images to display
+              </div>
+            )}
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
@@ -100,7 +121,7 @@ const MiniScreenSlideshow = ({ images = [] }) => {
                 />
                 <motion.img
                     key={`img-${index}`}
-                    src={images[index]}
+                    src={imageList[index]}
                     alt="Slideshow"
                     className="absolute w-full h-full object-cover cursor-pointer"
                     initial={{ opacity: 0 }}
@@ -129,7 +150,7 @@ const MiniScreenSlideshow = ({ images = [] }) => {
 
             {/* Dots Navigation */}
             <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {images.map((_, i) => (
+                {imageList.map((_, i) => (
                     <span
                         key={i}
                         onClick={() => setIndex(i)}
