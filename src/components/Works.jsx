@@ -1,9 +1,8 @@
 import image from '../statics/png/main-title.png';
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState, useMemo} from "react";
 import MiniSlideShow from "./MiniSlideShow";
 import FadingTextBoxWithMask from "./FadingTextBoxWithMask";
 import {useLocation} from "react-router-dom";
-import getProjects from "../services/getProjects.jsx";
 import getProjectsData from "../services/getProjectsData.jsx";
 
 export const Works = () => {
@@ -26,7 +25,7 @@ export const Works = () => {
         const fetchProjectData = async () => {
             try {
                 const data = await getProjectsData(project?.id);
-                setProjectData(Array.isArray(data) ? data : []);
+                setProjectData(Array.isArray(data) ? data[0] : []);
             } catch (e) {
                 console.error('Failed to load projects', e);
                 setProjectData({});
@@ -66,6 +65,25 @@ export const Works = () => {
         }, []
     );
 
+    // Normalize project_data to an array of { key, value }
+    const details = useMemo(() => {
+        const pd = project?.project_data;
+        if (Array.isArray(pd)) {
+            // Expecting [{ id, project_id, key, value, ... }]
+            return pd
+                .filter(Boolean)
+                .filter((item) => typeof item?.key === 'string' && item?.value != null)
+                .map((item) => ({ key: item.key, value: item.value }));
+        }
+        if (pd && typeof pd === 'object') {
+            // Fallback for legacy shape: { program: '...', location: '...', ... }
+            return Object.entries(pd)
+                .filter(([k, v]) => typeof k === 'string' && v != null)
+                .map(([k, v]) => ({ key: k, value: v }));
+        }
+        return [];
+    }, [project]);
+
     if (!project) {
         // اگر کاربر مستقیم صفحه رو باز کنه یا رفرش کنه، state از بین میره
         return <div>پروژه پیدا نشد. لطفاً از لیست وارد شوید.</div>;
@@ -97,40 +115,12 @@ export const Works = () => {
                                 <div
                                     className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
 
-                                    {project?.project_data?.program &&
-                                        <>
-                                            <span className="font-bold">PROGRAM</span>
-                                            <span className="text-right">{project?.project_data?.program}</span>
-                                        </>
-                                    }
-
-                                    {project?.project_data?.location &&
-                                        <>
-                                            <span className="font-bold">LOCATION</span>
-                                            <span className="text-right">{project?.project_data?.location}</span>
-                                        </>
-                                    }
-
-                                    {project?.project_data?.size &&
-                                        <>
-                                            <span className="font-bold">SIZE</span>
-                                            <span className="text-right">{project?.project_data?.size}</span>
-                                        </>
-                                    }
-
-                                    {project?.project_data?.type &&
-                                        <>
-                                            <span className="font-bold">TYPE</span>
-                                            <span className="text-right">{project?.project_data?.type}</span>
-                                        </>
-                                    }
-
-                                    {project?.project_data?.status &&
-                                        <>
-                                            <span className="font-bold">STATUS</span>
-                                            <span className="text-right">{project?.project_data?.status}</span>
-                                        </>
-                                    }
+                                    {details.map(({ key, value }) => (
+                                        <React.Fragment key={key}>
+                                            <span className="font-bold">{key.toUpperCase()}</span>
+                                            <span className="text-right">{String(value)}</span>
+                                        </React.Fragment>
+                                    ))}
 
                                 </div>
                             </div>
