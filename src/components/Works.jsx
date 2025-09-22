@@ -139,15 +139,16 @@ export const Works = () => {
                             </p>
                         </div>
                         <div className='flex mr-[7.69vw] lg:mr-[20.83vw]'>
-                            <p className='w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
-                                {project?.description}
+                            <div className='w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
+                                <p>
+                                    {project?.description}
+                                </p>
                                 <p className='mt-[50px] italic'>
                                     {project?.extraDescription}
                                 </p>
-                            </p>
-                            <p className=' w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
-
-                            </p>
+                            </div>
+                            <div className=' w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
+                            </div>
                         </div>
                     </div>
 
