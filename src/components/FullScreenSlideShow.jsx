@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { motion , AnimatePresence } from "framer-motion"; // Optional for smooth transition
-import fallbackImage from "../statics/png/main-title.png";
+import React, {useEffect, useState} from "react";
+import {AnimatePresence, motion} from "framer-motion"; // Optional for smooth transition
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
 import getSlides from "../services/getSlides.jsx";
+import toast, {Toaster} from "react-hot-toast";
 
 const FullScreenSlideshow = () => {
     const [index, setIndex] = useState(0);
     const [hoverZone, setHoverZone] = useState(null);
     const [slides, setSlides] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [, setError] = useState(null);
 
     useEffect(() => {
         let isMounted = true;
@@ -23,11 +23,14 @@ const FullScreenSlideshow = () => {
                 }
             } catch (e) {
                 if (isMounted) setError(e);
+                toast.error('Failed to load slides!');
             } finally {
                 if (isMounted) setIsLoading(false);
             }
         })();
-        return () => { isMounted = false; };
+        return () => {
+            isMounted = false;
+        };
     }, []);
 
     // Auto-slide every 5 seconds (only when we have slides)
@@ -62,38 +65,56 @@ const FullScreenSlideshow = () => {
     };
 
     return (
-        <div className="relative w-full h-[75vh] lg:h-screen overflow-hidden" onMouseMove={handleMouseMove} onMouseLeave={() => setHoverZone(null)}>
-            {/* Image Transition */}
-            <AnimatePresence mode="wait">
-                <motion.img
-                    key={index}
-                    src={slides[index]?.image || fallbackImage}
-                    alt={`Slideshow image ${slides.length ? index + 1 : 1}`}
-                    className="absolute w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
-                />
-            </AnimatePresence>
+        <>
+            <Toaster/>
+            {isLoading && (
+                <div className="fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center">
+                    <motion.span
+                        initial={{opacity: 0.3}}
+                        animate={{opacity: [0.3, 1, 0.3]}}
+                        transition={{duration: 1.6, repeat: Infinity}}
+                        className="text-white text-3xl md:text-5xl font-semibold tracking-[0.5em]"
+                    >
+                        FOKO
+                    </motion.span>
+                </div>
+            )}
+            <div className="relative w-full h-[75vh] lg:h-screen overflow-hidden" onMouseMove={handleMouseMove}
+                 onMouseLeave={() => setHoverZone(null)}>
+                {/* Image Transition */}
+                {slides && slides.length > 0 &&
+                    <AnimatePresence mode="wait">
+                        <motion.img
+                            key={index}
+                            src={slides[index]?.image}
+                            alt={`Slideshow image ${slides.length ? index + 1 : 1}`}
+                            className="absolute w-full h-full object-cover"
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            exit={{opacity: 0}}
+                            transition={{duration: 1}}
+                        />
+                    </AnimatePresence>
+                }
 
-            {/* Left Arrow */}
-            <button
-                onClick={prevSlide}
-                className={`absolute left-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 ${hoverZone === "left" ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
-            >
-                <img src={leftArrow} alt={'previous slide'} className="m-foko-sm lg:m-foko cursor-pointer"/>
-            </button>
+                {/* Left Arrow */}
+                <button
+                    onClick={prevSlide}
+                    className={`absolute left-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 ${hoverZone === "left" ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
+                >
+                    <img src={leftArrow} alt={'previous slide'} className="m-foko-sm lg:m-foko cursor-pointer"/>
+                </button>
 
-            {/* Right Arrow */}
-            <button
-                onClick={nextSlide}
-                className={`absolute flex justify-end items-center right-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 ${hoverZone === "right" ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
-            >
-                <img src={rightArrow} alt={'next slide'} className="m-foko-sm lg:m-foko cursor-pointer"/>
-            </button>
+                {/* Right Arrow */}
+                <button
+                    onClick={nextSlide}
+                    className={`absolute flex justify-end items-center right-0 top-1/2 w-1/4 h-screen transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 ${hoverZone === "right" ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
+                >
+                    <img src={rightArrow} alt={'next slide'} className="m-foko-sm lg:m-foko cursor-pointer"/>
+                </button>
 
-        </div>
+            </div>
+        </>
     );
 };
 
