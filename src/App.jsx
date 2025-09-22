@@ -9,6 +9,8 @@ import Categories from "./components/Categories";
 import Contact from "./components/ContactUsPage";
 import Login from "./components/Login";
 import {AnimatePresence} from "framer-motion";
+import getProjects from "./services/getProjects.jsx";
+import {ProjectsContext} from "./ProjectsContext.jsx";
 
 const AUTH_COOKIE = 'auth_token';
 const getCookie = (name) => {
@@ -58,10 +60,39 @@ function App() {
         setLoggedIn(Boolean(value));
     };
 
+    const [projects, setProjects] = useState([]);
+    const [projectsLoading, setProjectsLoading] = useState(true);
+    const [projectsError, setProjectsError] = useState(null);
+
+    const fetchProjectsOnce = React.useCallback(async () => {
+        setProjectsLoading(true);
+        setProjectsError(null);
+        try {
+            const data = await getProjects();
+            setProjects(Array.isArray(data) ? data : []);
+        } catch (e) {
+            setProjects([]);
+            setProjectsError(e);
+        } finally {
+            setProjectsLoading(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        // Preload projects on app start
+        fetchProjectsOnce().then(r => console.debug(r));
+    }, [fetchProjectsOnce]);
+
     return (
         <Router>
             <div className="App">
                 <AnimatePresence mode="wait">
+                    <ProjectsContext value={{
+                        projects,
+                        isLoading: projectsLoading,
+                        error: projectsError,
+                        refresh: fetchProjectsOnce,
+                    }}>
                     <Routes>
                         {!loggedIn ? (
                             <Route
@@ -79,6 +110,7 @@ function App() {
                             </Route>
                         )}
                     </Routes>
+                    </ProjectsContext>
                 </AnimatePresence>
             </div>
         </Router>

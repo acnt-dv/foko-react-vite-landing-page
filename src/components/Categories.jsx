@@ -1,32 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import getProjects from "../services/getProjects.jsx";
 import LoadingOverlay from "./LoadingOverlay.jsx";
+import {ProjectsContext} from "../ProjectsContext.jsx";
 
-const Categories = ({onProjectsLoaded}) => {
+const Categories = () => {
     const navigate = useNavigate();
     const [active, setActive] = useState("ALL");
-    const [projects, setProjects] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchProjects = async () => {
-            setIsLoading(true);
-            try {
-                const data = await getProjects();
-                setProjects(Array.isArray(data) ? data : []);
-                if (typeof onProjectsLoaded === 'function') {
-                    onProjectsLoaded(Array.isArray(data) ? data : []);
-                }
-            } catch (e) {
-                console.error('Failed to load projects', e);
-                setProjects([]);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchProjects().then(r => console.debug(r));
-    }, [onProjectsLoaded]);
+    const { projects, isLoading } = React.useContext(ProjectsContext);
 
     return (
         <>
