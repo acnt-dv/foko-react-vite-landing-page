@@ -80,7 +80,7 @@ function App() {
 
     useEffect(() => {
         // Preload projects on app start
-        fetchProjectsOnce().then(r => console.debug(r));
+        fetchProjectsOnce().then(r => console.debug(r ?? 'fetchProjectsOnce successfully'));
     }, [fetchProjectsOnce]);
 
     return (
@@ -93,23 +93,23 @@ function App() {
                         error: projectsError,
                         refresh: fetchProjectsOnce,
                     }}>
-                    <Routes>
-                        {!loggedIn ? (
-                            <Route
-                                path="*"
-                                element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedInWithCookie}/>}
-                            />
-                        ) : (
-                            <Route path="/" element={<Layout/>}>
-                                <Route index element={<Home/>}/>
-                                <Route path="/categories" element={<Categories/>}/>
-                                <Route path="/works" element={<Works/>}/>
-                                <Route path="/studio" element={<Studio/>}/>
-                                <Route path="/contactUs" element={<Contact/>}/>
-                                <Route path="*" element={<Navigate to="/" replace/>}/>
-                            </Route>
-                        )}
-                    </Routes>
+                        <Routes>
+                            {!loggedIn ? (
+                                <Route
+                                    path="*"
+                                    element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedInWithCookie}/>}
+                                />
+                            ) : (
+                                <Route path="/" element={<Layout/>}>
+                                    <Route index element={<Home/>}/>
+                                    <Route path="/categories" element={<Categories/>}/>
+                                    <Route path="/works" element={<Works/>}/>
+                                    <Route path="/studio" element={<Studio/>}/>
+                                    <Route path="/contactUs" element={<Contact/>}/>
+                                    <Route path="*" element={<Navigate to="/" replace/>}/>
+                                </Route>
+                            )}
+                        </Routes>
                     </ProjectsContext>
                 </AnimatePresence>
             </div>

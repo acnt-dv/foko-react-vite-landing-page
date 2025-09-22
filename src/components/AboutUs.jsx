@@ -13,10 +13,10 @@ const AboutUs = () => {
     useEffect(() => {
         const fetchAboutUs = async () => {
             const aboutUs = await getAboutUs();
-            setAboutUs(aboutUs?.text? aboutUs.text : ABOUT_US);
+            setAboutUs(aboutUs?.text ? aboutUs.text : ABOUT_US);
         }
-        fetchAboutUs().then(r => console.log(r));
-    },[])
+        fetchAboutUs().then(r => console.debug(r ?? 'fetchAboutUs successfully'));
+    }, [])
 
     return (
         <div
@@ -39,7 +39,7 @@ const AboutUs = () => {
                                 navigate('/contactUs')
                             }}>
                             MORE &nbsp; &nbsp; &nbsp;
-                            <img src={right} alt="Right Image" className='w-[0.42vw] h-[1.48vh]' />
+                            <img src={right} alt="Right Image" className='w-[0.42vw] h-[1.48vh]'/>
                         </h2>
 
                         <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[55.28vw] md:mr-[60.28vw] my-[5.92vh]"

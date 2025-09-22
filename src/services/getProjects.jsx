@@ -17,7 +17,7 @@ const apiClient = axios.create({
 const getProjects = async () => {
     try {
         const response = await apiClient.get('projects');
-        console.log(response?.data);
+        console.debug(response?.data);
         return response?.data;
     } catch (error) {
         console.error('API Error:', error.message);
