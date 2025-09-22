@@ -4,6 +4,7 @@ import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
 import getSlides from "../services/getSlides.jsx";
 import toast, {Toaster} from "react-hot-toast";
+import LoadingOverlay from "./LoadingOverlay.jsx";
 
 const FullScreenSlideshow = () => {
     const [index, setIndex] = useState(0);
@@ -67,18 +68,7 @@ const FullScreenSlideshow = () => {
     return (
         <>
             <Toaster/>
-            {isLoading && (
-                <div className="fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center">
-                    <motion.span
-                        initial={{opacity: 0.3}}
-                        animate={{opacity: [0.3, 1, 0.3]}}
-                        transition={{duration: 1.6, repeat: Infinity}}
-                        className="text-white text-3xl md:text-5xl font-semibold tracking-[0.5em]"
-                    >
-                        FOKO
-                    </motion.span>
-                </div>
-            )}
+            <LoadingOverlay show={isLoading} text="FOKO" />
             <div className="relative w-full h-[75vh] lg:h-screen overflow-hidden" onMouseMove={handleMouseMove}
                  onMouseLeave={() => setHoverZone(null)}>
                 {/* Image Transition */}
