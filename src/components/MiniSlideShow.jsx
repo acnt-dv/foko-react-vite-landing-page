@@ -111,25 +111,25 @@ const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
               </div>
             )}
             <AnimatePresence mode="wait">
-                <motion.div
-                    key={index}
-                    className="absolute w-full h-full pointer-events-none"
-                    initial={{ opacity: .5, backgroundColor: "#000" }}
-                    animate={{ opacity: 0 }}
-                    exit={{ opacity: .5, backgroundColor: "#000" }}
-                    transition={{ duration: 0.5 }}
-                />
-                <motion.img
-                    key={`img-${index}`}
-                    src={imageList[index]}
-                    alt="Slideshow"
-                    className="absolute w-full h-full object-cover cursor-pointer"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                    onClick={handleClickToOpen}
-                />
+                <motion.div key={index} className="absolute w-full h-full">
+                    <motion.div
+                        className="absolute inset-0 pointer-events-none"
+                        initial={{ opacity: 0.5, backgroundColor: "#000" }}
+                        animate={{ opacity: 0 }}
+                        exit={{ opacity: 0.5, backgroundColor: "#000" }}
+                        transition={{ duration: 0.5 }}
+                    />
+                    <motion.img
+                        src={imageList[index]}
+                        alt="Slideshow"
+                        className="absolute w-full h-full object-cover cursor-pointer"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                        onClick={handleClickToOpen}
+                    />
+                </motion.div>
             </AnimatePresence>
 
             {/* Left Arrow */}
