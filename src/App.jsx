@@ -87,7 +87,7 @@ function App() {
             try {
                 setProjects(JSON.parse(cached));
                 setProjectsLoading(false);
-            } catch {console.error('cache failed')};
+            } catch {console.error('cache failed')}
         }
 
         // Always refresh from API and update cache
