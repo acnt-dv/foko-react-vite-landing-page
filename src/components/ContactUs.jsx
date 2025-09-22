@@ -30,7 +30,7 @@ const ContactUs = () => {
                             <p className="text-10 lg:text-16">718-984-8018</p>
                         </span>
 
-                        <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[55.28vw] md:mr-[60.28vw] my-[5.92vh]"
+                        <h2 className="flex justify-start items-center lg:hidden font-rubik text-10 cursor-pointer w-[59.23vw] mr-[7.69vw] my-[5.92vh]"
                             onClick={() => {
                                 navigate('/contactUs')
                             }}>

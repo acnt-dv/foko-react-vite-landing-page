@@ -49,7 +49,7 @@ const Categories = () => {
 
                 {/* Image Grid */}
                 <div
-                    className="flex flex-col w-fit h-[48.82vh] lg:h-[62.96vh] justify-center items-end mr-[7.69vw] lg:mr-[15.63vw]">
+                    className="flex flex-col w-fit h-[48.82vh] lg:h-[62.96vh] justify-end lg:justify-center items-end mr-[7.69vw] lg:mr-[15.63vw]">
                     <div
                         className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(22.92vw,1fr))] gap-0 w-full md:max-w-[40rem] 2xl:max-w-[85rem] overflow-auto scrollbar-hide">
                         {projects.map((project) => {

@@ -17,7 +17,7 @@ const FullPageMenu = ({isOpen, onClose}) => {
             <div className="flex flex-col lg:flex-row w-full items-center justify-end">
                 <span className='flex justify-center lg:justify-end items-center mr-0 lg:mr-[28.44vw]'>
                     <img src={logo} alt={'logo'}
-                         className='w-[25.64vw] h-auto aspect-square lg:w-[6.77vw] lg:h-[12.04vh] filter brightness-0 invert'/>
+                         className='w-[25.64vw] h-auto aspect-square lg:w-[6.77vw] h-auto filter brightness-0 invert'/>
                 </span>
 
                 <nav>

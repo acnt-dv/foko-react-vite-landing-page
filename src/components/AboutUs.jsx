@@ -25,13 +25,13 @@ const AboutUs = () => {
                 <span className="flex justify-center lg:justify-start w-full">
                     <div
                         className="flex w-full flex-col justify-end lg:justify-between items-end lg:items-start text-justify my-0">
-                        <span className="flex">
+                        <div className="flex">
                             <h1 className="flex w-fit lg:hidden text-16 font-rubik text-end">ABOUT <br/> FOKO</h1>
                             <p className="w-[59.23vw] lg:w-[30.05vw] ml-[15.63vw] mr-[7.69vw] lg:mr-[7.81vw] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.015em]">
                                 {/*Welcome to FOKO Studio, an architecture and interior design practice specializing in creating functional, inspiring spaces that reflect your unique vision. From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.*/}
                                 {aboutUs}
                             </p>
-                        </span>
+                        </div>
 
 
                         <h2 className="hidden justify-center items-center lg:flex font-rubik w-fit ml-[15.63vw] lg:text-20 cursor-pointer lg:my-0"
@@ -42,7 +42,7 @@ const AboutUs = () => {
                             <img src={right} alt="Right Image" className='w-[0.42vw] h-[1.48vh]'/>
                         </h2>
 
-                        <h2 className="flex justify-center items-center lg:hidden font-rubik text-10 cursor-pointer mr-[55.28vw] md:mr-[60.28vw] my-[5.92vh]"
+                        <h2 className="flex justify-start items-center lg:hidden font-rubik text-10 cursor-pointer w-[59.23vw] mr-[7.69vw] my-[5.92vh]"
                             onClick={() => {
                                 navigate('/contactUs')
                             }}>
