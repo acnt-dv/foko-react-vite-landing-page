@@ -1,9 +1,9 @@
-import {useState, useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import toast, {Toaster} from "react-hot-toast";
 import logo from '../statics/png/foko-logo.png';
 import right from "../statics/svg/arrow-right.svg";
 
-export const Login = ({loggedIn, setLoggedIn}) => {
+export const Login = ({setLoggedIn}) => {
     const [password, setPassword] = useState("");
     const inputRef = useRef(null);
     const containerRef = useRef(null);
@@ -40,9 +40,10 @@ export const Login = ({loggedIn, setLoggedIn}) => {
                                 if (e.key === "Enter") {
                                     if (password === "HelloFOKO23") {
                                         toast.success("Login Successful!");
-                                        setLoggedIn(true);
+                                        setLoggedIn(true, {hours: 1});
                                     } else {
                                         toast.error("Invalid credential");
+                                        setLoggedIn(false);
                                     }
                                 }
                             }}
