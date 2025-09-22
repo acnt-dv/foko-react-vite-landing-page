@@ -17,9 +17,23 @@ const FullScreenSlideshow = () => {
         let isMounted = true;
         (async () => {
             try {
+                const cached = localStorage.getItem("fullSlidesCache");
+                if (cached) {
+                    try {
+                        const parsed = JSON.parse(cached);
+                        if (Array.isArray(parsed) && parsed.length > 0) {
+                            setSlides(parsed);
+                            setIndex(0);
+                            setIsLoading(false);
+                        }
+                    } catch {}
+                }
                 const data = await getSlides();
                 if (isMounted) {
                     setSlides(Array.isArray(data) ? data : []);
+                    if (Array.isArray(data)) {
+                        localStorage.setItem("fullSlidesCache", JSON.stringify(data));
+                    }
                     setIndex(0);
                 }
             } catch (e) {

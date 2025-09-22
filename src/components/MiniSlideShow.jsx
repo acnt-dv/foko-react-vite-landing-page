@@ -1,31 +1,30 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, {useEffect, useMemo, useRef, useState} from "react";
+import {AnimatePresence, motion} from "framer-motion";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
 import close from "../statics/svg/black-close.svg";
-import plusIcon from "../statics/svg/plus-btn.svg";
 
-const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
+const MiniScreenSlideshow = ({images = [], galleries = []}) => {
     const [index, setIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [hoverZone, setHoverZone] = useState(null);
-    const [isTouch, setIsTouch] = useState(false);
+    const [, setIsTouch] = useState(false);
     const [isDesktopPointer, setIsDesktopPointer] = useState(true);
     const containerRef = useRef(null);
 
     // Build a single list of image URLs from either `images` (array of strings)
     // or `galleries` (array of objects with an `image` URL field)
     const imageList = useMemo(() => {
-      const fromImages = Array.isArray(images)
-        ? images.filter(Boolean).map((v) => (typeof v === 'string' ? v : (v && v.image) || null)).filter(Boolean)
-        : [];
-      const fromGalleries = Array.isArray(galleries)
-        ? galleries.filter(Boolean).map((g) => (g && typeof g.image === 'string' ? g.image : null)).filter(Boolean)
-        : [];
-      const merged = [...fromImages, ...fromGalleries];
-      // de-duplicate while preserving order
-      return Array.from(new Set(merged));
+        const fromImages = Array.isArray(images)
+            ? images.filter(Boolean).map((v) => (typeof v === 'string' ? v : (v && v.image) || null)).filter(Boolean)
+            : [];
+        const fromGalleries = Array.isArray(galleries)
+            ? galleries.filter(Boolean).map((g) => (g && typeof g.image === 'string' ? g.image : null)).filter(Boolean)
+            : [];
+        const merged = [...fromImages, ...fromGalleries];
+        // de-duplicate while preserving order
+        return Array.from(new Set(merged));
     }, [images, galleries]);
 
     useEffect(() => {
@@ -60,9 +59,9 @@ const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
     };
 
     const openModal = (image) => {
-      if (!image) return;
-      setSelectedImage(image);
-      setShowModal(true);
+        if (!image) return;
+        setSelectedImage(image);
+        setShowModal(true);
     };
 
     const closeModal = () => {
@@ -71,31 +70,31 @@ const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
     };
 
     const handleMouseMove = (e) => {
-      // if (!containerRef.current || !isDesktopPointer) return; // desktop-only behavior
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const third = rect.width / 3;
-      if (x < third) {
-        setHoverZone('left');
-      } else if (x > 2 * third) {
-        setHoverZone('right');
-      } else {
-        setHoverZone(null);
-      }
+        // if (!containerRef.current || !isDesktopPointer) return; // desktop-only behavior
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const third = rect.width / 3;
+        if (x < third) {
+            setHoverZone('left');
+        } else if (x > 2 * third) {
+            setHoverZone('right');
+        } else {
+            setHoverZone(null);
+        }
     };
 
     const handleMouseLeave = () => {
-      if (isDesktopPointer) setHoverZone(null);
+        if (isDesktopPointer) setHoverZone(null);
     };
 
     const handleClickToOpen = (e) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const third = rect.width / 3;
-      if (x >= third && x <= 2 * third) {
-        openModal(imageList[index]);
-      }
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const third = rect.width / 3;
+        if (x >= third && x <= 2 * third) {
+            openModal(imageList[index]);
+        }
     };
 
     return (
@@ -106,27 +105,27 @@ const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
             className="relative w-full h-auto aspect-[2/1]"
         >
             {!imageList.length && (
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                No images to display
-              </div>
+                <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+                    No images to display
+                </div>
             )}
             <AnimatePresence mode="wait">
                 <motion.div key={index} className="absolute w-full h-full">
                     <motion.div
                         className="absolute inset-0 pointer-events-none"
-                        initial={{ opacity: 0.5, backgroundColor: "#000" }}
-                        animate={{ opacity: 0 }}
-                        exit={{ opacity: 0.5, backgroundColor: "#000" }}
-                        transition={{ duration: 0.5 }}
+                        initial={{opacity: 0.5, backgroundColor: "#000"}}
+                        animate={{opacity: 0}}
+                        exit={{opacity: 0.5, backgroundColor: "#000"}}
+                        transition={{duration: 0.5}}
                     />
                     <motion.img
                         src={imageList[index]}
                         alt="Slideshow"
                         className="absolute w-full h-full object-cover cursor-pointer"
-                        initial={{ opacity: 0.2 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0.1 }}
-                        transition={{ duration: 0.75 }}
+                        initial={{opacity: 0.2}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0.1}}
+                        transition={{duration: 0.75}}
                         onClick={handleClickToOpen}
                     />
                 </motion.div>
@@ -137,7 +136,8 @@ const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
                 onClick={prevSlide}
                 className={`absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 transition-opacity duration-200 z-20 ${hoverZone === 'left' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             >
-                <img src={leftArrow} alt="previous slide" className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer" />
+                <img src={leftArrow} alt="previous slide"
+                     className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer"/>
             </button>
 
             {/* Right Arrow */}
@@ -145,7 +145,8 @@ const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
                 onClick={nextSlide}
                 className={`absolute flex justify-end items-center right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 transition-opacity duration-200 z-20 ${hoverZone === 'right' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             >
-                <img src={rightArrow} alt="next slide" className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer" />
+                <img src={rightArrow} alt="next slide"
+                     className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer"/>
             </button>
 
             {/* Dots Navigation */}
@@ -161,13 +162,15 @@ const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
 
             {/* Fullscreen Modal */}
             {showModal && (
-                <div className="w-screen h-screen fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                    <div className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
+                <div
+                    className="w-screen h-screen fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                    <div
+                        className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
                         <button
                             onClick={closeModal}
                             className="absolute w-[30px] h-[30px] top-[30px] right-[30px] lg:w-[1.56vw] lg:h-[2.78vh] lg:top-[7.13vh] lg:right-[2.60vw] cursor-pointer"
                         >
-                            <img src={close} alt="close" width='30px' height='30px' className="filter grayscale" />
+                            <img src={close} alt="close" width='30px' height='30px' className="filter grayscale"/>
                         </button>
                         <span className="grid w-full text-start">
                             <img

@@ -70,17 +70,32 @@ function App() {
         try {
             const data = await getProjects();
             setProjects(Array.isArray(data) ? data : []);
+            return data;
         } catch (e) {
             setProjects([]);
             setProjectsError(e);
+            return null;
         } finally {
             setProjectsLoading(false);
         }
     }, []);
 
     useEffect(() => {
-        // Preload projects on app start
-        fetchProjectsOnce().then(r => console.debug(r ?? 'fetchProjectsOnce successfully'));
+        // On app start, try to use cached projects first
+        const cached = localStorage.getItem("projectsCache");
+        if (cached) {
+            try {
+                setProjects(JSON.parse(cached));
+                setProjectsLoading(false);
+            } catch {console.error('cache failed')};
+        }
+
+        // Always refresh from API and update cache
+        fetchProjectsOnce().then((data) => {
+            if (data) {
+                localStorage.setItem("projectsCache", JSON.stringify(data));
+            }
+        });
     }, [fetchProjectsOnce]);
 
     return (
