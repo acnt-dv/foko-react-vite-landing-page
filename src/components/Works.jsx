@@ -1,7 +1,6 @@
 import image from '../statics/png/main-title.png';
-import React, {useEffect, useRef, useState, useMemo} from "react";
+import React, {useEffect, useMemo, useRef, useState} from "react";
 import MiniSlideShow from "./MiniSlideShow";
-import FadingTextBoxWithMask from "./FadingTextBoxWithMask";
 import {useLocation} from "react-router-dom";
 import getProjectsData from "../services/getProjectsData.jsx";
 
@@ -20,7 +19,7 @@ export const Works = () => {
     const [projectData, setProjectData] = useState({});
 
     useEffect(() => {
-        if(!project) return {};
+        if (!project) return {};
 
         const fetchProjectData = async () => {
             try {
@@ -73,13 +72,13 @@ export const Works = () => {
             return pd
                 .filter(Boolean)
                 .filter((item) => typeof item?.key === 'string' && item?.value != null)
-                .map((item) => ({ key: item.key, value: item.value }));
+                .map((item) => ({key: item.key, value: item.value}));
         }
         if (pd && typeof pd === 'object') {
             // Fallback for legacy shape: { program: '...', location: '...', ... }
             return Object.entries(pd)
                 .filter(([k, v]) => typeof k === 'string' && v != null)
-                .map(([k, v]) => ({ key: k, value: v }));
+                .map(([k, v]) => ({key: k, value: v}));
         }
         return [];
     }, [project]);
@@ -91,7 +90,8 @@ export const Works = () => {
 
     return (
         <div className="flex flex-col w-full justify-center items-center bg-foko">
-            <div className="w-full h-[61vh] bg-cover bg-center bg-gray-400" style={{backgroundImage: `url(${project?.images?.[0] ?? image})`}}/>
+            <div className="w-full h-[61vh] bg-cover bg-center bg-gray-400"
+                 style={{backgroundImage: `url(${project?.images?.[0] ?? image})`}}/>
 
             <div className="flex w-full mt-[16.23vh] lg:mt-[18.52vh] items-start justify-center text-black">
                 <div className="flex-col w-full space-y-16 items-center justify-end text-black">
@@ -103,19 +103,25 @@ export const Works = () => {
                             </p>
                         </div>
                         <div className='flex mr-[7.69vw] lg:mr-[20.83vw]'>
-                            <p className=' w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
+                            <p className='w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
                                 {project?.description}
+                                <p className='mt-[50px] italic'>
+                                    {project?.extraDescription}
+                                </p>
+                            </p>
+                            <p className=' w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
+
                             </p>
                         </div>
                     </div>
 
                     <div className='flex w-full flex-col-reverse lg:flex-row justify-end mb-[27.78vh]'>
                         <div className="flex mt-[75px] mx-[7.69vw] lg:mr-[2.6vw] lg:ml-auto">
-                             <div className="flex flex-row justify-end items-end w-full">
+                            <div className="flex flex-row justify-end items-end w-full">
                                 <div
                                     className="w-full grid grid-cols-[auto_1fr] gap-y-1 text-left text-10 lg:text-[12px] leading-[1.8]">
 
-                                    {details.map(({ key, value }) => (
+                                    {details.map(({key, value}) => (
                                         <React.Fragment key={key}>
                                             <span className="font-bold">{key.toUpperCase()}</span>
                                             <span className="text-right">{String(value)}</span>
