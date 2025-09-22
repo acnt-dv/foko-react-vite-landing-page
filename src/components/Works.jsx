@@ -3,20 +3,35 @@ import React, {useEffect, useMemo, useRef, useState} from "react";
 import MiniSlideShow from "./MiniSlideShow";
 import {useLocation} from "react-router-dom";
 import getProjectsData from "../services/getProjectsData.jsx";
+import { motion } from 'framer-motion';
+
+// Reusable full-screen loading overlay component
+const LoadingOverlay = ({ show, text = 'FOKO' }) => {
+    if (!show) return null;
+    return (
+        <div className="fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center">
+            <motion.span
+                initial={{ opacity: 0.3 }}
+                animate={{ opacity: [0.3, 1, 0.3] }}
+                transition={{ duration: 1.6, repeat: Infinity }}
+                className="text-white text-3xl md:text-5xl font-semibold tracking-[0.5em]"
+            >
+                {text}
+            </motion.span>
+        </div>
+    );
+};
 
 export const Works = () => {
     // const [maxTranslate, setMaxTranslate] = useState(0);
-    const [translateY, setTranslateY] = useState(0);
+    const [, setTranslateY] = useState(0);
+    const [isGalleryLoading, setIsGalleryLoading] = useState(true);
     const miniSlideRef = useRef(null);
-
-//     const textLines =
-//         `This 11 bedroom private home sits on a Hillside site in Bel Air with expansive views of Los Angeles. The contemporary style of the home incorporates subtle nods to the client’s Japanese roots through the use of natural materials that blurred the line between landscape and architecture. This projectwas unbuilt due to economic strains from the pandemic.
-// `
 
     const location = useLocation();
     const {project} = location.state || {};
 
-    const [projectData, setProjectData] = useState({});
+    const [, setProjectData] = useState({});
 
     useEffect(() => {
         if (!project) return {};
@@ -30,8 +45,8 @@ export const Works = () => {
                 setProjectData({});
             }
         };
-        fetchProjectData();
-    }, []);
+        fetchProjectData().then(r => console.debug(r));
+    }, [project]);
 
     useEffect(() => {
             let maxTranslate = 0;
@@ -64,6 +79,25 @@ export const Works = () => {
         }, []
     );
 
+    useEffect(() => {
+        const galleries = project?.galleries;
+        if (!Array.isArray(galleries) || galleries.length === 0) {
+            setIsGalleryLoading(false);
+            return;
+        }
+        let cancelled = false;
+        const loadOne = (src) => new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve(true);
+            img.onerror = () => resolve(false);
+            img.src = src;
+        });
+        Promise.all(galleries.filter(Boolean).map(loadOne)).then(() => {
+            if (!cancelled) setIsGalleryLoading(false);
+        });
+        return () => { cancelled = true; };
+    }, [project]);
+
     // Normalize project_data to an array of { key, value }
     const details = useMemo(() => {
         const pd = project?.project_data;
@@ -89,6 +123,8 @@ export const Works = () => {
     }
 
     return (
+        <>
+        <LoadingOverlay show={isGalleryLoading} text="FOKO" />
         <div className="flex flex-col w-full justify-center items-center bg-foko">
             <div className="w-full h-[61vh] bg-cover bg-center bg-gray-400"
                  style={{backgroundImage: `url(${project?.images?.[0] ?? image})`}}/>
@@ -139,6 +175,7 @@ export const Works = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
