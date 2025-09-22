@@ -123,10 +123,10 @@ const MiniScreenSlideshow = ({ images = [], galleries = [] }) => {
                         src={imageList[index]}
                         alt="Slideshow"
                         className="absolute w-full h-full object-cover cursor-pointer"
-                        initial={{ opacity: 0 }}
+                        initial={{ opacity: 0.2 }}
                         animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.4 }}
+                        exit={{ opacity: 0.1 }}
+                        transition={{ duration: 0.75 }}
                         onClick={handleClickToOpen}
                     />
                 </motion.div>
