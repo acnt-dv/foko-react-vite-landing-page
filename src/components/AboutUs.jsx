@@ -13,7 +13,7 @@ const AboutUs = () => {
     useEffect(() => {
         const fetchAboutUs = async () => {
             const aboutUs = await getAboutUs();
-            setAboutUs(aboutUs?.text ? aboutUs.text : ABOUT_US);
+            setAboutUs(aboutUs?.text ? aboutUs.text.replace(/^<p>|<\/p>$/g, '') : ABOUT_US);
         }
         fetchAboutUs().then(r => console.debug(r ?? 'fetchAboutUs successfully'));
     }, [])
