@@ -6,14 +6,14 @@ import {useEffect, useState} from "react";
 import getAboutUs from "../services/getAbout.jsx";
 
 const AboutUs = () => {
-    const ABOUT_US = 'Welcome to FOKO Studio, an architecture and interior design practice specializing in creating functional, inspiring spaces that reflect your unique vision. From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.';
+    const ABOUT_US = '<p>Welcome to FOKO Studio, an architecture and interior design practice specializing in creating functional, inspiring spaces that reflect your unique vision. From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.</p>';
     const navigate = useNavigate();
-    const [aboutUs, setAboutUs] = useState(ABOUT_US);
+    const [aboutUsHtml, setAboutUsHtml] = useState(ABOUT_US);
 
     useEffect(() => {
         const fetchAboutUs = async () => {
-            const aboutUs = await getAboutUs();
-            setAboutUs(aboutUs?.text ? aboutUs.text.replace(/^<p>|<\/p>$/g, '') : ABOUT_US);
+            const res = await getAboutUs();
+            setAboutUsHtml(res?.text ?? ABOUT_US);
         }
         fetchAboutUs().then(r => console.debug(r ?? 'fetchAboutUs successfully'));
     }, [])
@@ -27,10 +27,10 @@ const AboutUs = () => {
                         className="flex w-full flex-col justify-end lg:justify-between items-end lg:items-start text-justify my-0">
                         <div className="flex">
                             <h1 className="flex w-fit lg:hidden text-16 font-rubik text-end">ABOUT <br/> FOKO</h1>
-                            <p className="w-[59.23vw] lg:w-[30.05vw] ml-[15.63vw] mr-[7.69vw] lg:mr-[7.81vw] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.015em]">
-                                {/*Welcome to FOKO Studio, an architecture and interior design practice specializing in creating functional, inspiring spaces that reflect your unique vision. From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.*/}
-                                {aboutUs}
-                            </p>
+                            <div
+                                className="w-[59.23vw] lg:w-[30.05vw] ml-[15.63vw] mr-[7.69vw] lg:mr-[7.81vw] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.015em]"
+                                dangerouslySetInnerHTML={{ __html: aboutUsHtml }}
+                            />
                         </div>
 
 
