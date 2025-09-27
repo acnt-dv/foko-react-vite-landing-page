@@ -54,7 +54,7 @@ const Categories = () => {
                         className="grid auto-cols-auto grid-cols-[repeat(auto-fit,minmax(49.49vw,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(22.92vw,1fr))] gap-0 w-full md:max-w-[40rem] 2xl:max-w-[85rem] overflow-auto scrollbar-hide">
                         {projects.map((project) => {
                             // Apply grayscale based on active filter
-                            const isActive = active === "ALL" || active === project.category;
+                            const isActive = active === "ALL" || active === project?.tags?.[0];
                             return (
                                 <div
                                     onClick={() => navigate('/works', {state: {project}})}
