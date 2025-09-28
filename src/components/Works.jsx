@@ -45,7 +45,7 @@ export const Works = () => {
                 setProjectData({});
             }
         };
-        fetchProjectData().then(r => console.debug(r ?? 'fetchProjectData successfully'));
+        fetchProjectData().then(r => console.debug(r ?? 'fetch ProjectData successfully'));
     }, [project]);
 
     useEffect(() => {
@@ -126,10 +126,10 @@ export const Works = () => {
 
     return (
         <>
-            <LoadingOverlay show={isGalleryLoading} text="FOKO"/>
+            <LoadingOverlay show={isGalleryLoading}/>
             <div className="flex flex-col w-full justify-center items-center bg-foko">
-                <div className="w-full h-[61vh] bg-cover bg-center bg-gray-400"
-                     style={{backgroundImage: `url(${project?.images?.[0] ?? image})`}}/>
+                <div className="w-full h-[61vh] max-h-[61vh] max-w-[100%] bg-cover bg-center bg-gray-400"
+                     style={{backgroundImage: `url(${project?.image ?? image})`}}/>
 
                 <div className="flex w-full mt-[16.23vh] lg:mt-[18.52vh] items-start justify-center text-black">
                     <div className="flex-col w-full space-y-16 items-center justify-end text-black">
