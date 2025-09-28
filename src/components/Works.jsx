@@ -121,7 +121,7 @@ export const Works = () => {
 
     if (!project) {
         // اگر کاربر مستقیم صفحه رو باز کنه یا رفرش کنه، state از بین میره
-        return <div>پروژه پیدا نشد. لطفاً از لیست وارد شوید.</div>;
+        return <div>404 Not Found!</div>;
     }
 
     return (
@@ -136,7 +136,6 @@ export const Works = () => {
                         <div className='flex w-full justify-between items-baseline mb-[18.52vh]'>
                             <div className='flex w-fit justify-end mx-[7.69vw] lg:mr-[2.60vw]'>
                                 <p className='font-rubik font-black lg:font-normal text-[clamp(10px,1.6vw,30px)] text-end align-text-top break-words'>
-                                    {/*BEL AIR <br /> RESIDENTIAL*/}
                                     {project?.title}
                                 </p>
                             </div>

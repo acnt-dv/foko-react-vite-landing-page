@@ -57,10 +57,10 @@ const Categories = () => {
                             const isActive = active === "ALL" || active === project?.tags?.[0];
                             return (
                                 <div
-                                    onClick={() => navigate('/works', {state: {project}})}
+                                    onClick={() => {isActive && navigate('/works', {state: {project}})}}
                                     key={project.id}
                                     className={`h-[16.23vh] lg:h-[21.02vh] bg-gray-900 flex items-end justify-center text-white 
-                                    bg-cover bg-center transition-all duration-500 cursor-pointer ${isActive ? "grayscale-0" : "grayscale"
+                                    bg-cover bg-center transition-all duration-500 ${isActive ? "grayscale-0 cursor-pointer" : "grayscale"
                                     }`}
                                     style={{backgroundImage: `url(${project?.image})`}}
 
