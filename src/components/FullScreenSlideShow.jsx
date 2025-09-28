@@ -24,7 +24,7 @@ const FullScreenSlideshow = () => {
                         if (Array.isArray(parsed) && parsed.length > 0) {
                             setSlides(parsed);
                             setIndex(0);
-                            setIsLoading(false);
+                            // setIsLoading(false);
                         }
                     } catch {}
                 }
@@ -82,7 +82,7 @@ const FullScreenSlideshow = () => {
     return (
         <>
             <Toaster/>
-            <LoadingOverlay show={isLoading} text="FOKO" />
+            <LoadingOverlay show={isLoading} />
             <div className="relative w-full h-[75vh] lg:h-screen overflow-hidden" onMouseMove={handleMouseMove}
                  onMouseLeave={() => setHoverZone(null)}>
                 {/* Image Transition */}

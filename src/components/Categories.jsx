@@ -10,7 +10,7 @@ const Categories = () => {
 
     return (
         <>
-            <LoadingOverlay show={isLoading} text="FOKO"/>
+            <LoadingOverlay show={isLoading}/>
             <div className="flex w-full h-screen items-center justify-end gap-0  text-black">
                 {/* Sidebar Buttons */}
                 {/* removed from this div style: lg:border-r lg:border-gray-500 */}
