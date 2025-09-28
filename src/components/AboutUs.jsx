@@ -36,7 +36,7 @@ const AboutUs = () => {
 
                         <h2 className="hidden justify-center items-center lg:flex font-rubik w-fit ml-[15.63vw] lg:text-20 cursor-pointer lg:my-0"
                             onClick={() => {
-                                navigate('/contactUs')
+                                navigate('/studio')
                             }}>
                             MORE &nbsp; &nbsp; &nbsp;
                             <img src={right} alt="Right Image" className='w-[0.42vw] h-[1.48vh]'/>
@@ -44,7 +44,7 @@ const AboutUs = () => {
 
                         <h2 className="flex justify-start items-center lg:hidden font-rubik text-10 cursor-pointer w-[59.23vw] mr-[7.69vw] my-[5.92vh]"
                             onClick={() => {
-                                navigate('/contactUs')
+                                navigate('/studio')
                             }}>
                             MORE &nbsp; &nbsp; &nbsp;
                             <img src={rightSmall} alt="Right Image" className='w-[1.03vw] h-[1.07vh]'/>
