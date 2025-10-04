@@ -23,7 +23,9 @@ export const Footer = () => {
             </div>
             <div className="flex w-1/4 justify-end text-10 lg:text-16 m-[30px] lg:m-[50px] gap-2 lg:gap-4">
                 {/* <p>LinkedIn</p> */}
-                <p className="cursor-pointer">Instagram</p>
+                <p className="cursor-pointer" onClick={() => {
+                    window.open("https://www.instagram.com/foko.studio?igsh=MXE1Y2VmengxNDBsNQ==", "_blank");
+                }}>Instagram</p>
             </div>
         </div>
     )
