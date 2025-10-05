@@ -11,7 +11,7 @@ if (!BASE_URL) {
 const apiClient = axios.create({
     baseURL: BASE_URL,
     timeout: 5000,
-    headers: { 'Content-Type': 'application/json' }
+    headers: {'Content-Type': 'application/json'}
 });
 
 const getProjectsGallery = async (projectId) => {
