@@ -126,9 +126,9 @@ export const Works = () => {
                                 <div
                                     className='w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
                                     {Boolean(project?.description) && (
-                                      <div
-                                        dangerouslySetInnerHTML={{ __html: project.description }}
-                                      />
+                                        <div
+                                            dangerouslySetInnerHTML={{__html: project.description}}
+                                        />
                                     )}
                                 </div>
                             </div>

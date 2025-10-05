@@ -1,12 +1,13 @@
 import React from "react";
 import profileImage from "../statics/png/about-us.png"; // Replace with actual image path
 
-const ProfileCard = ({ name, title, education, description, profileImg }) => {
+const ProfileCard = ({name, title, education, description, profileImg}) => {
     return (
         <div className="flex bg-foko min-h-full lg:w-full mt-[5.92vh] lg:mt-[18.52vh] justify-end">
             <div className="flex flex-col lg:flex-row w-full">
                 <span className="grid w-full lg:flex justify-end">
-                    <div className="ml-[7.69vw] mr-[7.69vw] h-auto lg:w-[27.08vw] lg:min-h-[63.89vh] flex flex-col items-center justify-end mx-0 lg:ml-[15.63vw] lg:mr-[2.60vw]">
+                    <div
+                        className="ml-[7.69vw] mr-[7.69vw] h-auto lg:w-[27.08vw] lg:min-h-[63.89vh] flex flex-col items-center justify-end mx-0 lg:ml-[15.63vw] lg:mr-[2.60vw]">
                         {/* Profile Image */}
                         <img
                             src={profileImg || profileImage}
@@ -39,8 +40,10 @@ const ProfileCard = ({ name, title, education, description, profileImg }) => {
 
                         {/* Education Section */}
                         {education && (
-                            <div className="flex flex-row justify-start items-end ml-[7.69vw] lg:ml-0 mt-[5.92vh] lg:mt-0">
-                                <div className="text-[clamp(10px,0.83vw,16px)] text-left leading-loose tracking-[0.005em]">
+                            <div
+                                className="flex flex-row justify-start items-end ml-[7.69vw] lg:ml-0 mt-[5.92vh] lg:mt-0">
+                                <div
+                                    className="text-[clamp(10px,0.83vw,16px)] text-left leading-loose tracking-[0.005em]">
                                     <div className="grid grid-cols-2 gap-x-16 gap-y-1">
                                         {education.map((edu, index) => (
                                             <React.Fragment key={index}>

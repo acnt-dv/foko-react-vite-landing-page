@@ -16,12 +16,8 @@ const MiniScreenSlideshow = ({images = [], galleries = []}) => {
     // Build a single list of image URLs from either `images` (array of strings)
     // or `galleries` (array of objects with an `image` URL field)
     const imageList = useMemo(() => {
-        const fromImages = Array.isArray(images)
-            ? images.filter(Boolean).map((v) => (typeof v === 'string' ? v : (v && v.image) || null)).filter(Boolean)
-            : [];
-        const fromGalleries = Array.isArray(galleries)
-            ? galleries.filter(Boolean).map((g) => (g && typeof g.image === 'string' ? g.image : null)).filter(Boolean)
-            : [];
+        const fromImages = Array.isArray(images) ? images.filter(Boolean).map((v) => (typeof v === 'string' ? v : (v && v.image) || null)).filter(Boolean) : [];
+        const fromGalleries = Array.isArray(galleries) ? galleries.filter(Boolean).map((g) => (g && typeof g.image === 'string' ? g.image : null)).filter(Boolean) : [];
         const merged = [...fromImages, ...fromGalleries];
         // de-duplicate while preserving order
         return Array.from(new Set(merged));
@@ -97,82 +93,76 @@ const MiniScreenSlideshow = ({images = [], galleries = []}) => {
         }
     };
 
-    return (
-        <div
-            ref={containerRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className="relative w-full h-auto aspect-[2/1]"
+    return (<div
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="relative w-full h-auto aspect-[2/1]"
+    >
+        {!imageList.length && (<div className="absolute inset-0 flex items-center justify-center text-gray-500">
+            No images to display
+        </div>)}
+        <AnimatePresence mode="wait">
+            <motion.div key={index} className="absolute w-full h-full">
+                <motion.div
+                    className="absolute inset-0 pointer-events-none"
+                    initial={{opacity: 0.5, backgroundColor: "#000"}}
+                    animate={{opacity: 0}}
+                    exit={{opacity: 0.5, backgroundColor: "#000"}}
+                    transition={{duration: 0.5}}
+                />
+                <motion.img
+                    src={imageList[index]}
+                    alt="Slideshow"
+                    className="absolute w-full h-full object-cover cursor-pointer"
+                    initial={{opacity: 0.2}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0.1}}
+                    transition={{duration: 0.75}}
+                    onClick={handleClickToOpen}
+                />
+            </motion.div>
+        </AnimatePresence>
+
+        {/* Left Arrow */}
+        <button
+            onClick={prevSlide}
+            className={`absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 transition-opacity duration-200 z-20 ${hoverZone === 'left' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
-            {!imageList.length && (
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                    No images to display
-                </div>
-            )}
-            <AnimatePresence mode="wait">
-                <motion.div key={index} className="absolute w-full h-full">
-                    <motion.div
-                        className="absolute inset-0 pointer-events-none"
-                        initial={{opacity: 0.5, backgroundColor: "#000"}}
-                        animate={{opacity: 0}}
-                        exit={{opacity: 0.5, backgroundColor: "#000"}}
-                        transition={{duration: 0.5}}
-                    />
-                    <motion.img
-                        src={imageList[index]}
-                        alt="Slideshow"
-                        className="absolute w-full h-full object-cover cursor-pointer"
-                        initial={{opacity: 0.2}}
-                        animate={{opacity: 1}}
-                        exit={{opacity: 0.1}}
-                        transition={{duration: 0.75}}
-                        onClick={handleClickToOpen}
-                    />
-                </motion.div>
-            </AnimatePresence>
+            <img src={leftArrow} alt="previous slide"
+                 className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer"/>
+        </button>
 
-            {/* Left Arrow */}
-            <button
-                onClick={prevSlide}
-                className={`absolute left-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 transition-opacity duration-200 z-20 ${hoverZone === 'left' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-            >
-                <img src={leftArrow} alt="previous slide"
-                     className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer"/>
-            </button>
+        {/* Right Arrow */}
+        <button
+            onClick={nextSlide}
+            className={`absolute flex justify-end items-center right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 transition-opacity duration-200 z-20 ${hoverZone === 'right' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        >
+            <img src={rightArrow} alt="next slide"
+                 className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer"/>
+        </button>
 
-            {/* Right Arrow */}
-            <button
-                onClick={nextSlide}
-                className={`absolute flex justify-end items-center right-0 top-1/2 w-1/4 transform -translate-y-1/2 bg-opacity-0 text-white hover:bg-opacity-0 transition-opacity duration-200 z-20 ${hoverZone === 'right' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-            >
-                <img src={rightArrow} alt="next slide"
-                     className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] m-[10px] lg:m-foko cursor-pointer"/>
-            </button>
+        {/* Dots Navigation */}
+        <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {imageList.map((_, i) => (<span
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`w-[10px] h-[10px] rounded-full cursor-pointer ${index === i ? "bg-black" : "border-[1px] border-black bg-transparent"}`}
+            ></span>))}
+        </div>
 
-            {/* Dots Navigation */}
-            <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {imageList.map((_, i) => (
-                    <span
-                        key={i}
-                        onClick={() => setIndex(i)}
-                        className={`w-[10px] h-[10px] rounded-full cursor-pointer ${index === i ? "bg-black" : "border-[1px] border-black bg-transparent"}`}
-                    ></span>
-                ))}
-            </div>
-
-            {/* Fullscreen Modal */}
-            {showModal && (
-                <div
-                    className="w-screen h-screen fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                    <div
-                        className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
-                        <button
-                            onClick={closeModal}
-                            className="absolute w-[30px] h-[30px] top-[30px] right-[30px] lg:w-[1.56vw] lg:h-[2.78vh] lg:top-[7.13vh] lg:right-[2.60vw] cursor-pointer"
-                        >
-                            <img src={close} alt="close" width='30px' height='30px' className="filter grayscale"/>
-                        </button>
-                        <span className="grid w-full text-start">
+        {/* Fullscreen Modal */}
+        {showModal && (<div
+            className="w-screen h-screen fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <div
+                className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
+                <button
+                    onClick={closeModal}
+                    className="absolute w-[30px] h-[30px] top-[30px] right-[30px] lg:w-[1.56vw] lg:h-[2.78vh] lg:top-[7.13vh] lg:right-[2.60vw] cursor-pointer"
+                >
+                    <img src={close} alt="close" width='30px' height='30px' className="filter grayscale"/>
+                </button>
+                <span className="grid w-full text-start">
                             <img
                                 src={selectedImage}
                                 alt="Fullscreen"
@@ -182,11 +172,9 @@ const MiniScreenSlideshow = ({images = [], galleries = []}) => {
                                 Some renderings by Polynates. Work completed while at BA Collective.
                             </p>
                         </span>
-                    </div>
-                </div>
-            )}
-        </div>
-    );
+            </div>
+        </div>)}
+    </div>);
 };
 
 export default MiniScreenSlideshow;

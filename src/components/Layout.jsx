@@ -1,8 +1,6 @@
-import {React, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
 import Header from './Header';
-// import Footer from './Footer';
-// import Login from './Login';
 import FullPageMenu from "./FullPageMenu";
 import BackToTop from "./BackToTop";
 
@@ -27,7 +25,6 @@ export const Layout = () => {
             <FullPageMenu isOpen={menuOpen} onClose={toggleMenu}/>
             <Outlet/>
             <BackToTop/>
-            {/* <Footer /> */}
         </div>
     )
 }

@@ -6,7 +6,7 @@ import {ProjectsContext} from "../ProjectsContext.jsx";
 const Categories = () => {
     const navigate = useNavigate();
     const [active, setActive] = useState("ALL");
-    const { projects, isLoading } = React.useContext(ProjectsContext);
+    const {projects, isLoading} = React.useContext(ProjectsContext);
 
     return (
         <>
@@ -57,13 +57,14 @@ const Categories = () => {
                             const isActive = active === "ALL" || active === project?.tags?.[0];
                             return (
                                 <div
-                                    onClick={() => {isActive && navigate('/works', {state: {project}})}}
+                                    onClick={() => {
+                                        isActive && navigate('/works', {state: {project}})
+                                    }}
                                     key={project.id}
                                     className={`h-[16.23vh] lg:h-[21.02vh] bg-gray-900 flex items-end justify-center text-white 
                                     bg-cover bg-center transition-all duration-500 ${isActive ? "grayscale-0 cursor-pointer" : "grayscale"
                                     }`}
                                     style={{backgroundImage: `url(${project?.image})`}}
-
                                 >
                                     {isActive &&
                                         <div
@@ -78,9 +79,6 @@ const Categories = () => {
                         })}
                     </div>
                 </div>
-
-                {/* Empty Right Column */}
-                {/*<div className="flex flex-col w-[15%] h-3/4"></div>*/}
             </div>
         </>
     );

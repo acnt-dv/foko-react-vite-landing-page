@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 
-const FadingTextBox = ({ text }) => {
+const FadingTextBox = ({text}) => {
     const scrollBoxRef = useRef(null);
     const [opacities, setOpacities] = useState([]);
 
@@ -43,7 +43,7 @@ const FadingTextBox = ({ text }) => {
                 scrollBox.removeEventListener("scroll", handleScroll);
             }
         };
-    }, [lines.length]);
+    }, [lines, lines.length]);
 
     return (
         <div className="flex w-full items-center justify-center self-center mt-[30px] lg:mt-[50px]">
@@ -56,7 +56,7 @@ const FadingTextBox = ({ text }) => {
                     <p
                         key={index}
                         className="transition-opacity duration-300 text-justify leading-relaxed w-full mx-auto"
-                        style={{ opacity: opacities[index] , textAlign: "justify", hyphens: "auto" }}
+                        style={{opacity: opacities[index], textAlign: "justify", hyphens: "auto"}}
                     >
                         {line}
                     </p>

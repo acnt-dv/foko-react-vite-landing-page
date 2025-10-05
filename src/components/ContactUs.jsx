@@ -1,6 +1,5 @@
 import rightSmall from "../statics/svg/arrow-right-small.svg";
 import {useNavigate} from "react-router-dom";
-import right from "../statics/svg/arrow-right.svg";
 
 const ContactUs = () => {
     const navigate = useNavigate();
@@ -13,7 +12,6 @@ const ContactUs = () => {
             </span>
             <span className="flex w-full">
                 <div className='flex w-full text-justify items-start'>
-                    {/*<h1 className="ml-[7.69vw] mr-[7.69vw] text-16 font-rubik text-end block lg:hidden">Contact <br/> Us</h1>*/}
                     <div className="flex w-full flex-col items-end lg:items-start text-right lg:text-left">
                         <span className="flex">
                         <h1 className="flex w-fit lg:hidden text-16 font-rubik text-end">Contact <br/> Us</h1>

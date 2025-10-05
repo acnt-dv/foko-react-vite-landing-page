@@ -33,7 +33,6 @@ const AboutUs = () => {
                             />
                         </div>
 
-
                         <h2 className="hidden justify-center items-center lg:flex font-rubik w-fit ml-[15.63vw] lg:text-20 cursor-pointer lg:my-0"
                             onClick={() => {
                                 navigate('/studio')
