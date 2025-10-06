@@ -8,7 +8,7 @@ export default defineConfig(({mode}) => {
     const env = loadEnv(mode, process.cwd(), '')
 
     // Default to production API if not provided
-    const apiTarget = env.VITE_API_TARGET || 'https://api.fokostudio.com'
+    const apiTarget = env.VITE_API_TARGET || 'https://api.fokostudio.com';
 
     const isDev = mode === 'development'
 
