@@ -4,15 +4,7 @@ import rightSmall from "../statics/svg/arrow-right-small.svg";
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState, useCallback } from "react";
 import getAboutUs from "../services/getAbout.jsx";
-
-// Centralized static content for clarity and reuse
-const DEFAULT_ABOUT_US_HTML = `
-  <p>
-    Welcome to FOKO Studio, an architecture and interior design practice
-    specializing in creating functional, inspiring spaces that reflect your unique vision.
-    From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.
-  </p>
-`;
+import {DEFAULT_ABOUT_US_HTML} from "../assets/constants.js";
 
 /**
  * Accessible and maintainable AboutUs section.

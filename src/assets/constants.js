@@ -9,3 +9,12 @@ export const CONTACT_US_INFO = {
         {name: 'Jenny Fontenot', email: 'jenny@fokostudio.com', phone: '718-984-8018'},
     ]
 };
+
+// Centralized static content for clarity and reuse
+export const DEFAULT_ABOUT_US_HTML = `
+  <p>
+    Welcome to FOKO Studio, an architecture and interior design practice
+    specializing in creating functional, inspiring spaces that reflect your unique vision.
+    From residential to commercial projects, our team is dedicated to delivering exceptional design solutions.
+  </p>
+`;
