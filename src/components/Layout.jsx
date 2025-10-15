@@ -3,6 +3,7 @@ import {Outlet} from "react-router-dom";
 import Header from './Header';
 import FullPageMenu from "./FullPageMenu";
 import BackToTop from "./BackToTop";
+import Footer from "./Footer.jsx";
 
 export const Layout = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -25,6 +26,7 @@ export const Layout = () => {
             <FullPageMenu isOpen={menuOpen} onClose={toggleMenu}/>
             <Outlet/>
             <BackToTop/>
+            <Footer/>
         </div>
     )
 }

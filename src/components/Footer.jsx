@@ -1,33 +1,45 @@
-import {useEffect, useState} from "react";
-import {INSTAGRAM_LINK} from "../assets/constants.js";
+import { useEffect, useState } from "react";
+import { INSTAGRAM_LINK } from "../assets/constants.js";
+import { useLocation } from "react-router-dom";
 
 export const Footer = () => {
-    const [, setShowFooter] = useState(false);
+    const [isBottom, setIsBottom] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.innerHeight + window.scrollY;
-            const documentHeight = document.body.offsetHeight;
-            setShowFooter(scrollPosition >= documentHeight);
+            const documentHeight = document.documentElement.scrollHeight;
+            setIsBottom(scrollPosition >= documentHeight - 5);
         };
 
         window.addEventListener("scroll", handleScroll);
+        handleScroll(); // check once on load
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const isContactPage = location.pathname.toLowerCase().includes("contact");
+
     return (
-        <div className={`fixed bottom-0 left-0 flex justify-between w-full z-50 transition-transform duration-300`}>
-            <div className="flex w-3/4 justify-start text-[7px] lg:text-10 m-[30px] lg:m-[50px]">
+        <footer
+            className={`w-full z-50 bg-transparent ${
+                isBottom ? "opacity-100" : "opacity-100"
+            }`}
+        >
+            <div className="flex justify-between items-center px-[30px] lg:px-[50px] pb-[30px] lg:pb-[50px] text-[7px] lg:text-10">
                 <p>@ 2025 FOKO STUDIO. ALL RIGHTS RESERVED.</p>
+
+                {isContactPage && (
+                    <p
+                        className="cursor-pointer text-10 lg:text-16"
+                        onClick={() => window.open(INSTAGRAM_LINK, "_blank")}
+                    >
+                        Instagram
+                    </p>
+                )}
             </div>
-            <div className="flex w-1/4 justify-end text-10 lg:text-16 m-[30px] lg:m-[50px] gap-2 lg:gap-4">
-                {/* <p>LinkedIn</p> */}
-                <p className="cursor-pointer" onClick={() => {
-                    window.open(INSTAGRAM_LINK, "_blank");
-                }}>Instagram</p>
-            </div>
-        </div>
-    )
-}
+        </footer>
+    );
+};
 
 export default Footer;

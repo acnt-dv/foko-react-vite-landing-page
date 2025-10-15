@@ -1,5 +1,4 @@
 import {Fragment} from "react";
-import Footer from "./Footer";
 import ContactInfo from "./common/ContactInfo";
 import {CONTACT_US_INFO} from "../assets/constants.js";
 
@@ -36,7 +35,6 @@ const Contact = ({contactsInfo}) => {
                     </section>
                 </div>
             </div>
-            <Footer/>
         </Fragment>
     );
 }
