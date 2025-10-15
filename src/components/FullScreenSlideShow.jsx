@@ -26,7 +26,8 @@ const FullScreenSlideshow = () => {
                             setIndex(0);
                             // setIsLoading(false);
                         }
-                    } catch {}
+                    } catch {
+                    }
                 }
                 const data = await getSlides();
                 if (isMounted) {
@@ -82,23 +83,26 @@ const FullScreenSlideshow = () => {
     return (
         <>
             <Toaster/>
-            <LoadingOverlay show={isLoading} />
+            <LoadingOverlay show={isLoading}/>
             <div className="relative w-full h-[75vh] lg:h-screen overflow-hidden" onMouseMove={handleMouseMove}
                  onMouseLeave={() => setHoverZone(null)}>
                 {/* Image Transition */}
                 {slides && slides.length > 0 &&
-                    <AnimatePresence mode="wait">
-                        <motion.img
-                            key={index}
-                            src={slides[index]?.image}
-                            alt={`Slideshow image ${slides.length ? index + 1 : 1}`}
-                            className="absolute w-full h-full object-cover"
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            exit={{opacity: 0}}
-                            transition={{duration: 1}}
-                        />
-                    </AnimatePresence>
+                    <>
+                        <AnimatePresence mode="wait">
+                            <motion.img
+                                key={index}
+                                src={slides[index]?.image}
+                                alt={`Slideshow image ${slides.length ? index + 1 : 1}`}
+                                className="absolute w-full h-full object-cover"
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1}}
+                                exit={{opacity: 0}}
+                                transition={{duration: 1}}
+                            />
+                        </AnimatePresence>
+                        <h4 className="absolute left-[30px] lg:left-[50px] bottom-[30px] lg:bottom-[50px] z-100 ont-rubik font-black lg:font-normal text-[clamp(10px,1.6vw,30px)] text-end align-text-top break-words">{slides[index]?.text}</h4>
+                    </>
                 }
 
                 {/* Left Arrow */}
