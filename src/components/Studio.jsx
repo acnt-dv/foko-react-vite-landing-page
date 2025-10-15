@@ -112,9 +112,7 @@ const AboutUs = () => {
                         her to understand what clients want and involve them in the creative process.`, `Driven by a passion for learning about diverse cultures and technologies, Pegah actively
                         incorporates these elements into her designs. Her innate design intuition and adept problem-
                         solving skills enable her to grasp a client’s aspirations and engage them in a collaborative
-                        creative journey.`, `Pegah holds a Bachelor of Architecture from the University of Mazandaran, complemented
-                        by Master of Architecture degrees from both the University of Tehran and the University of
-                        California, Los Angeles.`]}
+                        creative journey.`]}
                     education={[{
                         degree: "Masters of Architecture II",
                         institution: "University of California"
