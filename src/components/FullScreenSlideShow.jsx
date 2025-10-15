@@ -98,7 +98,7 @@ const FullScreenSlideshow = () => {
                                 initial={{opacity: 0}}
                                 animate={{opacity: 1}}
                                 exit={{opacity: 0}}
-                                transition={{duration: 1}}
+                                transition={{duration: 0.6}}
                             />
                         </AnimatePresence>
                         <h4 className="absolute left-[30px] lg:left-[50px] bottom-[30px] lg:bottom-[50px] z-100 ont-rubik font-black lg:font-normal text-[clamp(10px,1.6vw,30px)] text-end align-text-top break-words">{slides[index]?.text}</h4>
