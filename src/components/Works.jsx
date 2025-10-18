@@ -116,7 +116,7 @@ export const Works = () => {
 
                 <div className="flex w-full mt-[16.23vh] lg:mt-[18.52vh] items-start justify-center text-black">
                     <div className="flex-col w-full space-y-16 items-center justify-end text-black">
-                        <div className='flex w-full justify-between items-baseline mb-[18.52vh]'>
+                        <div className='flex w-full justify-between mb-[18.52vh]'>
                             <div className='flex w-fit justify-end mx-[7.69vw] lg:mr-[2.60vw]'>
                                 <p className='font-rubik font-black lg:font-normal text-[clamp(10px,1.6vw,30px)] text-end align-text-top break-words'>
                                     {project?.title}
@@ -124,7 +124,7 @@ export const Works = () => {
                             </div>
                             <div className='flex mr-[7.69vw] lg:mr-[20.83vw]'>
                                 <div
-                                    className='w-[52.23vw] lg:w-[58.33vw] lg:-top-[4px] xl:-top-[8px] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
+                                    className='w-[52.23vw] lg:w-[58.33vw] text-[clamp(10px,0.83vw,16px)] text-justify leading-loose tracking-[0.005em]'>
                                     {Boolean(project?.description) && (
                                         <div
                                             dangerouslySetInnerHTML={{__html: project.description}}
