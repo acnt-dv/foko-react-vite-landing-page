@@ -3,6 +3,7 @@ import {AnimatePresence, motion} from "framer-motion";
 import leftArrow from "../statics/svg/left-arrow.svg";
 import rightArrow from "../statics/svg/right-arrow.svg";
 import close from "../statics/svg/black-close.svg";
+import {Top_Right_Fixed_Buttons} from "./Header.jsx";
 
 const MiniScreenSlideshow = ({images = [], galleries = []}) => {
     const [index, setIndex] = useState(0);
@@ -158,9 +159,9 @@ const MiniScreenSlideshow = ({images = [], galleries = []}) => {
                 className="w-full h-full relative bg-foko flex justify-center items-center max-w-full max-h-full">
                 <button
                     onClick={closeModal}
-                    className="absolute w-[30px] h-[30px] top-[30px] right-[30px] lg:w-[1.56vw] lg:h-[2.78vh] lg:top-[7.13vh] lg:right-[2.60vw] cursor-pointer"
+                    className={Top_Right_Fixed_Buttons}
                 >
-                    <img src={close} alt="close" width='30px' height='30px' className="filter grayscale"/>
+                    <img src={close} alt="close" width='20px' height='20px' className="mr-[15px]"/>
                 </button>
                 <span className="grid w-full text-start">
                             <img

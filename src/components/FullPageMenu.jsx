@@ -2,6 +2,7 @@ import React from 'react';
 import logo from "../statics/png/foko-logo.png";
 import close from "../statics/png/close.png";
 import {useNavigate} from "react-router-dom";
+import {Top_Right_Fixed_Buttons} from "./Header.jsx";
 
 const FullPageMenu = ({isOpen, onClose}) => {
     const navigate = useNavigate();
@@ -10,14 +11,14 @@ const FullPageMenu = ({isOpen, onClose}) => {
         <div
             className={`z-10 fixed inset-0 bg-black flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${isOpen ? 'opacity-90 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
             <button onClick={onClose}
-                    className="absolute top-[37.5px] right-[30px] lg:top-[72.5px] lg:right-[50px] cursor-pointer">
+                    className={Top_Right_Fixed_Buttons}>
                 <img src={close} alt="close" width='30px' height='30px'/>
             </button>
 
             <div className="flex flex-col lg:flex-row w-full items-center justify-end">
                 <span className='flex justify-center lg:justify-end items-center mr-0 lg:mr-[28.44vw]'>
                     <img src={logo} alt={'logo'}
-                         className='w-[25.64vw] h-auto aspect-square lg:w-[6.77vw] h-auto filter brightness-0 invert'/>
+                         className='w-[25.64vw] aspect-square lg:w-[6.77vw] h-auto filter brightness-0 invert'/>
                 </span>
 
                 <nav>

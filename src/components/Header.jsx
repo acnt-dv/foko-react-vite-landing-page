@@ -2,6 +2,8 @@ import menuIcon from '../statics/svg/menu-icon.svg';
 import logo from '../statics/png/foko-logo.png';
 import { useNavigate } from 'react-router-dom';
 
+export const Top_Right_Fixed_Buttons = "absolute top-[37.5px] right-[30px] lg:top-[72.5px] lg:right-[50px] cursor-pointer";
+
 export const Header = ({ menuToggle, hideLogo }) => {
     const navigate = useNavigate();
 
@@ -10,8 +12,8 @@ export const Header = ({ menuToggle, hideLogo }) => {
             <div className={`transition-opacity duration-300 ${hideLogo ? "opacity-0" : "opacity-100"} cursor-pointer`}>
                 <img src={logo} alt="logo" className="w-[12.82vw] h-auto aspect-square lg:w-[3.91vw] lg:h-auto m-[30px] lg:m-[50px]" onClick={() => navigate('/')} />
             </div>
-            <button onClick={menuToggle} className="cursor-pointer">
-                <img src={menuIcon} alt="menuIcon" className="w-[30px] h-[20px] m-[30px] lg:m-[50px]" />
+            <button onClick={menuToggle}>
+                <img src={menuIcon} alt="menuIcon" className={Top_Right_Fixed_Buttons} />
             </button>
         </div>
     )
