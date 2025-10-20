@@ -170,7 +170,7 @@ const MiniScreenSlideshow = ({images = [], galleries = []}) => {
                                 className="w-full h-auto lg:w-[87.00vw] lg:h-[72.5vh] mx-0 lg:mx-[7.5vw] mt-[18.52vh] mb-[2.78vh] object-cover"
                             />
                             <p className="text-10 lg:text-16 ml-[7.5vw] mb-[15.72vh]">
-                                Some renderings by Polynates. Work completed while at BA Collective.
+                                Some renderings by Polynates.
                             </p>
                         </span>
             </div>
