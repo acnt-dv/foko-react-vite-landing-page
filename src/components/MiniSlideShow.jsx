@@ -167,9 +167,9 @@ const MiniScreenSlideshow = ({images = [], galleries = []}) => {
                             <img
                                 src={selectedImage}
                                 alt="Fullscreen"
-                                className="w-full h-auto lg:w-[79.17vw] lg:h-[62.96vh] mx-0 lg:mx-[10.42vw] mt-[18.52vh] mb-[2.78vh] object-contain"
+                                className="w-full h-auto lg:w-[87.00vw] lg:h-[72.5vh] mx-0 lg:mx-[7.5vw] mt-[18.52vh] mb-[2.78vh] object-cover"
                             />
-                            <p className="text-10 lg:text-16 ml-[10.42vw] mb-[15.72vh]">
+                            <p className="text-10 lg:text-16 ml-[7.5vw] mb-[15.72vh]">
                                 Some renderings by Polynates. Work completed while at BA Collective.
                             </p>
                         </span>
