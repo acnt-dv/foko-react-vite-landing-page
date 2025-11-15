@@ -57,6 +57,11 @@ const MiniScreenSlideshow = ({images = [], galleries = []}) => {
 
     const openModal = (image) => {
         if (!image) return;
+        // If this image exists in our list, sync the slideshow index with it
+        const imgIndex = imageList.indexOf(image);
+        if (imgIndex !== -1) {
+            setIndex(imgIndex);
+        }
         setSelectedImage(image);
         setShowModal(true);
     };
@@ -163,16 +168,36 @@ const MiniScreenSlideshow = ({images = [], galleries = []}) => {
                 >
                     <img src={close} alt="close" width='20px' height='20px' className="mr-[15px]"/>
                 </button>
+                <button
+                    onClick={prevSlide}
+                    className="absolute cursor-pointer left-[7.5vw] top-1/2 transform -translate-y-1/2 p-0 z-150"
+                >
+                    <img
+                        src={leftArrow}
+                        alt="previous slide"
+                        className="w-[20px] h-[20px]"
+                    />
+                </button>
+                <button
+                    onClick={nextSlide}
+                    className="absolute cursor-pointer right-[7.5vw] top-1/2 transform -translate-y-1/2 p-0 z-50"
+                >
+                    <img
+                        src={rightArrow}
+                        alt="next slide"
+                        className="w-[20px] h-[20px]"
+                    />
+                </button>
                 <span className="grid w-full text-start">
                             <img
-                                src={selectedImage}
+                                src={imageList[index] || selectedImage}
                                 alt="Fullscreen"
-                                className="w-full h-auto lg:w-[87.00vw] lg:h-[72.5vh] mx-0 lg:mx-[7.5vw] mt-[18.52vh] mb-[2.78vh] object-cover"
+                                className="w-full h-auto lg:w-[88.1vw] lg:h-[70.0vh] mx-0 lg:mx-[5.95vw] mt-[18.52vh] mb-[2.78vh] object-cover"
                             />
-                            <p className="text-10 lg:text-16 ml-[7.5vw] mb-[15.72vh]">
+                            <p className="text-10 lg:text-16 ml-[5.95vw] mb-[15.72vh]">
                                 Some renderings by Polynates.
                             </p>
-                        </span>
+                </span>
             </div>
         </div>)}
     </div>);
