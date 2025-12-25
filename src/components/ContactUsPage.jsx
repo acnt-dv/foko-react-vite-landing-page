@@ -24,7 +24,7 @@ const Contact = ({contactsInfo}) => {
                         <h1 className="text-16 font-rubik text-end block lg:hidden mx-[30px]">Contact <br/> Us</h1>
                         <div className="col">
                             {/* Introductory text */}
-                            <p className="mr-[30px] lg:mr-[150px] max-w-[450px] lg:self-center text-10 lg:text-16 mt-[4px] lg:mt-0">
+                            <p className="mr-[30px] lg:mr-[150px] max-w-[450px] lg:self-center text-[clamp(10px,0.83vw,16px)] mb-[9.26vh] lg:mt-0">
                                 {contactUsInfo?.SECTION_TEXT}
                             </p>
                             {/* Render contact information */}
