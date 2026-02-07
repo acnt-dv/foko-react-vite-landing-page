@@ -1,5 +1,6 @@
-import aboutUsImage from '../statics/png/about-us.png';
-import profileImage from '../statics/png/about-us.png'; //
+import aboutUsImage from '../statics/png/about-us.jpg';
+import profileImageJenny from '../statics/png/jenny-bio.jpg';
+import profileImagePegah from '../statics/png/pegah-bio.jpg';
 import ProfileCard from "./ProfileCard";
 
 const AboutUs = () => {
@@ -90,7 +91,7 @@ const AboutUs = () => {
                 <ProfileCard
                     name="Jenny Fontenot"
                     title="Co-Founder"
-                    profileImg={profileImage}
+                    profileImg={profileImageJenny}
                     description={[`Jenny is the co-founder and Architectural Director of FOKO Studio. She is a licensed architect with a passion for creating positive impact for individuals and communities through shaping the built environment. With over 10 years of experience in various typologies and scales, including retail, institutional, residential, workplace, and adaptive-reuse projects, Jenny has developed a diverse portfolio that showcases her versatility and expertise.`, `As a licensed architect in both New York and California, Jenny brings a wealth of knowledge and understanding of different building regulations, allowing her to navigate complex projects while seeking innovative design solutions. Jenny sees the value in every detail and approaches each design challenge with an enthusiastic mindset, eager to unravel its puzzle-like nature.`, `Extending beyond traditional architecture, Jenny’s interests include furniture and product design. She believes in creating holistic and captivating experiences for users through design and collaboration at all scales.`]}
                     education={[{
                         degree: "Masters of Architecture",
@@ -101,7 +102,7 @@ const AboutUs = () => {
                 <ProfileCard
                     name="PEGAH KOULAEIAN"
                     title="Co-Founder"
-                    profileImg={profileImage}
+                    profileImg={profileImagePegah}
                     description={[`Pegah, the co-founder and Interior Architecture Director of FOKO Studio, brings over a decade
                         of experience in architecture and interior design to her role. Her expertise spans diverse
                         projects in hospitality, workplace, and residential environments around the world. Committed

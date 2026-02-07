@@ -1,5 +1,5 @@
 import React from "react";
-import profileImage from "../statics/png/about-us.png"; // Replace with actual image path
+import profileImage from "../statics/png/about-us.jpg";
 
 const ProfileCard = ({name, title, education, description, profileImg}) => {
     return (

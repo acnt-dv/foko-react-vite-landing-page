@@ -1,4 +1,4 @@
-import aboutUsImage from '../statics/png/about-us.png';
+import aboutUsImage from '../statics/png/home-page.jpg';
 import right from "../statics/svg/arrow-right.svg";
 import rightSmall from "../statics/svg/arrow-right-small.svg";
 import {useNavigate} from 'react-router-dom';
@@ -61,7 +61,7 @@ const AboutUs = () => {
                     <img
                         src={aboutUsImage}
                         alt="Architectural design by FOKO Studio"
-                        className="hidden lg:block filter grayscale w-[32.14vw] h-[47.07vh] mr-[15.63vw]"
+                        className="hidden lg:block filter grayscale w-[32.14vw] h-[47.07vh] mr-[15.63vw] object-cover"
                     />
                 </div>
             </div>
@@ -69,7 +69,7 @@ const AboutUs = () => {
             <img
                 src={aboutUsImage}
                 alt="Architectural project example"
-                className="block lg:hidden filter grayscale w-full h-[61.02vh] object-cover object-[center_30%] hover:object-[center_60%] transition-[object-position] duration-700"
+                className="block lg:hidden filter grayscale w-full h-[61.02vh] object-cover"
             />
         </section>
     );
